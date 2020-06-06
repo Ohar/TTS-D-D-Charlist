@@ -2667,22 +2667,24 @@ function updateJumpAndWeight()
     local strBtnIndex = 1
     -- Update Weight Capacity // line 579
     weightCapacity = ref_buttonData.counter[strBtnIndex].value * 15
-    self.editButton({index = 85, label = weightCapacity})
+    -- TODO: weightCapacity = ref_buttonData.counter["counter_"..PARAM_STR_ID].value * 15
+    self.editButton({index = btnIndexByElementIdTable["display_Weight_Capacity"], label = weightCapacity})
 
     -- Update Raise, Lift and Pull // line 579
     raiseLiftPullCapacity = weightCapacity * 2
-    self.editButton({index = 86, label = raiseLiftPullCapacity})
+    self.editButton({index = btnIndexByElementIdTable["display_Raise_Lift_and_Pull"], label = raiseLiftPullCapacity})
 
     -- Update Jump Height // line 593
     jumpHeight = ref_buttonData.display[strBtnIndex].value + 3
-    self.editButton({index = 87, label = jumpHeight})
+    self.editButton({index = btnIndexByElementIdTable["display_Jump_Height"], label = jumpHeight})
 
     -- Update Jump Distance // line 600
     jumpDistance = ref_buttonData.counter[strBtnIndex].value
-    self.editButton({index = 88, label = jumpDistance})
+    self.editButton({index = btnIndexByElementIdTable["display_Jump_Distance"], label = jumpDistance})
 
     -- Update Jump Height with Hands // line 607
     characterHeight = ref_buttonData.textbox[61].value
+    -- TODO: characterHeight = ref_buttonData.textbox[TEXTBOX_HEIGHT_ID].value
     if characterHeight == '' then
         characterHeight = 0
     end
@@ -2690,19 +2692,19 @@ function updateJumpAndWeight()
     tonumber(characterHeight)
     characterOneAndHalfHeight = math.floor(characterHeight * 1.5)
     jumpHeightWithHands = jumpHeight + characterOneAndHalfHeight
-    self.editButton({index = 89, label = jumpHeightWithHands})
+    self.editButton({index = btnIndexByElementIdTable["display_Jump_Height_with_Hands"], label = jumpHeightWithHands})
 
     -- Update Jump Height — no running // line 614
     jumpHeightNoRunning = math.floor(jumpHeight / 2)
-    self.editButton({index = 90, label = jumpHeightNoRunning})
+    self.editButton({index = btnIndexByElementIdTable["display_Jump_Height_no_running"], label = jumpHeightNoRunning})
 
     -- Update Jump Distance — no running // line 621
     jumpDistanceNoRunning = math.floor(jumpDistance / 2)
-    self.editButton({index = 91, label = jumpDistanceNoRunning})
+    self.editButton({index = btnIndexByElementIdTable["display_Jump_Distance_no_running"], label = jumpDistanceNoRunning})
 
     -- Update Jump Height with Hands — no running // line 628
     jumpHeightWithHandsNoRunning = jumpHeightNoRunning + characterOneAndHalfHeight
-    self.editButton({index = 92, label = jumpHeightWithHandsNoRunning})
+    self.editButton({index = btnIndexByElementIdTable["display_Jump_Height_with_Hands_no_running"], label = jumpHeightWithHandsNoRunning})
 end
 
 -- Lvl update btn - Activate/Deactivate
