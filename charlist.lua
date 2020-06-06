@@ -2856,21 +2856,21 @@ function createCounter()
         end
 
         --Creates button and counts it
-        self.createButton({
-            click_function = "click_none",
-            color          = buttonColor,
-            font_color     = buttonFontColor,
-            font_size      = data.size,
-            function_owner = self,
-            height         = size,
-            label          = label,
-            position       = data.pos,
-            scale          = buttonScale,
-            width          = size,
-        })
-
-        local btnTable = self.getButtons()
-        btnIndexByElementIdTable[data.id] = btnTable[#btnTable].index
+        createBtnAndSaveIndex(
+            data.id,
+            {
+                click_function = "click_none",
+                color          = buttonColor,
+                font_color     = buttonFontColor,
+                font_size      = data.size,
+                function_owner = self,
+                height         = size,
+                label          = label,
+                position       = data.pos,
+                scale          = buttonScale,
+                width          = size,
+            }
+        )
 
         spawnedButtonCount = spawnedButtonCount + 1
 
@@ -2892,21 +2892,21 @@ function createCounter()
         local size = data.size / 2
 
         --Creates button and counts it
-        self.createButton({
-            click_function = funcName,
-            color          = buttonColor,
-            font_color     = buttonFontColor,
-            font_size      = size,
-            function_owner = self,
-            height         = size,
-            label          = "+",
-            position       = pos,
-            scale          = buttonScale,
-            width          = size,
-        })
-
-        local btnAddTable = self.getButtons()
-        btnIndexByElementIdTable[data.btnAddId] = btnAddTable[#btnAddTable].index
+        createBtnAndSaveIndex(
+            data.btnAddId,
+            {
+                click_function = funcName,
+                color          = buttonColor,
+                font_color     = buttonFontColor,
+                font_size      = size,
+                function_owner = self,
+                height         = size,
+                label          = "+",
+                position       = pos,
+                scale          = buttonScale,
+                width          = size,
+            }
+        )
 
         spawnedButtonCount = spawnedButtonCount + 1
 
@@ -2926,22 +2926,21 @@ function createCounter()
         }
 
         --Creates button and counts it
-        self.createButton({
-            click_function = funcName,
-            color          = buttonColor,
-            font_color     = buttonFontColor,
-            font_size      = size,
-            function_owner = self,
-            height         = size,
-            label          = "−",
-            position       = pos,
-            scale          = buttonScale,
-            width          = size,
-        })
-        local btnSubTable = self.getButtons()
-        btnIndexByElementIdTable[data.btnSubId] = btnSubTable[#btnSubTable].index
-
-        print(JSON.encode(btnIndexByElementIdTable))
+        createBtnAndSaveIndex(
+            data.btnSubId,
+            {
+                click_function = funcName,
+                color          = buttonColor,
+                font_color     = buttonFontColor,
+                font_size      = size,
+                function_owner = self,
+                height         = size,
+                label          = "−",
+                position       = pos,
+                scale          = buttonScale,
+                width          = size,
+            }
+        )
 
         spawnedButtonCount = spawnedButtonCount + 1
     end
@@ -2974,6 +2973,9 @@ function createDisplay()
             tooltip        = tooltip,
             width          = size,
         })
+
+        local btnTable = self.getButtons()
+        btnIndexByElementIdTable[data.id] = btnTable[#btnTable].index
     end
 end
 --Makes textbox
@@ -3002,4 +3004,12 @@ function createTextbox()
             width          = data.width,
         })
     end
+end
+
+function createBtnAndSaveIndex (btnId, params)
+    self.createButton(params)
+    local btnTable = self.getButtons()
+    btnIndexByElementIdTable[btnId] = btnTable[#btnTable].index
+
+    --print(JSON.encode(btnIndexByElementIdTable))
 end
