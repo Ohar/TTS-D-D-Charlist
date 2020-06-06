@@ -460,6 +460,7 @@ local CHECKBOX_DEATH_SAVETHROW_SUCCESS_3_ID = "checkbox_Death_savethrow_success_
 local CHECKBOX_DEATH_SAVETHROW_FAIL_1_ID = "checkbox_Death_savethrow_fail_1"
 local CHECKBOX_DEATH_SAVETHROW_FAIL_2_ID = "checkbox_Death_savethrow_fail_2"
 local CHECKBOX_DEATH_SAVETHROW_FAIL_3_ID = "checkbox_Death_savethrow_fail_3"
+local CHECKBOX_WEIGHT_CAPACITY_X_2 = "checkbox_WEIGHT_CAPACITY_X_2"
 
 local COUNTER_PARAM_STR_ID = "counter_"..PARAM_STR_ID
 local COUNTER_PARAM_DEX_ID = "counter_"..PARAM_DEX_ID
@@ -833,6 +834,12 @@ defaultButtonData = {
             skillId = nil,
             pos     = {0.96,0.1,-1.015},
             size    = 200,
+            state   = false
+        },
+        [CHECKBOX_WEIGHT_CAPACITY_X_2] = {
+            skillId = nil,
+            pos     = {0.392,0.1,1.937},
+            size    = 150,
             state   = false
         },
         --End of checkboxes
@@ -2122,6 +2129,7 @@ function click_checkbox(checkboxId)
         })
     end
 
+    updateJumpAndWeight()
     updateSave()
 end
 
@@ -2256,8 +2264,13 @@ end
 
 --Makes checkboxes
 function updateJumpAndWeight()
+    local weightCapacityKoef = 1
+    if ref_buttonData.checkbox[CHECKBOX_WEIGHT_CAPACITY_X_2].state == true then
+        weightCapacityKoef = 2
+    end
+
     -- Update Weight Capacity
-    weightCapacity = ref_buttonData.counter[COUNTER_PARAM_STR_ID].value * 15
+    weightCapacity = ref_buttonData.counter[COUNTER_PARAM_STR_ID].value * 15 * weightCapacityKoef
     self.editButton({
         index = btnIndexByElementIdTable[DISPLAY_WEIGHT_CAPACITY_ID],
         label = weightCapacity,
