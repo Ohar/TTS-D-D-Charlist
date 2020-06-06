@@ -2471,17 +2471,17 @@ function click_counter(tableIndex, buttonIndex, amount, counterId)
     --        ref_buttonData.display["display_"..skillId].value = atributo + bonus
     --        self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
     --    end
-    --end
-
-    -- Passive Perception Update
-    --if skillId == SKILL_PERCEPTION_ID then
-    --    -- With or Without Perception Proficiency
-    --    if ref_buttonData.checkbox["checkbox_"..SKILL_PERCEPTION_ID].state == true then
-    --        ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus + proficiency
-    --        self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value}) -- TODO: check if cutton is correct here
-    --    else
-    --        ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus
-    --        self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value}) -- TODO: check if cutton is correct here
+    --
+    --    --Passive Perception Update
+    --    if skillId == SKILL_PERCEPTION_ID then
+    --        -- With or Without Perception Proficiency
+    --        if ref_buttonData.checkbox["checkbox_"..SKILL_PERCEPTION_ID].state == true then
+    --            ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus + proficiency
+    --            self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value}) -- TODO: check if cutton is correct here
+    --        else
+    --            ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus
+    --            self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value}) -- TODO: check if cutton is correct here
+    --        end
     --    end
     --end
 
