@@ -2315,6 +2315,7 @@ function click_checkbox(tableIndex, checkboxId) --
     -- buttonIndex 0 to 23
 
     local checkbox = ref_buttonData.checkbox[tableIndex]
+    -- TODO: local checkbox = ref_buttonData.checkbox[checkboxId]
     local skillId = checkbox.skillId
 
     if not (skillId == nil) then
