@@ -827,57 +827,69 @@ defaultButtonData = {
 
         -- 1 counter STR
         {
-            id      = "counter_"..PARAM_STR_ID,
-            paramId = PARAM_STR_ID,
-            pos    = {-1.35,0.1,-1.025},
-            size   = 450,
-            value  = 10,
-            hideBG = true
+            btnAddId = "counter_btn_add_"..PARAM_STR_ID,
+            btnSubId = "counter_btn_sub_"..PARAM_STR_ID,
+            hideBG   = true,
+            id       = "counter_"..PARAM_STR_ID,
+            paramId  = PARAM_STR_ID,
+            pos      = {-1.35,0.1,-1.025},
+            size     = 450,
+            value    = 10,
         },
         -- 2 counter DEX
         {
-            id      = "counter_"..PARAM_DEX_ID,
-            paramId = PARAM_DEX_ID,
-            pos    = {-1.35,0.1,-0.662},
-            size   = 450,
-            value  = 10,
-            hideBG = true
+            btnAddId = "counter_btn_add_"..PARAM_DEX_ID,
+            btnSubId = "counter_btn_sub_"..PARAM_DEX_ID,
+            hideBG   = true,
+            id       = "counter_"..PARAM_DEX_ID,
+            paramId  = PARAM_DEX_ID,
+            pos      = {-1.35,0.1,-0.662},
+            size     = 450,
+            value    = 10,
         },
         -- 3 counter CON
         {
-            id      = "counter_"..PARAM_CON_ID,
-            paramId = PARAM_CON_ID,
-            pos    = {-1.35,0.1,-0.299},
-            size   = 450,
-            value  = 10,
-            hideBG = true
+            btnAddId = "counter_btn_add_"..PARAM_CON_ID,
+            btnSubId = "counter_btn_sub_"..PARAM_CON_ID,
+            hideBG   = true,
+            id       = "counter_"..PARAM_CON_ID,
+            paramId  = PARAM_CON_ID,
+            pos      = {-1.35,0.1,-0.299},
+            size     = 450,
+            value    = 10,
         },
         -- 4 counter INT
         {
-            id      = "counter_"..PARAM_INT_ID,
-            paramId = PARAM_INT_ID,
-            pos    = {-1.35,0.1,0.064},
-            size   = 450,
-            value  = 10,
-            hideBG = true
+            btnAddId = "counter_btn_add_"..PARAM_INT_ID,
+            btnSubId = "counter_btn_sub_"..PARAM_INT_ID,
+            hideBG   = true,
+            id       = "counter_"..PARAM_INT_ID,
+            paramId  = PARAM_INT_ID,
+            pos      = {-1.35,0.1,0.064},
+            size     = 450,
+            value    = 10,
         },
         -- 5 counter WIT
         {
-            id      = "counter_"..PARAM_WIT_ID,
-            paramId = PARAM_WIT_ID,
-            pos    = {-1.35,0.1,0.427},
-            size   = 450,
-            value  = 10,
-            hideBG = true
+            btnAddId = "counter_btn_add_"..PARAM_WIT_ID,
+            btnSubId = "counter_btn_sub_"..PARAM_WIT_ID,
+            hideBG   = true,
+            id       = "counter_"..PARAM_WIT_ID,
+            paramId  = PARAM_WIT_ID,
+            pos      = {-1.35,0.1,0.427},
+            size     = 450,
+            value    = 10,
         },
         -- 6 counter CHA
         {
-            id      = "counter_"..PARAM_CHA_ID,
-            paramId = PARAM_CHA_ID,
-            pos    = {-1.35,0.1,0.790},
-            size   = 450,
-            value  = 10,
-            hideBG = true
+            btnAddId = "counter_btn_add_"..PARAM_CHA_ID,
+            btnSubId = "counter_btn_sub_"..PARAM_CHA_ID,
+            hideBG   = true,
+            id       = "counter_"..PARAM_CHA_ID,
+            paramId  = PARAM_CHA_ID,
+            pos      = {-1.35,0.1,0.790},
+            size     = 450,
+            value    = 10,
         },
 
         --End of counters
