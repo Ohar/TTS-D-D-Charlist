@@ -326,6 +326,192 @@ local paramIdBySkillId = {
     [SKILL_WIT_SAVETHROW_ID] = PARAM_WIT_ID,
 }
 
+local TEXTBOX_NAME_ID = "textbox_Name"
+local TEXTBOX_CLASS_LEVEL_ID = "textbox_Class_Level"
+local TEXTBOX_BACKGROUND_ID = "textbox_Background"
+local TEXTBOX_PLAYERS_NAME_ID = "textbox_Players_name"
+local TEXTBOX_RACE_ID = "textbox_Race"
+local TEXTBOX_ALIGMENT_ID = "textbox_Aligment"
+local TEXTBOX_XP_ID = "textbox_XP"
+local TEXTBOX_DELETED_PROFICIENCY_ID = "textbox_DELETED_Proficiency"
+local TEXTBOX_AGE_ID = "textbox_Age"
+local TEXTBOX_AC_ID = "textbox_AC"
+local TEXTBOX_HP_MAX_ID = "textbox_HP_max"
+local TEXTBOX_HP_TEMPORARY_ID = "textbox_HP_temporary"
+local TEXTBOX_HIT_DICES_ID = "textbox_Hit_Dices"
+local TEXTBOX_INITIATIVE_ID = "textbox_Initiative"
+local TEXTBOX_SPEED_ID = "textbox_Speed"
+local TEXTBOX_VISION_ID = "textbox_Vision"
+local TEXTBOX_CURRENT_HIT_POINTS_ID = "textbox_Current_Hit_Points"
+local TEXTBOX_WEAPON_NAME_1_ID = "textbox_Weapon_Name_1"
+local TEXTBOX_WEAPON_NAME_2_ID = "textbox_Weapon_Name_2"
+local TEXTBOX_WEAPON_NAME_3_ID = "textbox_Weapon_Name_3"
+local TEXTBOX_WEAPON_NAME_4_ID = "textbox_Weapon_Name_4"
+local TEXTBOX_WEAPON_NAME_5_ID = "textbox_Weapon_Name_5"
+local TEXTBOX_WEAPON_NAME_6_ID = "textbox_Weapon_Name_6"
+local TEXTBOX_WEAPON_NAME_7_ID = "textbox_Weapon_Name_7"
+local TEXTBOX_DAMAGE_1_ID = "textbox_Damage_1"
+local TEXTBOX_DAMAGE_2_ID = "textbox_Damage_2"
+local TEXTBOX_DAMAGE_3_ID = "textbox_Damage_3"
+local TEXTBOX_DAMAGE_4_ID = "textbox_Damage_4"
+local TEXTBOX_DAMAGE_5_ID = "textbox_Damage_5"
+local TEXTBOX_DAMAGE_6_ID = "textbox_Damage_6"
+local TEXTBOX_DAMAGE_7_ID = "textbox_Damage_7"
+local TEXTBOX_DAMAGE_TYPE_1_ID = "textbox_Damage_Type_1"
+local TEXTBOX_DAMAGE_TYPE_2_ID = "textbox_Damage_Type_2"
+local TEXTBOX_DAMAGE_TYPE_3_ID = "textbox_Damage_Type_3"
+local TEXTBOX_DAMAGE_TYPE_4_ID = "textbox_Damage_Type_4"
+local TEXTBOX_DAMAGE_TYPE_5_ID = "textbox_Damage_Type_5"
+local TEXTBOX_DAMAGE_TYPE_6_ID = "textbox_Damage_Type_6"
+local TEXTBOX_DAMAGE_TYPE_7_ID = "textbox_Damage_Type_7"
+local TEXTBOX_RANGE_1_ID = "textbox_Range_1"
+local TEXTBOX_RANGE_2_ID = "textbox_Range_2"
+local TEXTBOX_RANGE_3_ID = "textbox_Range_3"
+local TEXTBOX_RANGE_4_ID = "textbox_Range_4"
+local TEXTBOX_RANGE_5_ID = "textbox_Range_5"
+local TEXTBOX_RANGE_6_ID = "textbox_Range_6"
+local TEXTBOX_RANGE_7_ID = "textbox_Range_7"
+local TEXTBOX_NOTES_1_ID = "textbox_Notes_1"
+local TEXTBOX_NOTES_2_ID = "textbox_Notes_2"
+local TEXTBOX_NOTES_3_ID = "textbox_Notes_3"
+local TEXTBOX_NOTES_4_ID = "textbox_Notes_4"
+local TEXTBOX_NOTES_5_ID = "textbox_Notes_5"
+local TEXTBOX_NOTES_6_ID = "textbox_Notes_6"
+local TEXTBOX_NOTES_7_ID = "textbox_Notes_7"
+local TEXTBOX_COPPER_COINS_ID = "textbox_Copper_coins"
+local TEXTBOX_SILVER_COINS_ID = "textbox_Silver_coins"
+local TEXTBOX_ELECTRUM_COINS_ID = "textbox_Electrum_coins"
+local TEXTBOX_GOLD_COINS_ID = "textbox_Gold_coins"
+local TEXTBOX_PLATINUM_COINS_ID = "textbox_Platinum_coins"
+local TEXTBOX_EQUIPMENT_1_ID = "textbox_Equipment_1"
+local TEXTBOX_EQUIPMENT_2_ID = "textbox_Equipment_2"
+local TEXTBOX_CLASS_RACE_CHARACTERISTICS_ID = "textbox_Class_Race_Characteristics"
+local TEXTBOX_HEIGHT_ID = "textbox_Height"
+local TEXTBOX_WEIGHT_ID = "textbox_Weight"
+local TEXTBOX_PROFICIENCY_3_ID = "textbox_Proficiency_3"
+local TEXTBOX_REMOVED_JUMP_DISTANCE_ID = "textbox_REMOVED_Jump_Distance"
+local TEXTBOX_REMOVED_JUMP_HEIGHT_ID = "textbox_REMOVED_Jump_Height"
+local TEXTBOX_REMOVED_WEIGHT_ID = "textbox_REMOVED_Weight"
+local TEXTBOX_REMOVED_RAISE_LIFT_PULL_ID = "textbox_REMOVED_Raise_Lift_Pull"
+local TEXTBOX_SKILL_STR_SAVETHROW_ID = "textbox_"..SKILL_STR_SAVETHROW_ID
+local TEXTBOX_SKILL_ATHLETICS_ID = "textbox_"..SKILL_ATHLETICS_ID
+local TEXTBOX_SKILL_DEX_SAVETHROW_ID = "textbox_"..SKILL_DEX_SAVETHROW_ID
+local TEXTBOX_SKILL_ACROBATICS_ID = "textbox_"..SKILL_ACROBATICS_ID
+local TEXTBOX_SKILL_STEALTH_ID = "textbox_"..SKILL_STEALTH_ID
+local TEXTBOX_SKILL_SLEIGHT_OF_HAND_ID = "textbox_"..SKILL_SLEIGHT_OF_HAND_ID
+local TEXTBOX_SKILL_CON_SAVETHROW_ID = "textbox_"..SKILL_CON_SAVETHROW_ID
+local TEXTBOX_SKILL_INT_SAVETHROW_ID = "textbox_"..SKILL_INT_SAVETHROW_ID
+local TEXTBOX_SKILL_ARCANA_ID = "textbox_"..SKILL_ARCANA_ID
+local TEXTBOX_SKILL_HISTORY_ID = "textbox_"..SKILL_HISTORY_ID
+local TEXTBOX_SKILL_INVESTIGATION_ID = "textbox_"..SKILL_INVESTIGATION_ID
+local TEXTBOX_SKILL_NATURE_ID = "textbox_"..SKILL_NATURE_ID
+local TEXTBOX_SKILL_RELIGION_ID = "textbox_"..SKILL_RELIGION_ID
+local TEXTBOX_SKILL_WIT_SAVETHROW_ID = "textbox_"..SKILL_WIT_SAVETHROW_ID
+local TEXTBOX_SKILL_ANIMAL_HANDLING_ID = "textbox_"..SKILL_ANIMAL_HANDLING_ID
+local TEXTBOX_SKILL_INSIGHT_ID = "textbox_"..SKILL_INSIGHT_ID
+local TEXTBOX_SKILL_MEDICINE_ID = "textbox_"..SKILL_MEDICINE_ID
+local TEXTBOX_SKILL_PERCEPTION_ID = "textbox_"..SKILL_PERCEPTION_ID
+local TEXTBOX_SKILL_SURVIVAL_ID = "textbox_"..SKILL_SURVIVAL_ID
+local TEXTBOX_SKILL_CHA_SAVETHROW_ID = "textbox_"..SKILL_CHA_SAVETHROW_ID
+local TEXTBOX_SKILL_PERFORMANCE_ID = "textbox_"..SKILL_PERFORMANCE_ID
+local TEXTBOX_SKILL_DECEPTION_ID = "textbox_"..SKILL_DECEPTION_ID
+local TEXTBOX_SKILL_INTIMIDATION_ID = "textbox_"..SKILL_INTIMIDATION_ID
+local TEXTBOX_SKILL_PERSUASION_ID = "textbox_"..SKILL_PERSUASION_ID
+
+local textboxLabelCollection = {
+    [TEXTBOX_NAME_ID] = "Имя персонажа",
+    [TEXTBOX_CLASS_LEVEL_ID] = "Kласс",
+    [TEXTBOX_BACKGROUND_ID] = "Предыстория",
+    [TEXTBOX_PLAYERS_NAME_ID] = "Имя игрока",
+    [TEXTBOX_RACE_ID] = "Pаса",
+    [TEXTBOX_ALIGMENT_ID] = "Mировоззрение",
+    [TEXTBOX_XP_ID] = "Oпыт",
+    [TEXTBOX_DELETED_PROFICIENCY_ID] = "",
+    [TEXTBOX_AGE_ID] = "Bозраст",
+    [TEXTBOX_AC_ID] = "KД",
+    [TEXTBOX_HP_MAX_ID] = "",
+    [TEXTBOX_HP_TEMPORARY_ID] = "",
+    [TEXTBOX_HIT_DICES_ID] = "",
+    [TEXTBOX_INITIATIVE_ID] = "+0",
+    [TEXTBOX_SPEED_ID] = "",
+    [TEXTBOX_VISION_ID] = "обычное",
+    [TEXTBOX_CURRENT_HIT_POINTS_ID] = "",
+    [TEXTBOX_WEAPON_NAME_1_ID] = "",
+    [TEXTBOX_WEAPON_NAME_2_ID] = "",
+    [TEXTBOX_WEAPON_NAME_3_ID] = "",
+    [TEXTBOX_WEAPON_NAME_4_ID] = "",
+    [TEXTBOX_WEAPON_NAME_5_ID] = "",
+    [TEXTBOX_WEAPON_NAME_6_ID] = "",
+    [TEXTBOX_WEAPON_NAME_7_ID] = "",
+    [TEXTBOX_DAMAGE_1_ID] = "",
+    [TEXTBOX_DAMAGE_2_ID] = "",
+    [TEXTBOX_DAMAGE_3_ID] = "",
+    [TEXTBOX_DAMAGE_4_ID] = "",
+    [TEXTBOX_DAMAGE_5_ID] = "",
+    [TEXTBOX_DAMAGE_6_ID] = "",
+    [TEXTBOX_DAMAGE_7_ID] = "",
+    [TEXTBOX_DAMAGE_TYPE_1_ID] = "",
+    [TEXTBOX_DAMAGE_TYPE_2_ID] = "",
+    [TEXTBOX_DAMAGE_TYPE_3_ID] = "",
+    [TEXTBOX_DAMAGE_TYPE_4_ID] = "",
+    [TEXTBOX_DAMAGE_TYPE_5_ID] = "",
+    [TEXTBOX_DAMAGE_TYPE_6_ID] = "",
+    [TEXTBOX_DAMAGE_TYPE_7_ID] = "",
+    [TEXTBOX_RANGE_1_ID] = "",
+    [TEXTBOX_RANGE_2_ID] = "",
+    [TEXTBOX_RANGE_3_ID] = "",
+    [TEXTBOX_RANGE_4_ID] = "",
+    [TEXTBOX_RANGE_5_ID] = "",
+    [TEXTBOX_RANGE_6_ID] = "",
+    [TEXTBOX_RANGE_7_ID] = "",
+    [TEXTBOX_NOTES_1_ID] = "",
+    [TEXTBOX_NOTES_2_ID] = "",
+    [TEXTBOX_NOTES_3_ID] = "",
+    [TEXTBOX_NOTES_4_ID] = "",
+    [TEXTBOX_NOTES_5_ID] = "",
+    [TEXTBOX_NOTES_6_ID] = "",
+    [TEXTBOX_NOTES_7_ID] = "",
+    [TEXTBOX_COPPER_COINS_ID] = "0",
+    [TEXTBOX_SILVER_COINS_ID] = "0",
+    [TEXTBOX_ELECTRUM_COINS_ID] = "0",
+    [TEXTBOX_GOLD_COINS_ID] = "0",
+    [TEXTBOX_PLATINUM_COINS_ID] = "0",
+    [TEXTBOX_EQUIPMENT_1_ID] = "",
+    [TEXTBOX_EQUIPMENT_2_ID] = "",
+    [TEXTBOX_CLASS_RACE_CHARACTERISTICS_ID] = "",
+    [TEXTBOX_HEIGHT_ID] = "Рост",
+    [TEXTBOX_WEIGHT_ID] = "Bес",
+    [TEXTBOX_PROFICIENCY_3_ID] = "",
+    [TEXTBOX_REMOVED_JUMP_DISTANCE_ID] = "",
+    [TEXTBOX_REMOVED_JUMP_HEIGHT_ID] = "",
+    [TEXTBOX_REMOVED_WEIGHT_ID] = "",
+    [TEXTBOX_REMOVED_RAISE_LIFT_PULL_ID] = "",
+    [TEXTBOX_SKILL_STR_SAVETHROW_ID] = "",
+    [TEXTBOX_SKILL_ATHLETICS_ID] = "",
+    [TEXTBOX_SKILL_DEX_SAVETHROW_ID] = "",
+    [TEXTBOX_SKILL_ACROBATICS_ID] = "",
+    [TEXTBOX_SKILL_STEALTH_ID] = "",
+    [TEXTBOX_SKILL_SLEIGHT_OF_HAND_ID] = "",
+    [TEXTBOX_SKILL_CON_SAVETHROW_ID] = "",
+    [TEXTBOX_SKILL_INT_SAVETHROW_ID] = "",
+    [TEXTBOX_SKILL_ARCANA_ID] = "",
+    [TEXTBOX_SKILL_HISTORY_ID] = "",
+    [TEXTBOX_SKILL_INVESTIGATION_ID] = "",
+    [TEXTBOX_SKILL_NATURE_ID] = "",
+    [TEXTBOX_SKILL_RELIGION_ID] = "",
+    [TEXTBOX_SKILL_WIT_SAVETHROW_ID] = "",
+    [TEXTBOX_SKILL_ANIMAL_HANDLING_ID] = "",
+    [TEXTBOX_SKILL_INSIGHT_ID] = "",
+    [TEXTBOX_SKILL_MEDICINE_ID] = "",
+    [TEXTBOX_SKILL_PERCEPTION_ID] = "",
+    [TEXTBOX_SKILL_SURVIVAL_ID] = "",
+    [TEXTBOX_SKILL_CHA_SAVETHROW_ID] = "",
+    [TEXTBOX_SKILL_PERFORMANCE_ID] = "",
+    [TEXTBOX_SKILL_DECEPTION_ID] = "",
+    [TEXTBOX_SKILL_INTIMIDATION_ID] = "",
+    [TEXTBOX_SKILL_PERSUASION_ID] = "",
+}
+
 --This is the button placement information
 defaultButtonData = {
     --Add checkboxes
@@ -1090,7 +1276,6 @@ defaultButtonData = {
         rows      = how many lines of text you want for this box
         width     = how wide the text box is
         font_size = size of text. This and "rows" effect overall height
-        label     = what is shown when there is no text. "" = nothing
         value     = text entered into box. "" = nothing
         alignment = Number to indicate how you want text aligned
                     (1=Automatic, 2=Left, 3=Center, 4=Right, 5=Justified)
@@ -1099,1029 +1284,938 @@ defaultButtonData = {
 
         -- 1 textbox Name
         {
-            id        = "textbox_Name",
+            id        = TEXTBOX_NAME_ID,
             pos       = {-0.825,0.1,-1.900},
             rows      = 1,
             width     = 5000,
             font_size = 350,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 2 textbox Class & Level
         {
-            id        = "textbox_Class_Level",
+            id        = TEXTBOX_CLASS_LEVEL_ID,
             pos       = {0.075,0.1,-1.975},
             rows      = 1,
             width     = 2500,
             font_size = 350,
-            label     = "Kласс",
             value     = "",
             alignment = 3
         },
         -- 3 textbox Background
         {
-            id        = "textbox_Background",
+            id        = TEXTBOX_BACKGROUND_ID,
             pos       = {0.612,0.1,-1.975},
             rows      = 1,
             width     = 2600,
             font_size = 350,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 4 textbox Player’s name
         {
-            id        = "textbox_Players_name",
+            id        = TEXTBOX_PLAYERS_NAME_ID,
             pos       = {1.14,0.1,-1.975},
             rows      = 1,
             width     = 2400,
             font_size = 350,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 5 textbox Race
         {
-            id        = "textbox_Race",
+            id        = TEXTBOX_RACE_ID,
             pos       = {0.075,0.1,-1.835},
             rows      = 1,
             width     = 2500,
             font_size = 350,
-            label     = "Pаса",
             value     = "",
             alignment = 3
         },
         -- 6 textbox Aligment
         {
-            id        = "textbox_Aligment",
+            id        = TEXTBOX_ALIGMENT_ID,
             pos       = {0.612,0.1,-1.835},
             rows      = 1,
             width     = 2600,
             font_size = 350,
-            label     = "Mировоззрение",
             value     = "",
             alignment = 3
         },
         -- 7 textbox XP
         {
-            id        = "textbox_XP",
+            id        = TEXTBOX_XP_ID,
             pos       = {1.015,0.1,-1.835},
             rows      = 1,
             width     = 1200,
             font_size = 350,
-            label     = "Oпыт",
             value     = "0",
             alignment = 3
         },
         -- 8 textbox DELETED — Proficiency
         {
-            id        = "textbox_DELETED_Proficiency", -- TODO: delete
+            id        = TEXTBOX_DELETED_PROFICIENCY_ID,
             pos       = {0,0,0},
             rows      = 0,
             width     = 0,
             font_size = 0,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 9 textbox Age
         {
-            id        = "textbox_Age",
+            id        = TEXTBOX_AGE_ID,
             pos       = {-0.671,0.1,1.24},
             rows      = 1,
             width     = 1200,
             font_size = 300,
-            label     = "Bозраст",
             value     = "0",
             alignment = 3
         },
         -- 10 textbox AC
         {
-            id        = "textbox_AC",
+            id        = TEXTBOX_AC_ID,
             pos       = {-0.265,0.1,-1.425},
             rows      = 1,
             width     = 750,
             font_size = 450,
-            label     = "KД",
             value     = "10",
             alignment = 3
         },
         -- 11 textbox HP max
         {
-            id        = "textbox_HP_max",
+            id        = TEXTBOX_HP_MAX_ID,
             pos       = {0.045,0.1,-1.425},
             rows      = 1,
             width     = 750,
             font_size = 450,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 12 textbox HP temporary
         {
-            id        = "textbox_HP_temporary",
+            id        = TEXTBOX_HP_TEMPORARY_ID,
             pos       = {0.355,0.1,-1.425},
             rows      = 1,
             width     = 750,
             font_size = 450,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 13 textbox Hit Dices
         {
-            id        = "textbox_Hit_Dices",
+            id        = TEXTBOX_HIT_DICES_ID,
             pos       = {0.93,0.1,-1.38},
             rows      = 1,
             width     = 500,
             font_size = 450,
-            label     = "",
             value     = "",
             alignment = 1
         },
         -- 14 textbox Initiative
         {
-            id        = "textbox_Initiative",
+            id        = TEXTBOX_INITIATIVE_ID,
             pos       = {1.25,0.1,-1.45},
             rows      = 1,
             width     = 750,
             font_size = 450,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 15 textbox Speed
         {
-            id        = "textbox_Speed",
+            id        = TEXTBOX_SPEED_ID,
             pos       = {1.25,0.1,-1.225},
             rows      = 1,
             width     = 1000,
             font_size = 450,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 16 textbox Vision
         {
-            id        = "textbox_Vision",
+            id        = TEXTBOX_VISION_ID,
             pos       = {1.25,0.1,-1.0},
             rows      = 1,
             width     = 1500,
             font_size = 450,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 17 textbox Current Hit Points
         {
-            id        = "textbox_Current_Hit_Points",
+            id        = TEXTBOX_CURRENT_HIT_POINTS_ID,
             pos       = {0.035,0.1,-1.09},
             rows      = 1,
             width     = 3800,
             font_size = 750,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 18 textbox Weapon Name1
         {
-            id        = "textbox_Weapon_Name_1",
+            id        = TEXTBOX_WEAPON_NAME_1_ID,
             pos       = {-0.08,0.1,-0.71 },
             rows      = 1,
             width     = 3350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 19 textbox Weapon Name2
         {
-            id        = "textbox_Weapon_Name_2",
+            id        = TEXTBOX_WEAPON_NAME_2_ID,
             pos       = {-0.08,0.1,-0.632},
             rows      = 1,
             width     = 3350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 20 textbox Weapon Name3
         {
-            id        = "textbox_Weapon_Name_3",
+            id        = TEXTBOX_WEAPON_NAME_3_ID,
             pos       = {-0.08,0.1,-0.554},
             rows      = 1,
             width     = 3350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 21 textbox Weapon Name4
         {
-            id        = "textbox_Weapon_Name_4",
+            id        = TEXTBOX_WEAPON_NAME_4_ID,
             pos       = {-0.08,0.1,-0.476},
             rows      = 1,
             width     = 3350,
             font_size = 310,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 22 textbox Weapon Name5
         {
-            id        = "textbox_Weapon_Name_5",
+            id        = TEXTBOX_WEAPON_NAME_5_ID,
             pos       = {-0.08,0.1,-0.398},
             rows      = 1,
             width     = 3350,
             font_size = 310,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 23 textbox Weapon Name6
         {
-            id        = "textbox_Weapon_Name_6",
+            id        = TEXTBOX_WEAPON_NAME_6_ID,
             pos       = {-0.08,0.1,-0.320},
             rows      = 1,
             width     = 3350,
             font_size = 310,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 24 textbox Weapon Name7
         {
-            id        = "textbox_Weapon_Name_7",
+            id        = TEXTBOX_WEAPON_NAME_7_ID,
             pos       = {-0.08,0.1,-0.242},
             rows      = 1,
             width     = 3350,
             font_size = 310,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 25 textbox Damage 1
         {
-            id        = "textbox_Damage_1",
+            id        = TEXTBOX_DAMAGE_1_ID,
             pos       = {0.38,0.1,-0.71},
             rows      = 1,
             width     = 800,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 26 textbox Damage 2
         {
-            id        = "textbox_Damage_2",
+            id        = TEXTBOX_DAMAGE_2_ID,
             pos       = {0.38,0.1,-0.632},
             rows      = 1,
             width     = 800,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 27 textbox Damage3
         {
-            id        = "textbox_Damage_3",
+            id        = TEXTBOX_DAMAGE_3_ID,
             pos       = {0.38,0.1,-0.554},
             rows      = 1,
             width     = 800,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 28 textbox Damage4
         {
-            id        = "textbox_Damage_4",
+            id        = TEXTBOX_DAMAGE_4_ID,
             pos       = {0.38,0.1,-0.476},
             rows      = 1,
             width     = 800,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 29 textbox Damage5
         {
-            id        = "textbox_Damage_5",
+            id        = TEXTBOX_DAMAGE_5_ID,
             pos       = {0.38,0.1,-0.398},
             rows      = 1,
             width     = 800,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 30 textbox Damage6
         {
-            id        = "textbox_Damage_6",
+            id        = TEXTBOX_DAMAGE_6_ID,
             pos       = {0.38,0.1,-0.320},
             rows      = 1,
             width     = 800,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 31 textbox Damage7
         {
-            id        = "textbox_Damage_7",
+            id        = TEXTBOX_DAMAGE_7_ID,
             pos       = {0.38,0.1,-0.242},
             rows      = 1,
             width     = 800,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 32textbox Damage Type1
         {
-            id        = "textbox_Damage_Type_1",
+            id        = TEXTBOX_DAMAGE_TYPE_1_ID,
             pos       = {0.6375,0.1,-0.71},
             rows      = 1,
             width     = 1350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 33textbox Damage Type2
         {
-            id        = "textbox_Damage_Type_2",
+            id        = TEXTBOX_DAMAGE_TYPE_2_ID,
             pos       = {0.6375,0.1,-0.632},
             rows      = 1,
             width     = 1350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 34textbox Damage Type3
         {
-            id        = "textbox_Damage_Type_3",
+            id        = TEXTBOX_DAMAGE_TYPE_3_ID,
             pos       = {0.6375,0.1,-0.554},
             rows      = 1,
             width     = 1350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 35textbox Damage Type4
         {
-            id        = "textbox_Damage_Type_4",
+            id        = TEXTBOX_DAMAGE_TYPE_4_ID,
             pos       = {0.6375,0.1,-0.476},
             rows      = 1,
             width     = 1350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 36textbox Damage Type5
         {
-            id        = "textbox_Damage_Type_5",
+            id        = TEXTBOX_DAMAGE_TYPE_5_ID,
             pos       = {0.6375,0.1,-0.398},
             rows      = 1,
             width     = 1350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 37textbox Damage Type6
         {
-            id        = "textbox_Damage_Type_6",
+            id        = TEXTBOX_DAMAGE_TYPE_6_ID,
             pos       = {0.6375,0.1,-0.320},
             rows      = 1,
             width     = 1350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 38textbox Damage Type7
         {
-            id        = "textbox_Damage_Type_7",
+            id        = TEXTBOX_DAMAGE_TYPE_7_ID,
             pos       = {0.6375,0.1,-0.242},
             rows      = 1,
             width     = 1350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 39 textbox Range1
         {
-            id        = "textbox_Range_1",
+            id        = TEXTBOX_RANGE_1_ID,
             pos       = {0.9475,0.1,-0.71},
             rows      = 1,
             width     = 1250,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 40 textbox Range2
         {
-            id        = "textbox_Range_2",
+            id        = TEXTBOX_RANGE_2_ID,
             pos       = {0.9475,0.1,-0.632},
             rows      = 1,
             width     = 1250,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 41 textbox Range3
         {
-            id        = "textbox_Range_3",
+            id        = TEXTBOX_RANGE_3_ID,
             pos       = {0.9475,0.1,-0.554},
             rows      = 1,
             width     = 1250,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 42 textbox Range4
         {
-            id        = "textbox_Range_4",
+            id        = TEXTBOX_RANGE_4_ID,
             pos       = {0.9475,0.1,-0.476},
             rows      = 1,
             width     = 1250,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 43 textbox Range5
         {
-            id        = "textbox_Range_5",
+            id        = TEXTBOX_RANGE_5_ID,
             pos       = {0.9475,0.1,-0.398},
             rows      = 1,
             width     = 1250,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
 
         -- 44 textbox Range6
         {
-            id        = "textbox_Range_6",
+            id        = TEXTBOX_RANGE_6_ID,
             pos       = {0.9475,0.1,-0.320},
             rows      = 1,
             width     = 1250,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 45 textbox Range7
         {
-            id        = "textbox_Range_7",
+            id        = TEXTBOX_RANGE_7_ID,
             pos       = {0.9475,0.1,-0.242},
             rows      = 1,
             width     = 1250,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 46 textbox Notes1
         {
-            id        = "textbox_Notes_1",
+            id        = TEXTBOX_NOTES_1_ID,
             pos       = {1.29,0.1,-0.71},
             rows      = 1,
             width     = 1700,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
 
         -- 47 textbox Notes2
         {
-            id        = "textbox_Notes_2",
+            id        = TEXTBOX_NOTES_2_ID,
             pos       = {1.29,0.1,-0.632},
             rows      = 1,
             width     = 1700,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 48 textbox Notes3
         {
-            id        = "textbox_Notes_3",
+            id        = TEXTBOX_NOTES_3_ID,
             pos       = {1.29,0.1,-0.554},
             rows      = 1,
             width     = 1700,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 49 textbox Notes4
         {
-            id        = "textbox_Notes_4",
+            id        = TEXTBOX_NOTES_4_ID,
             pos       = {1.29,0.1,-0.476},
             rows      = 1,
             width     = 1700,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 50 textbox Notes5
         {
-            id        = "textbox_Notes_5",
+            id        = TEXTBOX_NOTES_5_ID,
             pos       = {1.29,0.1,-0.398},
             rows      = 1,
             width     = 1700,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 51 textbox Notes6
         {
-            id        = "textbox_Notes_6",
+            id        = TEXTBOX_NOTES_6_ID,
             pos       = {1.29,0.1,-0.320},
             rows      = 1,
             width     = 1700,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 52 textbox Notes7
         {
-            id        = "textbox_Notes_7",
+            id        = TEXTBOX_NOTES_7_ID,
             pos       = {1.29,0.1,-0.242},
             rows      = 1,
             width     = 1700,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 53 textbox Copper coins
         {
-            id        = "textbox_Copper_coins",
+            id        = TEXTBOX_COPPER_COINS_ID,
             pos       = {-0.35,0.1,0.04},
             rows      = 1,
             width     = 850,
             font_size = 280,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 54 textbox Silver coins
         {
-            id        = "textbox_Silver_coins",
+            id        = TEXTBOX_SILVER_COINS_ID,
             pos       = {-0.35,0.1,0.18},
             rows      = 1,
             width     = 850,
             font_size = 280,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 55 textbox Electrum coins
         {
-            id        = "textbox_Electrum_coins",
+            id        = TEXTBOX_ELECTRUM_COINS_ID,
             pos       = {-0.35,0.1,0.315},
             rows      = 1,
             width     = 850,
             font_size = 280,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 56 textbox Gold coins
         {
-            id        = "textbox_Gold_coins",
+            id        = TEXTBOX_GOLD_COINS_ID,
             pos       = {-0.35,0.1,0.455},
             rows      = 1,
             width     = 850,
             font_size = 280,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 57 textbox Platinum coins
         {
-            id        = "textbox_Platinum_coins",
+            id        = TEXTBOX_PLATINUM_COINS_ID,
             pos       = {-0.35,0.1,0.6},
             rows      = 1,
             width     = 850,
             font_size = 280,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 58 textbox Equipment
         {
-            id        = "textbox_Equipment_1",
+            id        = TEXTBOX_EQUIPMENT_1_ID,
             pos       = {0.1335,0.1,0.31},
             rows      = 11,
             width     = 3300,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 2
         },
         -- 59 textbox Equipment2
         {
-            id        = "textbox_Equipment_2",
+            id        = TEXTBOX_EQUIPMENT_2_ID,
             pos       = {0.015,0.1,1.1},
             rows      = 13,
             width     = 4425,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 2
         },
         -- 60 textbox Class and Race Characteristics
         {
-            id        = "textbox_Class_Race_Characteristics",
+            id        = TEXTBOX_CLASS_RACE_CHARACTERISTICS_ID,
             pos       = {1.01,0.1,1.02},
             rows      = 41,
             width     = 4550,
             font_size = 250,
-            label     = "",
             value     = "",
             alignment = 2
         },
         -- 61 textbox Height
         {
-            id        = "textbox_Height",
+            id        = TEXTBOX_HEIGHT_ID,
             pos       = {-0.671,0.1,1.315},
             rows      = 1,
             width     = 1200,
             font_size = 300,
-            label     = "Pост",
             value     = "0",
             alignment = 3
         },
         -- 62 textbox Weight
         {
-            id        = "textbox_Weight",
+            id        = TEXTBOX_WEIGHT_ID,
             pos       = {-0.671,0.1,1.39},
             rows      = 1,
             width     = 1200,
             font_size = 300,
-            label     = "Bес",
             value     = "0",
             alignment = 3
         },
 
         -- 63 textbox Proficiency3
         {
-            id        = "textbox_Proficiency_3",
+            id        = TEXTBOX_PROFICIENCY_3_ID,
             pos       = {-1,0.1,1.78},
             rows      = 10,
             width     = 4350,
             font_size = 300,
-            label     = "",
             value     = "",
             alignment = 2
         },
         -- 64 textbox -- REMOVED -- Jump Distance
         {
-            id        = "textbox_REMOVED_Jump_Distance", -- TODO Remove
+            id        = TEXTBOX_REMOVED_JUMP_DISTANCE_ID,
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
             font_size = 0,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 65 textbox -- REMOVED -- Jump Height
         {
-            id        = "textbox_REMOVED_Jump_Height", -- TODO Remove
+            id        = TEXTBOX_REMOVED_JUMP_HEIGHT_ID,
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
             font_size = 0,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 66 textbox -- REMOVED -- Weight
         {
-            id        = "textbox_REMOVED_Weight", -- TODO Remove
+            id        = TEXTBOX_REMOVED_WEIGHT_ID,
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
             font_size = 0,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 67 textbox -- REMOVED -- Raise, Lift and Pull
         {
-            id        = "textbox_REMOVED_Raise_Lift_Pull", -- TODO Remove
+            id        = TEXTBOX_REMOVED_RAISE_LIFT_PULL_ID,
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
             font_size = 0,
-            label     = "",
             value     = "",
             alignment = 3
         },
         -- 68 textbox STR savethrow
         {
-            id        = "textbox_"..SKILL_STR_SAVETHROW_ID,
+            id        = TEXTBOX_SKILL_STR_SAVETHROW_ID,
             skillId   = SKILL_STR_SAVETHROW_ID,
             pos       = {-1.055,0.1,-1.165},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 69 textbox Atletics
         {
-            id        = "textbox_"..SKILL_ATHLETICS_ID,
+            id        = TEXTBOX_SKILL_ATHLETICS_ID,
             skillId   = SKILL_ATHLETICS_ID,
             pos       = {-1.055,0.1,-1.1105},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 70 textbox DEX savethrow
         {
-            id        = "textbox_"..SKILL_DEX_SAVETHROW_ID,
+            id        = TEXTBOX_SKILL_DEX_SAVETHROW_ID,
             skillId   = SKILL_DEX_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.8},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 71 textbox Acrobatics
         {
-            id        = "textbox_"..SKILL_ACROBATICS_ID,
+            id        = TEXTBOX_SKILL_ACROBATICS_ID,
             skillId   = SKILL_ACROBATICS_ID,
             pos       = {-1.055,0.1,-0.745},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 72 textbox Stealth
         {
-            id        = "textbox_"..SKILL_STEALTH_ID,
+            id        = TEXTBOX_SKILL_STEALTH_ID,
             skillId   = SKILL_STEALTH_ID,
             pos       = {-1.055,0.1,-0.695},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 73 textbox Sleight of Hand
         {
-            id        = "textbox_"..SKILL_SLEIGHT_OF_HAND_ID,
+            id        = TEXTBOX_SKILL_SLEIGHT_OF_HAND_ID,
             skillId   = SKILL_SLEIGHT_OF_HAND_ID,
             pos       = {-1.055,0.1,-0.645},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 74 textbox CON savethrow
         {
-            id        = "textbox_"..SKILL_CON_SAVETHROW_ID,
+            id        = TEXTBOX_SKILL_CON_SAVETHROW_ID,
             skillId   = SKILL_CON_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.435},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 75 textbox INT savethrow
         {
-            id        = "textbox_"..SKILL_INT_SAVETHROW_ID,
+            id        = TEXTBOX_SKILL_INT_SAVETHROW_ID,
             skillId   = SKILL_INT_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.075},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 76 textbox Arcana
         {
-            id        = "textbox_"..SKILL_ARCANA_ID,
+            id        = TEXTBOX_SKILL_ARCANA_ID,
             skillId   = SKILL_ARCANA_ID,
             pos       = {-1.055,0.1,-0.0215},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 77 textbox History
         {
-            id        = "textbox_"..SKILL_HISTORY_ID,
+            id        = TEXTBOX_SKILL_HISTORY_ID,
             skillId   = SKILL_HISTORY_ID,
             pos       = {-1.055,0.1,0.031},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 78 textbox Investigation
         {
-            id        = "textbox_"..SKILL_INVESTIGATION_ID,
+            id        = TEXTBOX_SKILL_INVESTIGATION_ID,
             skillId   = SKILL_INVESTIGATION_ID,
             pos       = {-1.055,0.1,0.0825},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 97 textbox Nature
         {
-            id        = "textbox_"..SKILL_NATURE_ID,
+            id        = TEXTBOX_SKILL_NATURE_ID,
             skillId   = SKILL_NATURE_ID,
             pos       = {-1.055,0.1,0.135},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 80 textbox Religion
         {
-            id        = "textbox_"..SKILL_RELIGION_ID,
+            id        = TEXTBOX_SKILL_RELIGION_ID,
             skillId   = SKILL_RELIGION_ID,
             pos       = {-1.055,0.1,0.185},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 81 textbox WIT savethrow
         {
-            id        = "textbox_"..SKILL_WIT_SAVETHROW_ID,
+            id        = TEXTBOX_SKILL_WIT_SAVETHROW_ID,
             skillId   = SKILL_WIT_SAVETHROW_ID,
             pos       = {-1.055,0.1,0.29},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 82 textbox Animal Handling
         {
-            id        = "textbox_"..SKILL_ANIMAL_HANDLING_ID,
+            id        = TEXTBOX_SKILL_ANIMAL_HANDLING_ID,
             skillId   = SKILL_ANIMAL_HANDLING_ID,
             pos       = {-1.055,0.1,0.345},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 83 textbox Insight
         {
-            id        = "textbox_"..SKILL_INSIGHT_ID,
+            id        = TEXTBOX_SKILL_INSIGHT_ID,
             skillId   = SKILL_INSIGHT_ID,
             pos       = {-1.055,0.1,0.395},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 84 textbox Medicine
         {
-            id        = "textbox_"..SKILL_MEDICINE_ID,
+            id        = TEXTBOX_SKILL_MEDICINE_ID,
             skillId   = SKILL_MEDICINE_ID,
             pos       = {-1.055,0.1,0.445},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 85 textbox Perception -- variable ind = 85
         {
-            id        = "textbox_"..SKILL_PERCEPTION_ID,
+            id        = TEXTBOX_SKILL_PERCEPTION_ID,
             skillId   = SKILL_PERCEPTION_ID,
             pos       = {-1.055,0.1,0.495},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 86 textbox Survival
         {
-            id        = "textbox_"..SKILL_SURVIVAL_ID,
+            id        = TEXTBOX_SKILL_SURVIVAL_ID,
             skillId   = SKILL_SURVIVAL_ID,
             pos       = {-1.055,0.1,0.55},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 87 textbox CHA savethrow
         {
-            id        = "textbox_"..SKILL_CHA_SAVETHROW_ID,
+            id        = TEXTBOX_SKILL_CHA_SAVETHROW_ID,
             skillId   = SKILL_CHA_SAVETHROW_ID,
             pos       = {-1.055,0.1,0.655},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 88 textbox Performance
         {
-            id        = "textbox_"..SKILL_PERFORMANCE_ID,
+            id        = TEXTBOX_SKILL_PERFORMANCE_ID,
             skillId   = SKILL_PERFORMANCE_ID,
             pos       = {-1.055,0.1,0.708},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 89 textbox Deception
         {
-            id        = "textbox_"..SKILL_DECEPTION_ID,
+            id        = TEXTBOX_SKILL_DECEPTION_ID,
             skillId   = SKILL_DECEPTION_ID,
             pos       = {-1.055,0.1,0.76},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 90 textbox Intimidation
         {
-            id        = "textbox_"..SKILL_INTIMIDATION_ID,
+            id        = TEXTBOX_SKILL_INTIMIDATION_ID,
             skillId   = SKILL_INTIMIDATION_ID,
             pos       = {-1.055,0.1,0.813},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
         -- 91 textbox Persuasion
         {
-            id        = "textbox_"..SKILL_PERSUASION_ID,
+            id        = TEXTBOX_SKILL_PERSUASION_ID,
             skillId   = SKILL_PERSUASION_ID,
             pos       = {-1.055,0.1,0.863},
             rows      = 1,
             width     = 200,
             font_size = 200,
-            label     = "",
             value     = "0",
             alignment = 3
         },
@@ -2779,7 +2873,7 @@ function createTextbox()
         self.createInput({
             input_function = funcName,
             function_owner = self,
-            label          = data.label,
+            label          = textboxLabelCollection[data.id],
             alignment      = data.alignment,
             position       = data.pos,
             scale          = buttonScale,
