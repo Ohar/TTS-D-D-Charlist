@@ -1,5 +1,6 @@
 --[[    Character Sheet Template    by: MrStump
 Customization Scripted_Sheet_DnD5e_PTv1_6 by: Nymeros
+Global refactoring anf new features: Ohar
 
 You can set up your own character sheet if you follow these steps.
 
