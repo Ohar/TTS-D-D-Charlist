@@ -1942,20 +1942,13 @@ defaultButtonData = {
     hitDiceLeft = 1,
 }
 
-LVL_UPDATE_BTN = {
-    function_owner = self,
-    index          = #defaultButtonData.checkbox + #defaultButtonData.counter * 3 + #defaultButtonData.display,
-}
-
-lvlUpdateBtnConditionOFF = {
+local lvlUpdateBtnConditionOFF = {
     click_function = "click_none",
     color          = buttonColor,
     font_color     = buttonFontColor,
     font_size      = 0,
-    function_owner = LVL_UPDATE_BTN.function_owner,
     function_owner = self,
     height         = 0,
-    index          = LVL_UPDATE_BTN.index,
     label          = '',
     position       = {0,0,0},
     scale          = {0,0,0},
@@ -2276,15 +2269,16 @@ function setLvlUpdateBtnCondition(doActivate)
             color          = buttonColor,
             font_color     = buttonFontColor,
             font_size      = 350,
-            function_owner = LVL_UPDATE_BTN.function_owner,
+            function_owner = self,
             height         = 500,
-            index          = LVL_UPDATE_BTN.index,
+            index          = btnIndexByElementIdTable.lvlUpdateBtn,
             label          = 'Обновить уровень ('..ref_buttonData.lvlByExp..')',
             position       = {1.040,0.1,-1.655},
             scale          = buttonScale,
             width          = 4000,
         })
     else
+        lvlUpdateBtnConditionOFF.index = btnIndexByElementIdTable.lvlUpdateBtn
         self.editButton(lvlUpdateBtnConditionOFF)
     end
 end
