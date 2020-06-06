@@ -2230,23 +2230,23 @@ defaultButtonData = {
 }
 
 LVL_UPDATE_BTN = {
-    index          = #defaultButtonData.checkbox + #defaultButtonData.counter * 3 + #defaultButtonData.display,
     function_owner = self,
+    index          = #defaultButtonData.checkbox + #defaultButtonData.counter * 3 + #defaultButtonData.display,
 }
 
 lvlUpdateBtnConditionOFF = {
+    click_function = "click_none",
+    color          = buttonColor,
+    font_color     = buttonFontColor,
+    font_size      = 0,
+    function_owner = LVL_UPDATE_BTN.function_owner,
+    function_owner = self,
+    height         = 0,
     index          = LVL_UPDATE_BTN.index,
     label          = '',
-    click_function = "click_none",
-    function_owner = self,
-    function_owner = LVL_UPDATE_BTN.function_owner,
     position       = {0,0,0},
-    height         = 0,
-    width          = 0,
-    font_size      = 0,
     scale          = {0,0,0},
-    color          = buttonColor,
-    font_color     = buttonFontColor
+    width          = 0,
 }
 
 
@@ -2257,13 +2257,20 @@ lvlUpdateBtnConditionOFF = {
 --Save function
 function updateSave()
     saved_data = JSON.encode(ref_buttonData)
-    if disableSave==true then saved_data="" end
+
+    if disableSave == true then
+        saved_data = ""
+    end
+
     self.script_state = saved_data
 end
 
 --Startup procedure
 function onload(saved_data)
-    if disableSave==true then saved_data="" end
+    if disableSave==true then
+        saved_data = ""
+    end
+
     if saved_data ~= "" then
         local loaded_data = JSON.decode(saved_data)
         ref_buttonData = loaded_data
@@ -2271,7 +2278,9 @@ function onload(saved_data)
     else
         ref_buttonData = defaultButtonData
     end
+
     spawnedButtonCount = 0
+
     createCheckbox()
     createCounter()
     createTextbox()
@@ -2295,21 +2304,27 @@ function click_checkbox(tableIndex, buttonIndex)
     if tableIndex < 3 then
         atributo = ref_buttonData.display[1].value
     end
+
     if tableIndex > 2 and tableIndex < 7 then
         atributo = ref_buttonData.display[2].value
     end
+
     if tableIndex == 7  then
         atributo = ref_buttonData.display[3].value
     end
+
     if tableIndex > 7 and tableIndex < 14 then
         atributo = ref_buttonData.display[4].value
     end
+
     if tableIndex > 13 and tableIndex < 20 then
         atributo = ref_buttonData.display[5].value
     end
+
     if tableIndex > 19 and tableIndex < 25 then
         atributo = ref_buttonData.display[6].value
     end
+
     -- Skill Point Total Value Calculation and Update - Proficiently Marked
     if ref_buttonData.checkbox[tableIndex].state == false then
         if tableIndex < 25 then
@@ -2321,6 +2336,7 @@ function click_checkbox(tableIndex, buttonIndex)
             ref_buttonData.display[tableIndex + 6].value = newValue  -- Index Proficiency Display ranges from 7 to 31
             self.editButton({index = tableIndex + 59, label = newValue}) -- Index do
         end
+
         ref_buttonData.checkbox[tableIndex].state = true
         self.editButton({index = buttonIndex, label = CHECKBOX_CHAR_FULL})
         -- Total Skill Calculation - Uncheck
@@ -2334,6 +2350,7 @@ function click_checkbox(tableIndex, buttonIndex)
         ref_buttonData.checkbox[tableIndex].state = false
         self.editButton({index = buttonIndex, label = CHECKBOX_CHAR_EMPTY})
     end
+
     -- Passive Perception Update in CheckBox
     if tableIndex == 18 then
         local proficiency = ref_buttonData.display[42].value
@@ -2367,6 +2384,7 @@ function click_counter(tableIndex, buttonIndex, amount)
         -- Update Attribute Modifier - buttonIndex 54 to 60
         self.editButton({index=tableIndex+53, label=ref_buttonData.display[tableIndex].value})
     end
+
     -- Declaring the Variables attribute and proficiency
     local atributo = ref_buttonData.display[tableIndex].value
     local proficiency = ref_buttonData.display[42].value
@@ -2380,6 +2398,7 @@ function click_counter(tableIndex, buttonIndex, amount)
             -- Declaring Bonus Variable for Skill
             local bonus = ref_buttonData.textbox[ind+67].value
             tonumber(bonus)
+
             -- Skill Update With and Without Proficiency
             if ref_buttonData.checkbox[ind].state == true then
                 ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
@@ -2392,11 +2411,13 @@ function click_counter(tableIndex, buttonIndex, amount)
 
         updateJumpAndWeight()
     end
+
     -- Dexterity Skill Calculation
     if tableIndex == 2 then
         for ind = 3, 6, 1 do
             local bonus = ref_buttonData.textbox[ind+67].value
             tonumber(bonus)
+
             if ref_buttonData.checkbox[ind].state == true then
                 ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
                 self.editButton({index=ind+59, label = atributo + bonus + proficiency})
@@ -2406,11 +2427,13 @@ function click_counter(tableIndex, buttonIndex, amount)
             end
         end
     end
+
     -- Constitution Skill Calculation
     if tableIndex == 3 then
         local ind=7
         local bonus = ref_buttonData.textbox[74].value
         tonumber(bonus)
+
         if ref_buttonData.checkbox[7].state == true then
             ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
             self.editButton({index=66, label = atributo + bonus + proficiency})
@@ -2419,11 +2442,13 @@ function click_counter(tableIndex, buttonIndex, amount)
             self.editButton({index=66, label = atributo + bonus})
         end
     end
+
     -- Intelligence Skill Calculation
     if tableIndex == 4 then
         for ind = 8, 13, 1 do
             local bonus = ref_buttonData.textbox[ind+67].value
             tonumber(bonus)
+
             if ref_buttonData.checkbox[ind].state == true then
                 ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
                 self.editButton({index=ind+59, label = atributo + bonus + proficiency})
@@ -2433,6 +2458,7 @@ function click_counter(tableIndex, buttonIndex, amount)
             end
         end
     end
+
     -- Wisdom Skill Calculation
     if tableIndex == 5 then
         for ind = 14, 19, 1 do
@@ -2446,6 +2472,7 @@ function click_counter(tableIndex, buttonIndex, amount)
                 ref_buttonData.display[ind+6].value = atributo + bonus
                 self.editButton({index=ind+59, label = atributo + bonus})
             end
+
             -- Passive Perception Update
             if ind == 18 then
                 -- With or Without Perception Proficiency
@@ -2459,11 +2486,13 @@ function click_counter(tableIndex, buttonIndex, amount)
             end
         end
     end
+
     -- Charisma Skill Calculation
     if tableIndex == 6 then
         for ind = 20, 24, 1 do
             local bonus = ref_buttonData.textbox[ind+67].value
             tonumber(bonus)
+
             if ref_buttonData.checkbox[ind].state == true then
                 ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
                 self.editButton({index=ind+59, label = atributo + bonus + proficiency})
@@ -2473,6 +2502,7 @@ function click_counter(tableIndex, buttonIndex, amount)
             end
         end
     end
+
     --Updates saved value for given text box
     updateSave()
 end
@@ -2507,6 +2537,7 @@ function updateSkillsByProficiency()
     -- Declaring Proficiency Values
     proficiency = ref_buttonData.display[42].value
     tonumber(proficiency)
+
     -- Proficiency Value Change Skills Update
     for cont = 1, 24, 1 do -- cont Goes Through All Skills
         -- Selecting Skill Matching Attribute Modifiers
@@ -2571,7 +2602,10 @@ function updateJumpAndWeight()
 
     -- Update Jump Height with Hands // line 607
     characterHeight = ref_buttonData.textbox[61].value
-    if characterHeight == '' then characterHeight = 0 end
+    if characterHeight == '' then
+        characterHeight = 0
+    end
+
     tonumber(characterHeight)
     characterOneAndHalfHeight = math.floor(characterHeight * 1.5)
     jumpHeightWithHands = jumpHeight + characterOneAndHalfHeight
@@ -2594,17 +2628,17 @@ end
 function setLvlUpdateBtnCondition(doActivate)
     if doActivate then
         self.editButton({
-            index          = LVL_UPDATE_BTN.index,
-            label          = 'Обновить уровень ('..ref_buttonData.lvlByExp..')',
             click_function = "onClickLvlUpdateBtn",
-            function_owner = LVL_UPDATE_BTN.function_owner,
-            position       = {1.040,0.1,-1.655},
-            height         = 500,
-            width          = 4000,
-            font_size      = 350,
-            scale          = buttonScale,
             color          = buttonColor,
             font_color     = buttonFontColor,
+            font_size      = 350,
+            function_owner = LVL_UPDATE_BTN.function_owner,
+            height         = 500,
+            index          = LVL_UPDATE_BTN.index,
+            label          = 'Обновить уровень ('..ref_buttonData.lvlByExp..')',
+            position       = {1.040,0.1,-1.655},
+            scale          = buttonScale,
+            width          = 4000,
         })
     else
         self.editButton(lvlUpdateBtnConditionOFF)
@@ -2625,22 +2659,27 @@ end
 -- Lvl update btn - Click
 function onClickLvlUpdateBtn()
     ref_buttonData.lvl = ref_buttonData.lvlByExp
+
     self.editButton({
         index = 93,
         label = ref_buttonData.lvlByExp,
         value = ref_buttonData.lvlByExp,
     })
+
     self.editButton({
         index = 94,
         label = ref_buttonData.nextLvlExp,
         value = ref_buttonData.nextLvlExp,
     })
+
     ref_buttonData.display[42].value = ref_buttonData.lvlByExpProficiency
+
     self.editButton({
         index = 95,
         label = '+'..ref_buttonData.lvlByExpProficiency,
         value = ref_buttonData.lvlByExpProficiency,
     })
+
     updateSkillsByProficiency()
     setLvlUpdateBtnCondition(false)
     updateHitDiceText()
@@ -2687,28 +2726,28 @@ function createHitDiceCounters()
     local size = 350
 
     self.createButton({
-        label          = '+',
         click_function = "hitDiceIncrement",
-        function_owner = self,
-        position       = {0.68,0.1,-1.47},
-        height         = size,
-        width          = size,
-        font_size      = size,
-        scale          = buttonScale,
         color          = buttonColor,
         font_color     = buttonFontColor,
+        font_size      = size,
+        function_owner = self,
+        height         = size,
+        label          = '+',
+        position       = {0.68,0.1,-1.47},
+        scale          = buttonScale,
+        width          = size,
     })
     self.createButton({
-        label          = '-',
         click_function = "hitDiceDecrement",
-        function_owner = self,
-        position       = {0.68,0.1,-1.29},
-        height         = size,
-        width          = size,
-        font_size      = size,
-        scale          = buttonScale,
         color          = buttonColor,
         font_color     = buttonFontColor,
+        font_size      = size,
+        function_owner = self,
+        height         = size,
+        label          = '-',
+        position       = {0.68,0.1,-1.29},
+        scale          = buttonScale,
+        width          = size,
     })
 
     updateHitDiceText()
@@ -2768,15 +2807,24 @@ function createCheckbox()
 
         --Sets up label
         local label = CHECKBOX_CHAR_EMPTY
-        if data.state==true then label = CHECKBOX_CHAR_FULL end
+        if data.state==true then
+            label = CHECKBOX_CHAR_FULL
+        end
 
         --Creates button and counts it
         self.createButton({
-            label=label, click_function=funcName, function_owner=self,
-            position=data.pos, height=data.size, width=data.size,
-            font_size=data.size, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
+            click_function = funcName,
+            color          = buttonColor,
+            font_color     = buttonFontColor,
+            font_size      = data.size,
+            function_owner = self,
+            height         = data.size,
+            label          = label,
+            position       = data.pos,
+            scale          = buttonScale,
+            width          = data.size,
         })
+
         spawnedButtonCount = spawnedButtonCount + 1
     end
 end
@@ -2789,54 +2837,95 @@ function createCounter()
         local label = data.value
         --Sets height/width for display
         local size = data.size
-        if data.hideBG == true then size = 0 end
+        if data.hideBG == true then
+            size = 0
+        end
+
         --Creates button and counts it
         self.createButton({
-            label=label, click_function="click_none", function_owner=self,
-            position=data.pos, height=size, width=size,
-            font_size=data.size, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
+            click_function = "click_none",
+            color          = buttonColor,
+            font_color     = buttonFontColor,
+            font_size      = data.size,
+            function_owner = self,
+            height         = size,
+            label          = label,
+            position       = data.pos,
+            scale          = buttonScale,
+            width          = size,
         })
+
         spawnedButtonCount = spawnedButtonCount + 1
 
         --Sets up add 1
         local funcName = "counterAdd"..i
-        local func = function() click_counter(i, displayNumber, 1) end
+        local func = function()
+            click_counter(i, displayNumber, 1)
+        end
         self.setVar(funcName, func)
         --Sets up label
         local label = "+"
         --Sets up position
         local offsetDistance = (data.size/2 + data.size/4) * (buttonScale[1] * 0.002)
-        local pos = {data.pos[1] + offsetDistance, data.pos[2], data.pos[3]}
+        local pos = {
+            data.pos[1] + offsetDistance,
+            data.pos[2],
+            data.pos[3],
+        }
         --Sets up size
         local size = data.size / 2
+
         --Creates button and counts it
         self.createButton({
-            label=label, click_function=funcName, function_owner=self,
-            position=pos, height=size, width=size,
-            font_size=size, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
+            click_function = funcName,
+            color          = buttonColor,
+            font_color     = buttonFontColor,
+            font_size      = size,
+            function_owner = self,
+            height         = size,
+            label          = label,
+            position       = pos,
+            scale          = buttonScale,
+            width          = size,
         })
+
         spawnedButtonCount = spawnedButtonCount + 1
 
         --Sets up subtract 1
         local funcName = "counterSub"..i
-        local func = function() click_counter(i, displayNumber, -1) end
+        local func = function()
+            click_counter(i, displayNumber, -1)
+        end
+
         self.setVar(funcName, func)
+
         --Sets up label
         local label = "−"
         --Set up position
-        local pos = {data.pos[1] - offsetDistance, data.pos[2], data.pos[3]}
+        local pos = {
+            data.pos[1] - offsetDistance,
+            data.pos[2],
+            data.pos[3],
+        }
+
         --Creates button and counts it
         self.createButton({
-            label=label, click_function=funcName, function_owner=self,
-            position=pos, height=size, width=size,
-            font_size=size, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
+            click_function = funcName,
+            color          = buttonColor,
+            font_color     = buttonFontColor,
+            font_size      = size,
+            function_owner = self,
+            height         = size,
+            label          = label,
+            position       = pos,
+            scale          = buttonScale,
+            width          = size,
         })
+
         spawnedButtonCount = spawnedButtonCount + 1
     end
 end
+
 --Makes display
 function createDisplay()
     for i, data in ipairs(ref_buttonData.display) do
@@ -2845,20 +2934,24 @@ function createDisplay()
         -- Sets height/width for display
         local size = data.size
         local tooltip = data.tooltip or ''
-        if data.hideBG == true then size = 0 end
+
+        if data.hideBG == true then
+            size = 0
+        end
+
         -- Create display button
         self.createButton({
-            label          = label,
             click_function = "click_none",
-            function_owner = self,
-            position       = data.pos,
-            height         = size,
-            width          = size,
-            font_size      = data.size,
-            scale          = buttonScale,
             color          = buttonColor,
             font_color     = buttonFontColor,
+            font_size      = data.size,
+            function_owner = self,
+            height         = size,
+            label          = label,
+            position       = data.pos,
+            scale          = buttonScale,
             tooltip        = tooltip,
+            width          = size,
         })
     end
 end
@@ -2867,22 +2960,25 @@ function createTextbox()
     for i, data in ipairs(ref_buttonData.textbox) do
         --Sets up reference function
         local funcName = "textbox"..i
-        local func = function(_, _, val, sel) click_textbox(i, val, sel) end
+        local func = function(_, _, val, sel)
+            click_textbox(i, val, sel)
+        end
+
         self.setVar(funcName, func)
 
         self.createInput({
-            input_function = funcName,
-            function_owner = self,
-            label          = textboxLabelCollection[data.id],
             alignment      = data.alignment,
-            position       = data.pos,
-            scale          = buttonScale,
-            width          = data.width,
-            height         = (data.font_size * data.rows) + 24,
-            font_size      = data.font_size,
             color          = buttonColor,
             font_color     = buttonFontColor,
+            font_size      = data.font_size,
+            function_owner = self,
+            height         = (data.font_size * data.rows) + 24,
+            input_function = funcName,
+            label          = textboxLabelCollection[data.id],
+            position       = data.pos,
+            scale          = buttonScale,
             value          = data.value,
+            width          = data.width,
         })
     end
 end
