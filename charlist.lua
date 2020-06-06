@@ -53,7 +53,7 @@ Bonus) Finding/Editing Positions for elements
 Begin editing below:    ]]
 
 --Set this to true while editing and false when you have finished
-disableSave = false
+disableSave = true
 --Remember to set this to false once you are done making changes
 --Then, after you save & apply it, save your game too
 
@@ -192,6 +192,9 @@ LVL_BY_EXP = {
 
 EXP_MIN = LVL_BY_EXP[1].min
 EXP_MAX = LVL_BY_EXP[#LVL_BY_EXP].max
+
+local TEXTBOX_SKILL_width = 280
+local TEXTBOX_SKILL_fontSize = 220
 
 local SKILL_ACROBATICS_ID = "Acrobatics"
 local SKILL_ANIMAL_HANDLING_ID = "Animal_Handling"
@@ -567,30 +570,30 @@ local textboxLabelCollection = {
     [TEXTBOX_HEIGHT_ID] = "Рост",
     [TEXTBOX_WEIGHT_ID] = "Вес",
     [TEXTBOX_PROFICIENCY_3_ID] = "",
-    [TEXTBOX_SKILL_STR_SAVETHROW_ID] = "",
-    [TEXTBOX_SKILL_ATHLETICS_ID] = "",
-    [TEXTBOX_SKILL_DEX_SAVETHROW_ID] = "",
-    [TEXTBOX_SKILL_ACROBATICS_ID] = "",
-    [TEXTBOX_SKILL_STEALTH_ID] = "",
-    [TEXTBOX_SKILL_SLEIGHT_OF_HAND_ID] = "",
-    [TEXTBOX_SKILL_CON_SAVETHROW_ID] = "",
-    [TEXTBOX_SKILL_INT_SAVETHROW_ID] = "",
-    [TEXTBOX_SKILL_ARCANA_ID] = "",
-    [TEXTBOX_SKILL_HISTORY_ID] = "",
-    [TEXTBOX_SKILL_INVESTIGATION_ID] = "",
-    [TEXTBOX_SKILL_NATURE_ID] = "",
-    [TEXTBOX_SKILL_RELIGION_ID] = "",
-    [TEXTBOX_SKILL_WIT_SAVETHROW_ID] = "",
-    [TEXTBOX_SKILL_ANIMAL_HANDLING_ID] = "",
-    [TEXTBOX_SKILL_INSIGHT_ID] = "",
-    [TEXTBOX_SKILL_MEDICINE_ID] = "",
-    [TEXTBOX_SKILL_PERCEPTION_ID] = "",
-    [TEXTBOX_SKILL_SURVIVAL_ID] = "",
-    [TEXTBOX_SKILL_CHA_SAVETHROW_ID] = "",
-    [TEXTBOX_SKILL_PERFORMANCE_ID] = "",
-    [TEXTBOX_SKILL_DECEPTION_ID] = "",
-    [TEXTBOX_SKILL_INTIMIDATION_ID] = "",
-    [TEXTBOX_SKILL_PERSUASION_ID] = "",
+    [TEXTBOX_SKILL_STR_SAVETHROW_ID] = "0",
+    [TEXTBOX_SKILL_ATHLETICS_ID] = "0",
+    [TEXTBOX_SKILL_DEX_SAVETHROW_ID] = "0",
+    [TEXTBOX_SKILL_ACROBATICS_ID] = "0",
+    [TEXTBOX_SKILL_STEALTH_ID] = "0",
+    [TEXTBOX_SKILL_SLEIGHT_OF_HAND_ID] = "0",
+    [TEXTBOX_SKILL_CON_SAVETHROW_ID] = "0",
+    [TEXTBOX_SKILL_INT_SAVETHROW_ID] = "0",
+    [TEXTBOX_SKILL_ARCANA_ID] = "0",
+    [TEXTBOX_SKILL_HISTORY_ID] = "0",
+    [TEXTBOX_SKILL_INVESTIGATION_ID] = "0",
+    [TEXTBOX_SKILL_NATURE_ID] = "0",
+    [TEXTBOX_SKILL_RELIGION_ID] = "0",
+    [TEXTBOX_SKILL_WIT_SAVETHROW_ID] = "0",
+    [TEXTBOX_SKILL_ANIMAL_HANDLING_ID] = "0",
+    [TEXTBOX_SKILL_INSIGHT_ID] = "0",
+    [TEXTBOX_SKILL_MEDICINE_ID] = "0",
+    [TEXTBOX_SKILL_PERCEPTION_ID] = "0",
+    [TEXTBOX_SKILL_SURVIVAL_ID] = "0",
+    [TEXTBOX_SKILL_CHA_SAVETHROW_ID] = "0",
+    [TEXTBOX_SKILL_PERFORMANCE_ID] = "0",
+    [TEXTBOX_SKILL_DECEPTION_ID] = "0",
+    [TEXTBOX_SKILL_INTIMIDATION_ID] = "0",
+    [TEXTBOX_SKILL_PERSUASION_ID] = "0",
 }
 
 local btnIndexByElementIdTable = {}
@@ -1721,8 +1724,8 @@ defaultButtonData = {
             skillId   = SKILL_STR_SAVETHROW_ID,
             pos       = {-1.055,0.1,-1.165},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1730,8 +1733,8 @@ defaultButtonData = {
             skillId   = SKILL_ATHLETICS_ID,
             pos       = {-1.055,0.1,-1.1105},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1739,8 +1742,8 @@ defaultButtonData = {
             skillId   = SKILL_DEX_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.8},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1748,8 +1751,8 @@ defaultButtonData = {
             skillId   = SKILL_ACROBATICS_ID,
             pos       = {-1.055,0.1,-0.745},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1757,8 +1760,8 @@ defaultButtonData = {
             skillId   = SKILL_STEALTH_ID,
             pos       = {-1.055,0.1,-0.695},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1766,8 +1769,8 @@ defaultButtonData = {
             skillId   = SKILL_SLEIGHT_OF_HAND_ID,
             pos       = {-1.055,0.1,-0.645},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1775,8 +1778,8 @@ defaultButtonData = {
             skillId   = SKILL_CON_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.435},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1784,8 +1787,8 @@ defaultButtonData = {
             skillId   = SKILL_INT_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.075},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1793,8 +1796,8 @@ defaultButtonData = {
             skillId   = SKILL_ARCANA_ID,
             pos       = {-1.055,0.1,-0.0215},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1802,8 +1805,8 @@ defaultButtonData = {
             skillId   = SKILL_HISTORY_ID,
             pos       = {-1.055,0.1,0.031},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1811,8 +1814,8 @@ defaultButtonData = {
             skillId   = SKILL_INVESTIGATION_ID,
             pos       = {-1.055,0.1,0.0825},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1820,8 +1823,8 @@ defaultButtonData = {
             skillId   = SKILL_NATURE_ID,
             pos       = {-1.055,0.1,0.135},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1829,8 +1832,8 @@ defaultButtonData = {
             skillId   = SKILL_RELIGION_ID,
             pos       = {-1.055,0.1,0.185},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1838,8 +1841,8 @@ defaultButtonData = {
             skillId   = SKILL_WIT_SAVETHROW_ID,
             pos       = {-1.055,0.1,0.29},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1847,8 +1850,8 @@ defaultButtonData = {
             skillId   = SKILL_ANIMAL_HANDLING_ID,
             pos       = {-1.055,0.1,0.345},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1856,8 +1859,8 @@ defaultButtonData = {
             skillId   = SKILL_INSIGHT_ID,
             pos       = {-1.055,0.1,0.395},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1865,8 +1868,8 @@ defaultButtonData = {
             skillId   = SKILL_MEDICINE_ID,
             pos       = {-1.055,0.1,0.445},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1874,8 +1877,8 @@ defaultButtonData = {
             skillId   = SKILL_PERCEPTION_ID,
             pos       = {-1.055,0.1,0.495},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1883,8 +1886,8 @@ defaultButtonData = {
             skillId   = SKILL_SURVIVAL_ID,
             pos       = {-1.055,0.1,0.55},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1892,8 +1895,8 @@ defaultButtonData = {
             skillId   = SKILL_CHA_SAVETHROW_ID,
             pos       = {-1.055,0.1,0.655},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1901,8 +1904,8 @@ defaultButtonData = {
             skillId   = SKILL_PERFORMANCE_ID,
             pos       = {-1.055,0.1,0.708},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1910,8 +1913,8 @@ defaultButtonData = {
             skillId   = SKILL_DECEPTION_ID,
             pos       = {-1.055,0.1,0.76},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1919,8 +1922,8 @@ defaultButtonData = {
             skillId   = SKILL_INTIMIDATION_ID,
             pos       = {-1.055,0.1,0.813},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
@@ -1928,8 +1931,8 @@ defaultButtonData = {
             skillId   = SKILL_PERSUASION_ID,
             pos       = {-1.055,0.1,0.863},
             rows      = 1,
-            width     = 200,
-            font_size = 200,
+            width     = TEXTBOX_SKILL_width,
+            font_size = TEXTBOX_SKILL_fontSize,
             value     = "0",
             alignment = 3
         },
