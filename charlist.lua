@@ -2441,33 +2441,63 @@ function click_counter(tableIndex, buttonIndex, amount, counterId)
         for ind = 1, 2, 1 do
             -- Declaring Bonus Variable for Skill
             local bonus = ref_buttonData.textbox[ind + 67].value
+            local skillId = skillIdListByParamId[paramId][ind]
             tonumber(bonus)
 
             -- Skill Update With and Without Proficiency
             if ref_buttonData.checkbox[ind].state == true then
                 ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-                self.editButton({index=ind + 59, label = atributo + bonus + proficiency})
+                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
             else
                 ref_buttonData.display[ind + 6].value = atributo + bonus
-                self.editButton({index=ind + 59, label = atributo + bonus})
+                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
             end
         end
 
         updateJumpAndWeight()
     end
 
+    -- TODO: Use this instead all params
+    --for i, skillId in ipairs(skillIdListByParamId[paramId]) do
+    --    -- Declaring Bonus Variable for Skill
+    --    local bonus = ref_buttonData.textbox["textbox_"..skillId].value
+    --    tonumber(bonus)
+    --
+    --    -- Skill Update With and Without Proficiency
+    --    if ref_buttonData.checkbox["checkbox_"..skillId].state == true then
+    --        ref_buttonData.display["display_"..skillId].value = atributo + bonus + proficiency
+    --        self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
+    --    else
+    --        ref_buttonData.display["display_"..skillId].value = atributo + bonus
+    --        self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
+    --    end
+    --end
+
+    -- Passive Perception Update
+    --if skillId == SKILL_PERCEPTION_ID then
+    --    -- With or Without Perception Proficiency
+    --    if ref_buttonData.checkbox["checkbox_"..SKILL_PERCEPTION_ID].state == true then
+    --        ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus + proficiency
+    --        self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value}) -- TODO: check if cutton is correct here
+    --    else
+    --        ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus
+    --        self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value}) -- TODO: check if cutton is correct here
+    --    end
+    --end
+
     -- Dexterity Skill Calculation
     if paramId == PARAM_DEX_ID then
         for ind = 3, 6, 1 do
             local bonus = ref_buttonData.textbox[ind + 67].value
+            local skillId = skillIdListByParamId[paramId][ind - 2]
             tonumber(bonus)
 
             if ref_buttonData.checkbox[ind].state == true then
                 ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-                self.editButton({index=ind + 59, label = atributo + bonus + proficiency})
+                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
             else
                 ref_buttonData.display[ind + 6].value = atributo + bonus
-                self.editButton({index=ind + 59, label = atributo + bonus})
+                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
             end
         end
     end
@@ -2476,14 +2506,15 @@ function click_counter(tableIndex, buttonIndex, amount, counterId)
     if paramId == PARAM_CON_ID then
         local ind = 7
         local bonus = ref_buttonData.textbox[74].value
+        local skillId = skillIdListByParamId[paramId][1]
         tonumber(bonus)
 
         if ref_buttonData.checkbox[7].state == true then
             ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-            self.editButton({index=66, label = atributo + bonus + proficiency})
+            self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
         else
             ref_buttonData.display[ind + 6].value = atributo + bonus
-            self.editButton({index=66, label = atributo + bonus})
+            self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
         end
     end
 
@@ -2491,14 +2522,15 @@ function click_counter(tableIndex, buttonIndex, amount, counterId)
     if paramId == PARAM_INT_ID then
         for ind = 8, 13, 1 do
             local bonus = ref_buttonData.textbox[ind + 67].value
+            local skillId = skillIdListByParamId[paramId][ind - 7]
             tonumber(bonus)
 
             if ref_buttonData.checkbox[ind].state == true then
                 ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-                self.editButton({index=ind + 59, label = atributo + bonus + proficiency})
+                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
             else
                 ref_buttonData.display[ind + 6].value = atributo + bonus
-                self.editButton({index=ind + 59, label = atributo + bonus})
+                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
             end
         end
     end
@@ -2507,14 +2539,15 @@ function click_counter(tableIndex, buttonIndex, amount, counterId)
     if paramId == PARAM_WIT_ID then
         for ind = 14, 19, 1 do
             local bonus = ref_buttonData.textbox[ind + 67].value
+            local skillId = skillIdListByParamId[paramId][ind - 13]
             tonumber(bonus)
 
             if ref_buttonData.checkbox[ind].state == true then
                 ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-                self.editButton({index=ind + 59, label = atributo + bonus + proficiency})
+                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
             else
                 ref_buttonData.display[ind + 6].value = atributo + bonus
-                self.editButton({index=ind + 59, label = atributo + bonus})
+                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
             end
 
             -- Passive Perception Update
@@ -2522,10 +2555,10 @@ function click_counter(tableIndex, buttonIndex, amount, counterId)
                 -- With or Without Perception Proficiency
                 if ref_buttonData.checkbox[ind].state == true then
                     ref_buttonData.display[31].value = 10 + atributo + bonus + proficiency
-                    self.editButton({index=84, label = ref_buttonData.display[31].value})
+                    self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display[31].value})
                 else
                     ref_buttonData.display[31].value = 10 + atributo + bonus
-                    self.editButton({index=84, label=ref_buttonData.display[31].value})
+                    self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label=ref_buttonData.display[31].value})
                 end
             end
         end
@@ -2535,14 +2568,15 @@ function click_counter(tableIndex, buttonIndex, amount, counterId)
     if paramId == PARAM_CHA_ID then
         for ind = 20, 24, 1 do
             local bonus = ref_buttonData.textbox[ind + 67].value
+            local skillId = skillIdListByParamId[paramId][ind - 19]
             tonumber(bonus)
 
             if ref_buttonData.checkbox[ind].state == true then
                 ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-                self.editButton({index=ind + 59, label = atributo + bonus + proficiency})
+                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
             else
                 ref_buttonData.display[ind + 6].value = atributo + bonus
-                self.editButton({index=ind + 59, label = atributo + bonus})
+                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
             end
         end
     end
