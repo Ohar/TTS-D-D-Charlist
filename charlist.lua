@@ -2407,41 +2407,49 @@ function click_checkbox(tableIndex, checkboxId) --
 end
 
 --Applies value to given counter display
-function click_counter(tableIndex, buttonIndex, amount)
-    -- tableIndex 1 to 6 // 5 = Wisdom
-    -- buttonIndex 36 to 53 // 48 = Wisdom
+function click_counter(tableIndex, buttonIndex, amount, counterId)
+    local paramId = ref_buttonData.counter[tableIndex].paramId
+    -- TODO: local paramId = ref_buttonData.counter[counterId].paramId
 
-    -- Attribute Modifier Calculation
-    if tableIndex < 7 then
-        ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
-        ref_buttonData.display[tableIndex].value = math.floor((ref_buttonData.counter[tableIndex].value-10)/2)
-        -- Update Attribute - buttonIndex 36 to 53
-        self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})
-        -- Update Attribute Modifier - buttonIndex 54 to 60
-        self.editButton({index=tableIndex+53, label=ref_buttonData.display[tableIndex].value})
-    end
+    ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
+    -- TODO: ref_buttonData.counter[counterId].value = ref_buttonData.counter[counterId].value + amount
+
+    ref_buttonData.display[tableIndex].value = math.floor((ref_buttonData.counter[tableIndex].value - 10) / 2)
+    -- TODO: ref_buttonData.display["display_"..paramId].value = math.floor((ref_buttonData.counter[counterId].value - 10) / 2)
+
+    -- Update Attribute
+    self.editButton({index = btnIndexByElementIdTable["counter_"..paramId], label = ref_buttonData.counter[tableIndex].value})
+    -- TODO: self.editButton({index = btnIndexByElementIdTable["counter_"..paramId], label = ref_buttonData.counter[counterId].value})
+
+    -- Update Attribute Modifier
+    self.editButton({index = btnIndexByElementIdTable["display_"..paramId], label = ref_buttonData.display[tableIndex].value})
+    -- TODO: self.editButton({index = btnIndexByElementIdTable["display_"..paramId], label = ref_buttonData.display[counterId].value})
 
     -- Declaring the Variables attribute and proficiency
     local atributo = ref_buttonData.display[tableIndex].value
+    -- TODO: local atributo = ref_buttonData.display["display_"..paramId].value
+
     local proficiency = ref_buttonData.display[42].value
+    -- TODO: local proficiency = ref_buttonData.display["display_Proficiency"].value
+
     tonumber(proficiency)
 
     -- Calculation and Update of Attribute Matching Skills
     -- ButtonIndex of Skill display from 60 to 84
     -- Strength Skill Calculation
-    if tableIndex == 1 then
+    if paramId == PARAM_STR_ID then
         for ind = 1, 2, 1 do
             -- Declaring Bonus Variable for Skill
-            local bonus = ref_buttonData.textbox[ind+67].value
+            local bonus = ref_buttonData.textbox[ind + 67].value
             tonumber(bonus)
 
             -- Skill Update With and Without Proficiency
             if ref_buttonData.checkbox[ind].state == true then
-                ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
-                self.editButton({index=ind+59, label = atributo + bonus + proficiency})
+                ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
+                self.editButton({index=ind + 59, label = atributo + bonus + proficiency})
             else
-                ref_buttonData.display[ind+6].value = atributo + bonus
-                self.editButton({index=ind+59, label = atributo + bonus})
+                ref_buttonData.display[ind + 6].value = atributo + bonus
+                self.editButton({index=ind + 59, label = atributo + bonus})
             end
         end
 
@@ -2449,64 +2457,64 @@ function click_counter(tableIndex, buttonIndex, amount)
     end
 
     -- Dexterity Skill Calculation
-    if tableIndex == 2 then
+    if paramId == PARAM_DEX_ID then
         for ind = 3, 6, 1 do
-            local bonus = ref_buttonData.textbox[ind+67].value
+            local bonus = ref_buttonData.textbox[ind + 67].value
             tonumber(bonus)
 
             if ref_buttonData.checkbox[ind].state == true then
-                ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
-                self.editButton({index=ind+59, label = atributo + bonus + proficiency})
+                ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
+                self.editButton({index=ind + 59, label = atributo + bonus + proficiency})
             else
-                ref_buttonData.display[ind+6].value = atributo + bonus
-                self.editButton({index=ind+59, label = atributo + bonus})
+                ref_buttonData.display[ind + 6].value = atributo + bonus
+                self.editButton({index=ind + 59, label = atributo + bonus})
             end
         end
     end
 
     -- Constitution Skill Calculation
-    if tableIndex == 3 then
-        local ind=7
+    if paramId == PARAM_CON_ID then
+        local ind = 7
         local bonus = ref_buttonData.textbox[74].value
         tonumber(bonus)
 
         if ref_buttonData.checkbox[7].state == true then
-            ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
+            ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
             self.editButton({index=66, label = atributo + bonus + proficiency})
         else
-            ref_buttonData.display[ind+6].value = atributo + bonus
+            ref_buttonData.display[ind + 6].value = atributo + bonus
             self.editButton({index=66, label = atributo + bonus})
         end
     end
 
     -- Intelligence Skill Calculation
-    if tableIndex == 4 then
+    if paramId == PARAM_INT_ID then
         for ind = 8, 13, 1 do
-            local bonus = ref_buttonData.textbox[ind+67].value
+            local bonus = ref_buttonData.textbox[ind + 67].value
             tonumber(bonus)
 
             if ref_buttonData.checkbox[ind].state == true then
-                ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
-                self.editButton({index=ind+59, label = atributo + bonus + proficiency})
+                ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
+                self.editButton({index=ind + 59, label = atributo + bonus + proficiency})
             else
-                ref_buttonData.display[ind+6].value = atributo + bonus
-                self.editButton({index=ind+59, label = atributo + bonus})
+                ref_buttonData.display[ind + 6].value = atributo + bonus
+                self.editButton({index=ind + 59, label = atributo + bonus})
             end
         end
     end
 
     -- Wisdom Skill Calculation
-    if tableIndex == 5 then
+    if paramId == PARAM_WIT_ID then
         for ind = 14, 19, 1 do
-            local bonus = ref_buttonData.textbox[ind+67].value
+            local bonus = ref_buttonData.textbox[ind + 67].value
             tonumber(bonus)
 
             if ref_buttonData.checkbox[ind].state == true then
-                ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
-                self.editButton({index=ind+59, label = atributo + bonus + proficiency})
+                ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
+                self.editButton({index=ind + 59, label = atributo + bonus + proficiency})
             else
-                ref_buttonData.display[ind+6].value = atributo + bonus
-                self.editButton({index=ind+59, label = atributo + bonus})
+                ref_buttonData.display[ind + 6].value = atributo + bonus
+                self.editButton({index=ind + 59, label = atributo + bonus})
             end
 
             -- Passive Perception Update
@@ -2524,17 +2532,17 @@ function click_counter(tableIndex, buttonIndex, amount)
     end
 
     -- Charisma Skill Calculation
-    if tableIndex == 6 then
+    if paramId == PARAM_CHA_ID then
         for ind = 20, 24, 1 do
-            local bonus = ref_buttonData.textbox[ind+67].value
+            local bonus = ref_buttonData.textbox[ind + 67].value
             tonumber(bonus)
 
             if ref_buttonData.checkbox[ind].state == true then
-                ref_buttonData.display[ind+6].value = atributo + bonus + proficiency
-                self.editButton({index=ind+59, label = atributo + bonus + proficiency})
+                ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
+                self.editButton({index=ind + 59, label = atributo + bonus + proficiency})
             else
-                ref_buttonData.display[ind+6].value = atributo + bonus
-                self.editButton({index=ind+59, label = atributo + bonus})
+                ref_buttonData.display[ind + 6].value = atributo + bonus
+                self.editButton({index=ind + 59, label = atributo + bonus})
             end
         end
     end
@@ -2907,7 +2915,7 @@ function createCounter()
         --Sets up add 1
         local funcName = data.btnAddId
         local func = function()
-            click_counter(i, displayNumber, 1)
+            click_counter(i, displayNumber, 1, data.id)
         end
 
         self.setVar(funcName, func)
@@ -2943,7 +2951,7 @@ function createCounter()
         --Sets up subtract 1
         local funcName = data.btnSubId
         local func = function()
-            click_counter(i, displayNumber, -1) -- TODO use “data.id” instead of “i”
+            click_counter(i, displayNumber, -1, data.id) -- TODO use “data.id” instead of “i”
         end
 
         self.setVar(funcName, func)
