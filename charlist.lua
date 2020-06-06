@@ -2209,9 +2209,9 @@ function onload(saved_data)
     end
 
     if saved_data ~= "" then
-        --local loaded_data = JSON.decode(saved_data)
-        --ref_buttonData = loaded_data
-         ref_buttonData = defaultButtonData
+        local loaded_data = JSON.decode(saved_data)
+        ref_buttonData = loaded_data
+        --ref_buttonData = defaultButtonData
     else
         ref_buttonData = defaultButtonData
     end
