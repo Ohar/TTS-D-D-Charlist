@@ -2617,6 +2617,7 @@ function click_none() end
 function updateSkillsByProficiency()
     -- Declaring Proficiency Values
     proficiency = ref_buttonData.display[42].value
+    -- TODO: proficiency = ref_buttonData.display[display_Proficiency].value
     tonumber(proficiency)
 
     -- Proficiency Value Change Skills Update
@@ -2658,6 +2659,29 @@ function updateSkillsByProficiency()
             self.editButton({index = 84, label = ref_buttonData.display[31].value})
         end
     end
+
+    -- Proficiency Value Change Skills Update
+    -- TODO: use next instead
+    --for skillId, paramId in ipairs(paramIdBySkillId) do
+    --    atributo = ref_buttonData.display["display_"..paramId].value
+    --
+    --    -- Upgrading Skills Only as Proficiency
+    --    local bonus = ref_buttonData.textbox["textbox_"..skillId].value
+    --    tonumber(bonus)
+    --    local nextValue = atributo + bonus
+    --    if ref_buttonData.checkbox["checkbox_"..skillId].state == true then
+    --        nextValue = atributo + bonus + proficiency
+    --    end
+    --
+    --    ref_buttonData.display["display_"..skillId].value = nextValue
+    --    self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = nextValue})
+    --
+    --    -- Updating Passive Perception with Proficiency
+    --    if skillId == SKILL_PERCEPTION_ID then
+    --        ref_buttonData.display["display_Passive_Perception"].value = 10 + nextValue
+    --        self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value})
+    --    end
+    --end
 end
 
 --Button creation
