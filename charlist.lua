@@ -2310,81 +2310,97 @@ end
 --Click functions for buttons
 
 --Checks or unchecks the given box
-function click_checkbox(tableIndex, buttonIndex, checkboxId) --
+function click_checkbox(tableIndex, checkboxId) --
     -- tableIndex 1 to 24 // 18 Perception
     -- buttonIndex 0 to 23
 
-    local skillId = ref_buttonData.checkbox[tableIndex].skillId
+    local checkbox = ref_buttonData.checkbox[tableIndex]
+    local skillId = checkbox.skillId
 
     if not (skillId == nil) then
         local paramId = paramIdBySkillId[skillId]
 
+        -- TODO: Вместо всех этих строк
+        -- TODO: atributo = ref_buttonData.display["display_"..paramId].value
         -- Saving the value of the Attribute Modifier Corresponding to the Checked Expertise
         if paramId == PARAM_STR_ID then
-            atributo = ref_buttonData.display[1].value -- TODO: use paramId instead of index
+            atributo = ref_buttonData.display[1].value
         end
 
         if paramId == PARAM_DEX_ID then
-            atributo = ref_buttonData.display[2].value -- TODO: use paramId instead of index
+            atributo = ref_buttonData.display[2].value
         end
 
         if paramId == PARAM_CON_ID  then
-            atributo = ref_buttonData.display[3].value -- TODO: use paramId instead of index
+            atributo = ref_buttonData.display[3].value
         end
 
         if paramId == PARAM_INT_ID then
-            atributo = ref_buttonData.display[4].value -- TODO: use paramId instead of index
+            atributo = ref_buttonData.display[4].value
         end
 
         if paramId == PARAM_WIT_ID then
-            atributo = ref_buttonData.display[5].value -- TODO: use paramId instead of index
+            atributo = ref_buttonData.display[5].value
         end
 
         if paramId == PARAM_CHA_ID then
-            atributo = ref_buttonData.display[6].value -- TODO: use paramId instead of index
+            atributo = ref_buttonData.display[6].value
         end
     end
 
     -- Skill Point Total Value Calculation and Update - Proficiently Marked
-    if ref_buttonData.checkbox[tableIndex].state == false then
-        if tableIndex < 25 then
+    if checkbox.state == false then
+        if not (skillId == nil) then
             local proficiency = ref_buttonData.display[42].value
+            --TODO: local proficiency = ref_buttonData.display["display_Proficiency"].value
             local bonus = ref_buttonData.textbox[tableIndex + 67].value
+            --TODO: local bonus = ref_buttonData.textbox["textbox_"..skillId].value
             tonumber(proficiency)
             tonumber(bonus)
             local newValue = atributo + bonus + proficiency
             ref_buttonData.display[tableIndex + 6].value = newValue  -- Index Proficiency Display ranges from 7 to 31
-            self.editButton({index = tableIndex + 59, label = newValue}) -- Index do
+            --TODO: ref_buttonData.display["display_"..skillId].value = newValue to 31
+            self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = newValue})
         end
 
-        ref_buttonData.checkbox[tableIndex].state = true
-        self.editButton({index = buttonIndex, label = CHECKBOX_CHAR_FULL})
+        checkbox.state = true
+        self.editButton({index = btnIndexByElementIdTable[checkboxId], label = CHECKBOX_CHAR_FULL})
         -- Total Skill Calculation - Uncheck
     else
-        if tableIndex < 25 then
+        if not (skillId == nil) then
             local bonus = ref_buttonData.textbox[tableIndex+67].value
+            --TODO: local bonus = ref_buttonData.textbox["textbox_"..skillId].value
             tonumber(bonus)
-            ref_buttonData.display[tableIndex+6].value = atributo+bonus
-            self.editButton({index = tableIndex+59, label=atributo+bonus})
+            local newVal = atributo + bonus
+
+            ref_buttonData.display[tableIndex + 6].value = newVal
+            --TODO: ref_buttonData.display["display_"..skillId].value = newVal
+            self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = newVal})
         end
-        ref_buttonData.checkbox[tableIndex].state = false
-        self.editButton({index = buttonIndex, label = CHECKBOX_CHAR_EMPTY})
+
+        checkbox.state = false
+        self.editButton({index = btnIndexByElementIdTable[checkboxId], label = CHECKBOX_CHAR_EMPTY})
     end
 
     -- Passive Perception Update in CheckBox
-    if tableIndex == 18 then
+    if checkboxId == "checkbox_"..SKILL_PERCEPTION_ID then
         local proficiency = ref_buttonData.display[42].value
-        local bonus = ref_buttonData.textbox[tableIndex+67].value
+        --TODO: local proficiency = ref_buttonData.display["display_Proficiency"].value
+        local bonus = ref_buttonData.textbox[tableIndex+67].value -- 18 + 67 = 85 TEXTBOX_SKILL_PERCEPTION_ID
+        --TODO: local bonus = ref_buttonData.textbox[TEXTBOX_SKILL_PERCEPTION_ID].value
         tonumber(proficiency)
         tonumber(bonus)
 
-        if ref_buttonData.checkbox[tableIndex].state == true then
-            ref_buttonData.display[31].value = 10+atributo+bonus+proficiency
-            self.editButton({index=84, label=ref_buttonData.display[31].value})
+        if checkbox.state == true then
+            ref_buttonData.display[31].value = 10 + atributo + bonus + proficiency
+            -- TODO: ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus + proficiency
         else
-            ref_buttonData.display[31].value = 10+atributo+bonus
-            self.editButton({index=84, label=ref_buttonData.display[31].value})
+            ref_buttonData.display[31].value = 10 + atributo + bonus
+            --TODO: ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus
         end
+
+        self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display[31].value})
+        --TODO: self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value})
     end
 
     updateSave()
@@ -2826,9 +2842,8 @@ end
 function createCheckbox()
     for i, data in ipairs(ref_buttonData.checkbox) do
         --Sets up reference function
-        local buttonNumber = spawnedButtonCount
         local funcName = "checkbox"..i
-        local func = function() click_checkbox(i, buttonNumber, data.id) end
+        local func = function() click_checkbox(i, data.id) end
         self.setVar(funcName, func)
 
         --Sets up label
