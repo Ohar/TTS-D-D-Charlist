@@ -2661,7 +2661,7 @@ end
 
 -- Lvl update btn - Create
 function createLvlUpdateBtn()
-    self.createButton(lvlUpdateBtnConditionOFF)
+    createBtnAndSaveIndex("lvlUpdateBtn", lvlUpdateBtnConditionOFF)
 end
 
 -- Lvl refresh
@@ -2739,30 +2739,36 @@ end
 function createHitDiceCounters()
     local size = 350
 
-    self.createButton({
-        click_function = "hitDiceIncrement",
-        color          = buttonColor,
-        font_color     = buttonFontColor,
-        font_size      = size,
-        function_owner = self,
-        height         = size,
-        label          = '+',
-        position       = {0.68,0.1,-1.47},
-        scale          = buttonScale,
-        width          = size,
-    })
-    self.createButton({
-        click_function = "hitDiceDecrement",
-        color          = buttonColor,
-        font_color     = buttonFontColor,
-        font_size      = size,
-        function_owner = self,
-        height         = size,
-        label          = '-',
-        position       = {0.68,0.1,-1.29},
-        scale          = buttonScale,
-        width          = size,
-    })
+    createBtnAndSaveIndex(
+        "hitDiceIncrement",
+        {
+            click_function = "hitDiceIncrement",
+            color          = buttonColor,
+            font_color     = buttonFontColor,
+            font_size      = size,
+            function_owner = self,
+            height         = size,
+            label          = '+',
+            position       = {0.68,0.1,-1.47},
+            scale          = buttonScale,
+            width          = size,
+        }
+    )
+    createBtnAndSaveIndex(
+        "hitDiceDecrement",
+        {
+            click_function = "hitDiceDecrement",
+            color          = buttonColor,
+            font_color     = buttonFontColor,
+            font_size      = size,
+            function_owner = self,
+            height         = size,
+            label          = '-',
+            position       = {0.68,0.1,-1.29},
+            scale          = buttonScale,
+            width          = size,
+        }
+    )
 
     updateHitDiceText()
 end
@@ -2826,18 +2832,21 @@ function createCheckbox()
         end
 
         --Creates button and counts it
-        self.createButton({
-            click_function = funcName,
-            color          = buttonColor,
-            font_color     = buttonFontColor,
-            font_size      = data.size,
-            function_owner = self,
-            height         = data.size,
-            label          = label,
-            position       = data.pos,
-            scale          = buttonScale,
-            width          = data.size,
-        })
+        createBtnAndSaveIndex(
+            data.id,
+            {
+                click_function = funcName,
+                color          = buttonColor,
+                font_color     = buttonFontColor,
+                font_size      = data.size,
+                function_owner = self,
+                height         = data.size,
+                label          = label,
+                position       = data.pos,
+                scale          = buttonScale,
+                width          = data.size,
+            }
+        )
 
         spawnedButtonCount = spawnedButtonCount + 1
     end
@@ -2960,22 +2969,22 @@ function createDisplay()
         end
 
         -- Create display button
-        self.createButton({
-            click_function = "click_none",
-            color          = buttonColor,
-            font_color     = buttonFontColor,
-            font_size      = data.size,
-            function_owner = self,
-            height         = size,
-            label          = label,
-            position       = data.pos,
-            scale          = buttonScale,
-            tooltip        = tooltip,
-            width          = size,
-        })
-
-        local btnTable = self.getButtons()
-        btnIndexByElementIdTable[data.id] = btnTable[#btnTable].index
+        createBtnAndSaveIndex(
+            data.id,
+            {
+                click_function = "click_none",
+                color          = buttonColor,
+                font_color     = buttonFontColor,
+                font_size      = data.size,
+                function_owner = self,
+                height         = size,
+                label          = label,
+                position       = data.pos,
+                scale          = buttonScale,
+                tooltip        = tooltip,
+                width          = size,
+            }
+        )
     end
 end
 --Makes textbox
