@@ -2295,14 +2295,14 @@ function onload(saved_data)
 
     spawnedButtonCount = 0
 
-    createCheckbox()
-    createCounter()
+    createCheckbox() -- 0 + 36 = 36 buttons
+    createCounter() -- 36 + 18 = 54 buttons
     createTextbox()
-    createDisplay()
+    createDisplay() -- 54 + 43 = 97 buttons
 
     updateJumpAndWeight()
-    createLvlUpdateBtn()
-    createHitDiceCounters()
+    createLvlUpdateBtn() -- 97 + 1 = 98 buttons
+    createHitDiceCounters() -- 98 + 2 = 100 buttons
 
     lvlRefresh()
 end
@@ -2768,21 +2768,22 @@ function onClickLvlUpdateBtn()
     ref_buttonData.lvl = ref_buttonData.lvlByExp
 
     self.editButton({
-        index = 93,
+        index = btnIndexByElementIdTable["display_Level"],
         label = ref_buttonData.lvlByExp,
         value = ref_buttonData.lvlByExp,
     })
 
     self.editButton({
-        index = 94,
+        index = btnIndexByElementIdTable["display_next_LVL"],
         label = ref_buttonData.nextLvlExp,
         value = ref_buttonData.nextLvlExp,
     })
 
     ref_buttonData.display[42].value = ref_buttonData.lvlByExpProficiency
+    -- TODO: ref_buttonData.display["display_Proficiency"].value = ref_buttonData.lvlByExpProficiency
 
     self.editButton({
-        index = 95,
+        index = btnIndexByElementIdTable["display_Proficiency"],
         label = '+'..ref_buttonData.lvlByExpProficiency,
         value = ref_buttonData.lvlByExpProficiency,
     })
