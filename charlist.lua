@@ -2586,20 +2586,23 @@ function click_counter(tableIndex, buttonIndex, amount, counterId)
 end
 
 --Applies value to given textbox
-function click_textbox(i, value, selected)
+function click_textbox(i, value, selected, textboxId)
     if selected == false then
         ref_buttonData.textbox[i].value = value
+        -- TODO: ref_buttonData.textbox[textboxId].value = value
 
         -- Declaring Proficiency Values
         updateSkillsByProficiency()
 
         -- Height Change — Jump Height with Hands update
         if i == 61 then
+        -- TODO: if textboxId == TEXTBOX_HEIGHT_ID then
             updateJumpAndWeight()
         end
 
         -- Exp Change — Level update
         if i == 7 then
+        -- TODO: if textboxId == TEXTBOX_XP_ID then
             updateLevelByExp()
         end
 
@@ -3056,7 +3059,7 @@ function createTextbox()
         --Sets up reference function
         local funcName = "textbox"..i
         local func = function(_, _, val, sel)
-            click_textbox(i, val, sel)
+            click_textbox(i, val, sel, data.id)
         end
 
         self.setVar(funcName, func)
