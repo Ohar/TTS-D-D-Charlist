@@ -2878,8 +2878,9 @@ function updateHitDiceText()
     local hitDiceText = hitDiceLeft..'/'..ref_buttonData.lvl..'к'
 
     ref_buttonData.display[43].value = hitDiceText
+    -- TODO: ref_buttonData.display["display_Hit_Dices_Left"].value = hitDiceText
     self.editButton({
-        index = 96,
+        index = btnIndexByElementIdTable["display_Hit_Dices_Left"],
         label = hitDiceText,
         value = hitDiceText,
     })
