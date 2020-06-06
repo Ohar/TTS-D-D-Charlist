@@ -2310,33 +2310,39 @@ end
 --Click functions for buttons
 
 --Checks or unchecks the given box
-function click_checkbox(tableIndex, buttonIndex)
+function click_checkbox(tableIndex, buttonIndex, checkboxId) --
     -- tableIndex 1 to 24 // 18 Perception
     -- buttonIndex 0 to 23
 
-    -- Saving the value of the Attribute Modifier Corresponding to the Checked Expertise
-    if tableIndex < 3 then
-        atributo = ref_buttonData.display[1].value
-    end
+    local skillId = ref_buttonData.checkbox[tableIndex].skillId
 
-    if tableIndex > 2 and tableIndex < 7 then
-        atributo = ref_buttonData.display[2].value
-    end
+    if not (skillId == nil) then
+        local paramId = paramIdBySkillId[skillId]
 
-    if tableIndex == 7  then
-        atributo = ref_buttonData.display[3].value
-    end
+        -- Saving the value of the Attribute Modifier Corresponding to the Checked Expertise
+        if paramId == PARAM_STR_ID then
+            atributo = ref_buttonData.display[1].value -- TODO: use paramId instead of index
+        end
 
-    if tableIndex > 7 and tableIndex < 14 then
-        atributo = ref_buttonData.display[4].value
-    end
+        if paramId == PARAM_DEX_ID then
+            atributo = ref_buttonData.display[2].value -- TODO: use paramId instead of index
+        end
 
-    if tableIndex > 13 and tableIndex < 20 then
-        atributo = ref_buttonData.display[5].value
-    end
+        if paramId == PARAM_CON_ID  then
+            atributo = ref_buttonData.display[3].value -- TODO: use paramId instead of index
+        end
 
-    if tableIndex > 19 and tableIndex < 25 then
-        atributo = ref_buttonData.display[6].value
+        if paramId == PARAM_INT_ID then
+            atributo = ref_buttonData.display[4].value -- TODO: use paramId instead of index
+        end
+
+        if paramId == PARAM_WIT_ID then
+            atributo = ref_buttonData.display[5].value -- TODO: use paramId instead of index
+        end
+
+        if paramId == PARAM_CHA_ID then
+            atributo = ref_buttonData.display[6].value -- TODO: use paramId instead of index
+        end
     end
 
     -- Skill Point Total Value Calculation and Update - Proficiently Marked
@@ -2822,7 +2828,7 @@ function createCheckbox()
         --Sets up reference function
         local buttonNumber = spawnedButtonCount
         local funcName = "checkbox"..i
-        local func = function() click_checkbox(i, buttonNumber) end
+        local func = function() click_checkbox(i, buttonNumber, data.id) end
         self.setVar(funcName, func)
 
         --Sets up label
