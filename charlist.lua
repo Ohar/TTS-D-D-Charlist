@@ -2773,6 +2773,7 @@ function updateLevelByExp()
     local EXP_TEXTBOX_ID = 7
 
     exp = tonumber(ref_buttonData.textbox[EXP_TEXTBOX_ID].value) or EXP_MIN
+    -- TODO: exp = tonumber(ref_buttonData.textbox[TEXTBOX_XP_ID].value) or EXP_MIN
 
     -- Исправить значение опыта
     if (exp < EXP_MIN or exp > EXP_MAX) then
@@ -2781,6 +2782,7 @@ function updateLevelByExp()
 
         -- Исправить значение опыта на инпуте
         ref_buttonData.textbox[EXP_TEXTBOX_ID].value = exp
+        -- TODO: ref_buttonData.textbox[TEXTBOX_XP_ID].value = exp
         Wait.time(function () self.editInput({index = EXP_INPUT_EDIT_ID, value = exp}) end, 0)
     end
 
