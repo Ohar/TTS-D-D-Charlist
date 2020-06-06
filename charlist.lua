@@ -2811,7 +2811,15 @@ function updateLevelByExp()
         -- Исправить значение опыта на инпуте
         ref_buttonData.textbox[EXP_TEXTBOX_ID].value = exp
         -- TODO: ref_buttonData.textbox[TEXTBOX_XP_ID].value = exp
-        Wait.time(function () self.editInput({index = EXP_INPUT_EDIT_ID, value = exp}) end, 0)
+        Wait.time(
+            function ()
+                self.editInput({
+                    index = EXP_INPUT_EDIT_ID, -- TODO: use input table like “btnIndexByElementIdTable”
+                    value = exp,
+                })
+            end,
+            0
+        )
     end
 
     for i, data in ipairs(LVL_BY_EXP) do
@@ -2919,12 +2927,15 @@ function createCheckbox()
     for i, data in ipairs(ref_buttonData.checkbox) do
         --Sets up reference function
         local funcName = "checkbox"..i
-        local func = function() click_checkbox(i, data.id) end
+        local func = function()
+            click_checkbox(i, data.id)
+        end
+
         self.setVar(funcName, func)
 
         --Sets up label
         local label = CHECKBOX_CHAR_EMPTY
-        if data.state==true then
+        if data.state == true then
             label = CHECKBOX_CHAR_FULL
         end
 
@@ -2988,7 +2999,7 @@ function createCounter()
 
         self.setVar(funcName, func)
         --Sets up position
-        local offsetDistance = (data.size/2 + data.size/4) * (buttonScale[1] * 0.002)
+        local offsetDistance = (data.size / 2 + data.size / 4) * (buttonScale[1] * 0.002)
         local pos = {
             data.pos[1] + offsetDistance,
             data.pos[2],
@@ -3019,7 +3030,7 @@ function createCounter()
         --Sets up subtract 1
         local funcName = data.btnSubId
         local func = function()
-            click_counter(i, displayNumber, -1, data.id) -- TODO use “data.id” instead of “i”
+            click_counter(i, displayNumber, -1, data.id)
         end
 
         self.setVar(funcName, func)
@@ -3084,6 +3095,7 @@ function createDisplay()
         )
     end
 end
+
 --Makes textbox
 function createTextbox()
     for i, data in ipairs(ref_buttonData.textbox) do
@@ -3116,6 +3128,4 @@ function createBtnAndSaveIndex (btnId, params)
     self.createButton(params)
     local btnTable = self.getButtons()
     btnIndexByElementIdTable[btnId] = btnTable[#btnTable].index
-
-    --print(JSON.encode(btnIndexByElementIdTable))
 end
