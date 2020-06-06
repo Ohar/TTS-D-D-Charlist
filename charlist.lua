@@ -418,6 +418,94 @@ local TEXTBOX_SKILL_DECEPTION_ID = "textbox_"..SKILL_DECEPTION_ID
 local TEXTBOX_SKILL_INTIMIDATION_ID = "textbox_"..SKILL_INTIMIDATION_ID
 local TEXTBOX_SKILL_PERSUASION_ID = "textbox_"..SKILL_PERSUASION_ID
 
+local CHECKBOX_SKILL_STR_SAVETHROW_ID = "checkbox_"..SKILL_STR_SAVETHROW_ID
+local CHECKBOX_SKILL_ATHLETICS_ID = "checkbox_"..SKILL_ATHLETICS_ID
+local CHECKBOX_SKILL_DEX_SAVETHROW_ID = "checkbox_"..SKILL_DEX_SAVETHROW_ID
+local CHECKBOX_SKILL_ACROBATICS_ID = "checkbox_"..SKILL_ACROBATICS_ID
+local CHECKBOX_SKILL_STEALTH_ID = "checkbox_"..SKILL_STEALTH_ID
+local CHECKBOX_SKILL_SLEIGHT_OF_HAND_ID = "checkbox_"..SKILL_SLEIGHT_OF_HAND_ID
+local CHECKBOX_SKILL_CON_SAVETHROW_ID = "checkbox_"..SKILL_CON_SAVETHROW_ID
+local CHECKBOX_SKILL_INT_SAVETHROW_ID = "checkbox_"..SKILL_INT_SAVETHROW_ID
+local CHECKBOX_SKILL_ARCANA_ID = "checkbox_"..SKILL_ARCANA_ID
+local CHECKBOX_SKILL_HISTORY_ID = "checkbox_"..SKILL_HISTORY_ID
+local CHECKBOX_SKILL_INVESTIGATION_ID = "checkbox_"..SKILL_INVESTIGATION_ID
+local CHECKBOX_SKILL_NATURE_ID = "checkbox_"..SKILL_NATURE_ID
+local CHECKBOX_SKILL_RELIGION_ID = "checkbox_"..SKILL_RELIGION_ID
+local CHECKBOX_SKILL_WIT_SAVETHROW_ID = "checkbox_"..SKILL_WIT_SAVETHROW_ID
+local CHECKBOX_SKILL_ANIMAL_HANDLING_ID = "checkbox_"..SKILL_ANIMAL_HANDLING_ID
+local CHECKBOX_SKILL_INSIGHT_ID = "checkbox_"..SKILL_INSIGHT_ID
+local CHECKBOX_SKILL_MEDICINE_ID = "checkbox_"..SKILL_MEDICINE_ID
+local CHECKBOX_SKILL_PERCEPTION_ID = "checkbox_"..SKILL_PERCEPTION_ID
+local CHECKBOX_SKILL_SURVIVAL_ID = "checkbox_"..SKILL_SURVIVAL_ID
+local CHECKBOX_SKILL_CHA_SAVETHROW_ID = "checkbox_"..SKILL_CHA_SAVETHROW_ID
+local CHECKBOX_SKILL_PERFORMANCE_ID = "checkbox_"..SKILL_PERFORMANCE_ID
+local CHECKBOX_SKILL_DECEPTION_ID = "checkbox_"..SKILL_DECEPTION_ID
+local CHECKBOX_SKILL_INTIMIDATION_ID = "checkbox_"..SKILL_INTIMIDATION_ID
+local CHECKBOX_SKILL_PERSUASION_ID = "checkbox_"..SKILL_PERSUASION_ID
+local CHECKBOX_LIGHT_ARMOR_ID = "checkbox_Light_Armor"
+local CHECKBOX_MEDIUM_ARMOR_ID = "checkbox_Medium_Armor"
+local CHECKBOX_HEAVY_ARMOR_ID = "checkbox_Heavy_Armor"
+local CHECKBOX_SHIELD_ID = "checkbox_Shield"
+local CHECKBOX_SIMPLE_WEAPONS_ID = "checkbox_Simple_Weapons"
+local CHECKBOX_MARTIAL_WEAPONS_ID = "checkbox_Martial_Weapons"
+local CHECKBOX_DEATH_SAVETHROW_SUCCESS_1_ID = "checkbox_Death_savethrow_success_1"
+local CHECKBOX_DEATH_SAVETHROW_SUCCESS_2_ID = "checkbox_Death_savethrow_success_2"
+local CHECKBOX_DEATH_SAVETHROW_SUCCESS_3_ID = "checkbox_Death_savethrow_success_3"
+local CHECKBOX_DEATH_SAVETHROW_FAIL_1_ID = "checkbox_Death_savethrow_fail_1"
+local CHECKBOX_DEATH_SAVETHROW_FAIL_2_ID = "checkbox_Death_savethrow_fail_2"
+local CHECKBOX_DEATH_SAVETHROW_FAIL_3_ID = "checkbox_Death_savethrow_fail_3"
+
+local COUNTER_PARAM_STR_ID = "counter_"..PARAM_STR_ID
+local COUNTER_PARAM_DEX_ID = "counter_"..PARAM_DEX_ID
+local COUNTER_PARAM_CON_ID = "counter_"..PARAM_CON_ID
+local COUNTER_PARAM_INT_ID = "counter_"..PARAM_INT_ID
+local COUNTER_PARAM_WIT_ID = "counter_"..PARAM_WIT_ID
+local COUNTER_PARAM_CHA_ID = "counter_"..PARAM_CHA_ID
+
+local DISPLAY_PARAM_STR_ID = "display_"..PARAM_STR_ID
+local DISPLAY_PARAM_DEX_ID = "display_"..PARAM_DEX_ID
+local DISPLAY_PARAM_CON_ID = "display_"..PARAM_CON_ID
+local DISPLAY_PARAM_INT_ID = "display_"..PARAM_INT_ID
+local DISPLAY_PARAM_WIT_ID = "display_"..PARAM_WIT_ID
+local DISPLAY_PARAM_CHA_ID = "display_"..PARAM_CHA_ID
+local DISPLAY_SKILL_STR_SAVETHROW_ID = "display_"..SKILL_STR_SAVETHROW_ID
+local DISPLAY_SKILL_ATHLETICS_ID = "display_"..SKILL_ATHLETICS_ID
+local DISPLAY_SKILL_DEX_SAVETHROW_ID = "display_"..SKILL_DEX_SAVETHROW_ID
+local DISPLAY_SKILL_ACROBATICS_ID = "display_"..SKILL_ACROBATICS_ID
+local DISPLAY_SKILL_STEALTH_ID = "display_"..SKILL_STEALTH_ID
+local DISPLAY_SKILL_SLEIGHT_OF_HAND_ID = "display_"..SKILL_SLEIGHT_OF_HAND_ID
+local DISPLAY_SKILL_CON_SAVETHROW_ID = "display_"..SKILL_CON_SAVETHROW_ID
+local DISPLAY_SKILL_INT_SAVETHROW_ID = "display_"..SKILL_INT_SAVETHROW_ID
+local DISPLAY_SKILL_ARCANA_ID = "display_"..SKILL_ARCANA_ID
+local DISPLAY_SKILL_HISTORY_ID = "display_"..SKILL_HISTORY_ID
+local DISPLAY_SKILL_INVESTIGATION_ID = "display_"..SKILL_INVESTIGATION_ID
+local DISPLAY_SKILL_NATURE_ID = "display_"..SKILL_NATURE_ID
+local DISPLAY_SKILL_RELIGION_ID = "display_"..SKILL_RELIGION_ID
+local DISPLAY_SKILL_WIT_SAVETHROW_ID = "display_"..SKILL_WIT_SAVETHROW_ID
+local DISPLAY_SKILL_ANIMAL_HANDLING_ID = "display_"..SKILL_ANIMAL_HANDLING_ID
+local DISPLAY_SKILL_INSIGHT_ID = "display_"..SKILL_INSIGHT_ID
+local DISPLAY_SKILL_MEDICINE_ID = "display_"..SKILL_MEDICINE_ID
+local DISPLAY_SKILL_PERCEPTION_ID = "display_"..SKILL_PERCEPTION_ID
+local DISPLAY_SKILL_SURVIVAL_ID = "display_"..SKILL_SURVIVAL_ID
+local DISPLAY_SKILL_CHA_SAVETHROW_ID = "display_"..SKILL_CHA_SAVETHROW_ID
+local DISPLAY_SKILL_PERFORMANCE_ID = "display_"..SKILL_PERFORMANCE_ID
+local DISPLAY_SKILL_DECEPTION_ID = "display_"..SKILL_DECEPTION_ID
+local DISPLAY_SKILL_INTIMIDATION_ID = "display_"..SKILL_INTIMIDATION_ID
+local DISPLAY_SKILL_PERSUASION_ID = "display_"..SKILL_PERSUASION_ID
+local DISPLAY_PASSIVE_PERCEPTION_ID = "display_Passive_Perception"
+local DISPLAY_WEIGHT_CAPACITY_ID = "display_Weight_Capacity"
+local DISPLAY_RAISE_LIFT_AND_PULL_ID = "display_Raise_Lift_and_Pull"
+local DISPLAY_JUMP_HEIGHT_ID = "display_Jump_Height"
+local DISPLAY_JUMP_DISTANCE_ID = "display_Jump_Distance"
+local DISPLAY_JUMP_HEIGHT_WITH_HANDS_ID = "display_Jump_Height_with_Hands"
+local DISPLAY_JUMP_HEIGHT_NO_RUNNING_ID = "display_Jump_Height_no_running"
+local DISPLAY_JUMP_DISTANCE_NO_RUNNING_ID = "display_Jump_Distance_no_running"
+local DISPLAY_JUMP_HEIGHT_WITH_HANDS_NO_RUNNING_ID = "display_Jump_Height_with_Hands_no_running"
+local DISPLAY_LEVEL_ID = "display_Level"
+local DISPLAY_NEXT_LVL_ID = "display_next_LVL"
+local DISPLAY_PROFICIENCY_ID = "display_Proficiency"
+local DISPLAY_HIT_DICES_LEFT_ID = "display_Hit_Dices_Left"
+
 local textboxLabelCollection = {
     [TEXTBOX_NAME_ID] = "Имя персонажа",
     [TEXTBOX_CLASS_LEVEL_ID] = "Класс",
@@ -523,292 +611,253 @@ defaultButtonData = {
         size  = height/width/font_size for checkbox
         state = default starting value for checkbox (true=checked, false=not)
         ]]
-        -- tableIndex Perícia {1 to 24} // Proficiency {25 to 30} // Jogadas de Morte {31 to 36}
-        -- buttonIndex Perícia {0 to 23} // Proficiency {24 to 29} // Jogadas de Morte {30 to 35}
-
         -- 1 checkbox STR savethrow
-        {
-            id      = "checkbox_"..SKILL_STR_SAVETHROW_ID,
+        [CHECKBOX_SKILL_STR_SAVETHROW_ID] = {
             skillId = SKILL_STR_SAVETHROW_ID,
             pos     = {-1.123,0.1,-1.155},
             size    = 150,
             state   = false
         },
         -- 2 checkbox Athletics
-        {
-            id      = "checkbox_"..SKILL_ATHLETICS_ID,
+        [CHECKBOX_SKILL_ATHLETICS_ID] = {
             skillId = SKILL_ATHLETICS_ID,
             pos     = {-1.123,0.1,-1.10},
             size    = 150,
             state   = false
         },
         -- 3 checkbox DEX savethrow
-        {
-            id      = "checkbox_"..SKILL_DEX_SAVETHROW_ID,
+        [CHECKBOX_SKILL_DEX_SAVETHROW_ID] = {
             skillId = SKILL_DEX_SAVETHROW_ID,
             pos     = {-1.123,0.1,-0.79},
             size    = 150,
             state   = false
         },
         -- 4 checkbox Acrobatics
-        {
-            id      = "checkbox_"..SKILL_ACROBATICS_ID,
+        [CHECKBOX_SKILL_ACROBATICS_ID] = {
             skillId = SKILL_ACROBATICS_ID,
             pos     = {-1.123,0.1,-0.735},
             size    = 150,
             state   = false
         },
         -- 5 checkbox Stealth
-        {
-            id      = "checkbox_"..SKILL_STEALTH_ID,
+        [CHECKBOX_SKILL_STEALTH_ID] = {
             skillId = SKILL_STEALTH_ID,
             pos     = {-1.123,0.1,-0.685},
             size    = 150,
             state   = false
         },
         -- 6 checkbox Sleight of hand
-        {
-            id      = "checkbox_"..SKILL_SLEIGHT_OF_HAND_ID,
+        [CHECKBOX_SKILL_SLEIGHT_OF_HAND_ID] = {
             skillId = SKILL_SLEIGHT_OF_HAND_ID,
             pos     = {-1.123,0.1,-0.630},
             size    = 150,
             state   = false
         },
         -- 7 checkbox CON savethrow
-        {
-            id      = "checkbox_"..SKILL_CON_SAVETHROW_ID,
+        [CHECKBOX_SKILL_CON_SAVETHROW_ID] = {
             skillId = SKILL_CON_SAVETHROW_ID,
             pos     = {-1.123,0.1,-0.428},
             size    = 150,
             state   = false
         },
         -- 8 checkbox INT savethrow
-        {
-            id      = "checkbox_"..SKILL_INT_SAVETHROW_ID,
+        [CHECKBOX_SKILL_INT_SAVETHROW_ID] = {
             skillId = SKILL_INT_SAVETHROW_ID,
             pos     = {-1.123,0.1,-0.070},
             size    = 150,
             state   = false
         },
         -- 9 checkbox Arcana
-        {
-            id      = "checkbox_"..SKILL_ARCANA_ID,
+        [CHECKBOX_SKILL_ARCANA_ID] = {
             skillId = SKILL_ARCANA_ID,
             pos     = {-1.123,0.1,-0.015},
             size    = 150,
             state   = false
         },
         -- 10 checkbox History
-        {
-            id      = "checkbox_"..SKILL_HISTORY_ID,
+        [CHECKBOX_SKILL_HISTORY_ID] = {
             skillId = SKILL_HISTORY_ID,
             pos     = {-1.123,0.1,0.040},
             size    = 150,
             state   = false
         },
         -- 11 checkbox Investigation
-        {
-            id      = "checkbox_"..SKILL_INVESTIGATION_ID,
+        [CHECKBOX_SKILL_INVESTIGATION_ID] = {
             skillId = SKILL_INVESTIGATION_ID,
             pos     = {-1.123,0.1,0.095},
             size    = 150,
             state   = false
         },
         -- 12 checkbox Nature
-        {
-            id      = "checkbox_"..SKILL_NATURE_ID,
+        [CHECKBOX_SKILL_NATURE_ID] = {
             skillId = SKILL_NATURE_ID,
             pos     = {-1.123,0.1,0.150},
             size    = 150,
             state   = false
         },
         -- 13 checkbox Religion
-        {
-            id      = "checkbox_"..SKILL_RELIGION_ID,
+        [CHECKBOX_SKILL_RELIGION_ID] = {
             skillId = SKILL_RELIGION_ID,
             pos     = {-1.123,0.1,0.202},
             size    = 150,
             state   = false
         },
         -- 14 checkbox WIT savethrow
-        {
-            id      = "checkbox_"..SKILL_WIT_SAVETHROW_ID,
+        [CHECKBOX_SKILL_WIT_SAVETHROW_ID] = {
             skillId = SKILL_WIT_SAVETHROW_ID,
             pos     = {-1.123,0.1,0.30},
             size    = 150,
             state   = false
         },
         -- 15 checkbox Animal Handling
-        {
-            id      = "checkbox_"..SKILL_ANIMAL_HANDLING_ID,
+        [CHECKBOX_SKILL_ANIMAL_HANDLING_ID] = {
             skillId = SKILL_ANIMAL_HANDLING_ID,
             pos     = {-1.123,0.1,0.355},
             size    = 150,
             state   = false
         },
         -- 16 checkbox Insight
-        {
-            id      = "checkbox_"..SKILL_INSIGHT_ID,
+        [CHECKBOX_SKILL_INSIGHT_ID] = {
             skillId = SKILL_INSIGHT_ID,
             pos     = {-1.123,0.1,0.410},
             size    = 150,
             state   = false
         },
         -- 17 checkbox Medicine
-        {
-            id      = "checkbox_"..SKILL_MEDICINE_ID,
+        [CHECKBOX_SKILL_MEDICINE_ID] = {
             skillId = SKILL_MEDICINE_ID,
             pos     = {-1.123,0.1,0.46},
             size    = 150,
             state   = false
         },
         -- 18 checkbox Perception
-        {
-            id      = "checkbox_"..SKILL_PERCEPTION_ID,
+        [CHECKBOX_SKILL_PERCEPTION_ID] = {
             skillId = SKILL_PERCEPTION_ID,
             pos     = {-1.123,0.1,0.51},
             size    = 150,
             state   = false
         },
         -- 19 checkbox Survival
-        {
-            id      = "checkbox_"..SKILL_SURVIVAL_ID,
+        [CHECKBOX_SKILL_SURVIVAL_ID] = {
             skillId = SKILL_SURVIVAL_ID,
             pos     = {-1.123,0.1,0.565},
             size    = 150,
             state   = false
         },
         -- 20 checkbox CHA savethrow
-        {
-            id      = "checkbox_"..SKILL_CHA_SAVETHROW_ID,
+        [CHECKBOX_SKILL_CHA_SAVETHROW_ID] = {
             skillId = SKILL_CHA_SAVETHROW_ID,
             pos     = {-1.123,0.1,0.67},
             size    = 150,
             state   = false
         },
         -- 21 checkbox Performance
-        {
-            id      = "checkbox_"..SKILL_PERFORMANCE_ID,
+        [CHECKBOX_SKILL_PERFORMANCE_ID] = {
             skillId = SKILL_PERFORMANCE_ID,
             pos     = {-1.123,0.1,0.725},
             size    = 150,
             state   = false
         },
         -- 22 checkbox Deception
-        {
-            id      = "checkbox_"..SKILL_DECEPTION_ID,
+        [CHECKBOX_SKILL_DECEPTION_ID] = {
             skillId = SKILL_DECEPTION_ID,
             pos     = {-1.123,0.1,0.775},
             size    = 150,
             state   = false
         },
         -- 23 checkbox Intimidation
-        {
-            id      = "checkbox_"..SKILL_INTIMIDATION_ID,
+        [CHECKBOX_SKILL_INTIMIDATION_ID] = {
             skillId = SKILL_INTIMIDATION_ID,
             pos     = {-1.123,0.1,0.82},
             size    = 150,
             state   = false
         },
         -- 24 checkbox Persuasion
-        {
-            id      = "checkbox_"..SKILL_PERSUASION_ID,
+        [CHECKBOX_SKILL_PERSUASION_ID] = {
             skillId = SKILL_PERSUASION_ID,
             pos     = {-1.123,0.1,0.875},
             size    = 150,
             state   = false
         },
         -- 25 checkbox Light Armor
-        {
-            id      = "checkbox_Light_Armor",
+        [CHECKBOX_LIGHT_ARMOR_ID] = {
             skillId = nil,
             pos     = {-1.430,0.1,1.26},
             size    = 150,
             state   = false
         },
         -- 26 checkbox Medium Armor
-        {
-            id      = "checkbox_Medium_Armor",
+        [CHECKBOX_MEDIUM_ARMOR_ID] = {
             skillId = nil,
             pos     = {-1.430,0.1,1.30},
             size    = 150,
             state   = false
         },
         -- 27 checkbox Heavy Armor
-        {
-            id      = "checkbox_Heavy_Armor",
+        [CHECKBOX_HEAVY_ARMOR_ID] = {
             skillId = nil,
             pos     = {-1.430,0.1,1.34},
             size    = 150,
             state   = false
         },
         -- 28 checkbox Shield
-        {
-            id      = "checkbox_Shield",
+        [CHECKBOX_SHIELD_ID] = {
             skillId = nil,
             pos     = {-1.430,0.1,1.38},
             size    = 150,
             state   = false
         },
         -- 29 checkbox Simple Weapons
-        {
-            id      = "checkbox_Simple_Weapons",
+        [CHECKBOX_SIMPLE_WEAPONS_ID] = {
             skillId = nil,
             pos     = {-1.2,0.1,1.26},
             size    = 150,
             state   = false
         },
         -- 30 checkbox Martial Weapons
-        {
-            id      = "checkbox_Martial_Weapons",
+        [CHECKBOX_MARTIAL_WEAPONS_ID] = {
             skillId = nil,
             pos     = {-1.2,0.1,1.30},
             size    = 150,
             state   = false
         },
         -- 31 checkbox Death savethrow success 1
-        {
-            id      = "checkbox_Death_savethrow_success_1",
+        [CHECKBOX_DEATH_SAVETHROW_SUCCESS_1_ID] = {
             skillId = nil,
             pos     = {0.825,0.1,-1.08},
             size    = 200,
             state   = false
         },
         -- 32 checkbox Death savethrow success 2
-        {
-            id      = "checkbox_Death_savethrow_success_2",
+        [CHECKBOX_DEATH_SAVETHROW_SUCCESS_2_ID] = {
             skillId = nil,
             pos     = {0.895,0.1,-1.08},
             size    = 200,
             state   = false
         },
         -- 33 checkbox Death savethrow success 3
-        {
-            id      = "checkbox_Death_savethrow_success_3",
+        [CHECKBOX_DEATH_SAVETHROW_SUCCESS_3_ID] = {
             skillId = nil,
             pos     = {0.96,0.1,-1.08},
             size    = 200,
             state   = false
         },
         -- 34 checkbox Death savethrow fail 1
-        {
-            id      = "checkbox_Death_savethrow_fail_1",
+        [CHECKBOX_DEATH_SAVETHROW_FAIL_1_ID] = {
             skillId = nil,
             pos     = {0.825,0.1,-1.015},
             size    = 200,
             state   = false
         },
         -- 35 checkbox Death savethrow fail 2
-        {
-            id      = "checkbox_Death_savethrow_fail_2",
+        [CHECKBOX_DEATH_SAVETHROW_FAIL_2_ID] = {
             skillId = nil,
             pos     = {0.895,0.1,-1.015},
             size    = 200,
             state   = false
         },
         -- 36 checkbox Death savethrow fail 3
-        {
-            id      = "checkbox_Death_savethrow_fail_3",
+        [CHECKBOX_DEATH_SAVETHROW_FAIL_3_ID] = {
             skillId = nil,
             pos     = {0.96,0.1,-1.015},
             size    = 200,
@@ -828,66 +877,60 @@ defaultButtonData = {
         -- buttonIndex Atributo {36 to 53} // 48 = Sabedoria
 
         -- 1 counter STR
-        {
+        [COUNTER_PARAM_STR_ID] = {
             btnAddId = "counter_btn_add_"..PARAM_STR_ID,
             btnSubId = "counter_btn_sub_"..PARAM_STR_ID,
             hideBG   = true,
-            id       = "counter_"..PARAM_STR_ID,
             paramId  = PARAM_STR_ID,
             pos      = {-1.35,0.1,-1.025},
             size     = 450,
             value    = 10,
         },
         -- 2 counter DEX
-        {
+        [COUNTER_PARAM_DEX_ID] = {
             btnAddId = "counter_btn_add_"..PARAM_DEX_ID,
             btnSubId = "counter_btn_sub_"..PARAM_DEX_ID,
             hideBG   = true,
-            id       = "counter_"..PARAM_DEX_ID,
             paramId  = PARAM_DEX_ID,
             pos      = {-1.35,0.1,-0.662},
             size     = 450,
             value    = 10,
         },
         -- 3 counter CON
-        {
+        [COUNTER_PARAM_CON_ID] = {
             btnAddId = "counter_btn_add_"..PARAM_CON_ID,
             btnSubId = "counter_btn_sub_"..PARAM_CON_ID,
             hideBG   = true,
-            id       = "counter_"..PARAM_CON_ID,
             paramId  = PARAM_CON_ID,
             pos      = {-1.35,0.1,-0.299},
             size     = 450,
             value    = 10,
         },
         -- 4 counter INT
-        {
+        [COUNTER_PARAM_INT_ID] = {
             btnAddId = "counter_btn_add_"..PARAM_INT_ID,
             btnSubId = "counter_btn_sub_"..PARAM_INT_ID,
             hideBG   = true,
-            id       = "counter_"..PARAM_INT_ID,
             paramId  = PARAM_INT_ID,
             pos      = {-1.35,0.1,0.064},
             size     = 450,
             value    = 10,
         },
         -- 5 counter WIT
-        {
+        [COUNTER_PARAM_WIT_ID] = {
             btnAddId = "counter_btn_add_"..PARAM_WIT_ID,
             btnSubId = "counter_btn_sub_"..PARAM_WIT_ID,
             hideBG   = true,
-            id       = "counter_"..PARAM_WIT_ID,
             paramId  = PARAM_WIT_ID,
             pos      = {-1.35,0.1,0.427},
             size     = 450,
             value    = 10,
         },
         -- 6 counter CHA
-        {
+        [COUNTER_PARAM_CHA_ID] = {
             btnAddId = "counter_btn_add_"..PARAM_CHA_ID,
             btnSubId = "counter_btn_sub_"..PARAM_CHA_ID,
             hideBG   = true,
-            id       = "counter_"..PARAM_CHA_ID,
             paramId  = PARAM_CHA_ID,
             pos      = {-1.35,0.1,0.790},
             size     = 450,
@@ -907,8 +950,7 @@ defaultButtonData = {
         -- TableIndex of buttonEdit of 1 to 31
         -- ButtonIndex Modificador Atributo {54 Até 60} // Perícia {61 to 84} // Passive Perception = 85
         -- 1 display STR
-        {
-            id      = "display_"..PARAM_STR_ID,
+        [DISPLAY_PARAM_STR_ID] = {
             paramId = PARAM_STR_ID,
             pos     = {-1.35,0.1,-1.14},
             size    = 450,
@@ -916,8 +958,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 2 display DEX
-        {
-            id      = "display_"..PARAM_DEX_ID,
+        [DISPLAY_PARAM_DEX_ID] = {
             paramId = PARAM_DEX_ID,
             pos     = {-1.35,0.1,-0.77},
             size    = 450,
@@ -925,8 +966,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 3 display CON
-        {
-            id      = "display_"..PARAM_CON_ID,
+        [DISPLAY_PARAM_CON_ID] = {
             paramId = PARAM_CON_ID,
             pos     = {-1.35,0.1,-0.41},
             size    = 450,
@@ -934,8 +974,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 4 display INT
-        {
-            id      = "display_"..PARAM_INT_ID,
+        [DISPLAY_PARAM_INT_ID] = {
             paramId = PARAM_INT_ID,
             pos     = {-1.35,0.1,-0.05},
             size    = 450,
@@ -943,8 +982,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 5 display WIT
-        {
-            id      = "display_"..PARAM_WIT_ID,
+        [DISPLAY_PARAM_WIT_ID] = {
             paramId = PARAM_WIT_ID,
             pos     = {-1.35,0.1,0.31},
             size    = 450,
@@ -952,8 +990,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 6 display CHA
-        {
-            id      = "display_"..PARAM_CHA_ID,
+        [DISPLAY_PARAM_CHA_ID] = {
             paramId = PARAM_CHA_ID,
             pos     = {-1.35,0.1,0.68},
             size    = 450,
@@ -961,8 +998,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 7 display STR savethrow
-        {
-            id      = "display_"..SKILL_STR_SAVETHROW_ID,
+        [DISPLAY_SKILL_STR_SAVETHROW_ID] = {
             skillId = SKILL_STR_SAVETHROW_ID,
             pos     = {-0.973,0.1,-1.16},
             size    = 250,
@@ -970,8 +1006,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 8 display Atletics
-        {
-            id      = "display_"..SKILL_ATHLETICS_ID,
+        [DISPLAY_SKILL_ATHLETICS_ID] = {
             skillId = SKILL_ATHLETICS_ID,
             pos     = {-0.973,0.1,-1.11},
             size    = 250,
@@ -979,8 +1014,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 9 display DEX savethrow
-        {
-            id      = "display_"..SKILL_DEX_SAVETHROW_ID,
+        [DISPLAY_SKILL_DEX_SAVETHROW_ID] = {
             skillId = SKILL_DEX_SAVETHROW_ID,
             pos     = {-0.973,0.1,-0.795},
             size    = 250,
@@ -988,8 +1022,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 10 display Acrobatics
-        {
-            id      = "display_"..SKILL_ACROBATICS_ID,
+        [DISPLAY_SKILL_ACROBATICS_ID] = {
             skillId = SKILL_ACROBATICS_ID,
             pos     = {-0.973,0.1,-0.745},
             size    = 250,
@@ -997,8 +1030,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 11 display Stealth
-        {
-            id      = "display_"..SKILL_STEALTH_ID,
+        [DISPLAY_SKILL_STEALTH_ID] = {
             skillId = SKILL_STEALTH_ID,
             pos     = {-0.973,0.1,-0.695},
             size    = 250,
@@ -1006,8 +1038,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 12 display Sleight of Hand
-        {
-            id      = "display_"..SKILL_SLEIGHT_OF_HAND_ID,
+        [DISPLAY_SKILL_SLEIGHT_OF_HAND_ID] = {
             skillId = SKILL_SLEIGHT_OF_HAND_ID,
             pos     = {-0.973,0.1,-0.645},
             size    = 250,
@@ -1015,8 +1046,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 13 display CON savethrow
-        {
-            id      = "display_"..SKILL_CON_SAVETHROW_ID,
+        [DISPLAY_SKILL_CON_SAVETHROW_ID] = {
             skillId = SKILL_CON_SAVETHROW_ID,
             pos     = {-0.973,0.1,-0.435},
             size    = 250,
@@ -1024,8 +1054,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 14 display INT savethrow
-        {
-            id      = "display_"..SKILL_INT_SAVETHROW_ID,
+        [DISPLAY_SKILL_INT_SAVETHROW_ID] = {
             skillId = SKILL_INT_SAVETHROW_ID,
             pos     = {-0.973,0.1,-0.07},
             size    = 250,
@@ -1033,8 +1062,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 15 display Arcana
-        {
-            id      = "display_"..SKILL_ARCANA_ID,
+        [DISPLAY_SKILL_ARCANA_ID] = {
             skillId = SKILL_ARCANA_ID,
             pos     = {-0.973,0.1,-0.0215},
             size    = 250,
@@ -1042,8 +1070,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 16 display History
-        {
-            id      = "display_"..SKILL_HISTORY_ID,
+        [DISPLAY_SKILL_HISTORY_ID] = {
             skillId = SKILL_HISTORY_ID,
             pos     = {-0.973,0.1,0.031},
             size    = 250,
@@ -1051,8 +1078,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 17 display Investigation
-        {
-            id      = "display_"..SKILL_INVESTIGATION_ID,
+        [DISPLAY_SKILL_INVESTIGATION_ID] = {
             skillId = SKILL_INVESTIGATION_ID,
             pos     = {-0.973,0.1,0.0825},
             size    = 250,
@@ -1060,8 +1086,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 18 display Nature
-        {
-            id      = "display_"..SKILL_NATURE_ID,
+        [DISPLAY_SKILL_NATURE_ID] = {
             skillId = SKILL_NATURE_ID,
             pos     = {-0.973,0.1,0.135},
             size    = 250,
@@ -1069,8 +1094,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 19 display Religion
-        {
-            id      = "display_"..SKILL_RELIGION_ID,
+        [DISPLAY_SKILL_RELIGION_ID] = {
             skillId = SKILL_RELIGION_ID,
             pos     = {-0.973,0.1,0.185},
             size    = 250,
@@ -1078,8 +1102,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 20 display WIT savethrow
-        {
-            id      = "display_"..SKILL_WIT_SAVETHROW_ID,
+        [DISPLAY_SKILL_WIT_SAVETHROW_ID] = {
             skillId = SKILL_WIT_SAVETHROW_ID,
             pos     = {-0.973,0.1,0.295},
             size    = 250,
@@ -1087,8 +1110,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 21 display Animal Handling
-        {
-            id      = "display_"..SKILL_ANIMAL_HANDLING_ID,
+        [DISPLAY_SKILL_ANIMAL_HANDLING_ID] = {
             skillId = SKILL_ANIMAL_HANDLING_ID,
             pos     = {-0.973,0.1,0.345},
             size    = 250,
@@ -1096,8 +1118,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 22 display Insight
-        {
-            id      = "display_"..SKILL_INSIGHT_ID,
+        [DISPLAY_SKILL_INSIGHT_ID] = {
             skillId = SKILL_INSIGHT_ID,
             pos     = {-0.973,0.1,0.395},
             size    = 250,
@@ -1105,8 +1126,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 23 display Medicine
-        {
-            id      = "display_"..SKILL_MEDICINE_ID,
+        [DISPLAY_SKILL_MEDICINE_ID] = {
             skillId = SKILL_MEDICINE_ID,
             pos     = {-0.973,0.1,0.445},
             size    = 250,
@@ -1114,8 +1134,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 24 display Perception
-        {
-            id      = "display_"..SKILL_PERCEPTION_ID,
+        [DISPLAY_SKILL_PERCEPTION_ID] = {
             skillId = SKILL_PERCEPTION_ID,
             pos     = {-0.973,0.1,0.495},
             size    = 250,
@@ -1123,8 +1142,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 25 display Survival
-        {
-            id      = "display_"..SKILL_SURVIVAL_ID,
+        [DISPLAY_SKILL_SURVIVAL_ID] = {
             skillId = SKILL_SURVIVAL_ID,
             pos     = {-0.973,0.1,0.55},
             size    = 250,
@@ -1132,8 +1150,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 26 display CHA savethrow
-        {
-            id      = "display_"..SKILL_CHA_SAVETHROW_ID,
+        [DISPLAY_SKILL_CHA_SAVETHROW_ID] = {
             skillId = SKILL_CHA_SAVETHROW_ID,
             pos     = {-0.973,0.1,0.66},
             size    = 250,
@@ -1141,8 +1158,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 27 display Performance
-        {
-            id      = "display_"..SKILL_PERFORMANCE_ID,
+        [DISPLAY_SKILL_PERFORMANCE_ID] = {
             skillId = SKILL_PERFORMANCE_ID,
             pos     = {-0.973,0.1,0.708},
             size    = 250,
@@ -1150,8 +1166,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 28 display Deception
-        {
-            id      = "display_"..SKILL_DECEPTION_ID,
+        [DISPLAY_SKILL_DECEPTION_ID] = {
             skillId = SKILL_DECEPTION_ID,
             pos     = {-0.973,0.1,0.76},
             size    = 250,
@@ -1159,8 +1174,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 29 display Intimidation
-        {
-            id      = "display_"..SKILL_INTIMIDATION_ID,
+        [DISPLAY_SKILL_INTIMIDATION_ID] = {
             skillId = SKILL_INTIMIDATION_ID,
             pos     = {-0.973,0.1,0.813},
             size    = 250,
@@ -1168,8 +1182,7 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 30 display Persuasion
-        {
-            id      = "display_"..SKILL_PERSUASION_ID,
+        [DISPLAY_SKILL_PERSUASION_ID] = {
             skillId = SKILL_PERSUASION_ID,
             pos     = {-0.973,0.1,0.863},
             size    = 250,
@@ -1177,104 +1190,104 @@ defaultButtonData = {
             hideBG  = true
         },
         -- 31 display Passive Perception ButtonIndex 84
-        {
-            id     = "display_Passive_Perception",
+        [DISPLAY_PASSIVE_PERCEPTION_ID] = {
+            id     = DISPLAY_PASSIVE_PERCEPTION_ID,
             pos    = {-1.35,0.1,1.03},
             size   = 450,
             value  = 10,
             hideBG = true,
         },
         -- 32 display Weight Capacity
-        {
-            id     = "display_Weight_Capacity",
+        [DISPLAY_WEIGHT_CAPACITY_ID] = {
+            id     = DISPLAY_WEIGHT_CAPACITY_ID,
             pos    = {-0.225,0.1,2.085},
             size   = 450,
             value  = 150,
             hideBG = true,
         },
         -- 33 display Raise, Lift and Pull
-        {
-            id     = "display_Raise_Lift_and_Pull",
+        [DISPLAY_RAISE_LIFT_AND_PULL_ID] = {
+            id     = DISPLAY_RAISE_LIFT_AND_PULL_ID,
             pos    = {0.225,0.1,2.085},
             size   = 450,
             value  = 300,
             hideBG = true,
         },
         -- 34 display Jump Height
-        {
-            id     = "display_Jump_Height",
+        [DISPLAY_JUMP_HEIGHT_ID] = {
+            id     = DISPLAY_JUMP_HEIGHT_ID,
             pos    = {0.05,0.1,1.76},
             size   = 350,
             value  = 3,
             hideBG = true,
         },
         -- 35 display Jump Distance
-        {
-            id     = "display_Jump_Distance",
+        [DISPLAY_JUMP_DISTANCE_ID] = {
+            id     = DISPLAY_JUMP_DISTANCE_ID,
             pos    = {0.05,0.1,1.695},
             size   = 350,
             value  = 10,
             hideBG = true,
         },
         -- 36 display Jump Height with Hands
-        {
-            id     = "display_Jump_Height_with_Hands",
+        [DISPLAY_JUMP_HEIGHT_WITH_HANDS_ID] = {
+            id     = DISPLAY_JUMP_HEIGHT_WITH_HANDS_ID,
             pos    = {0.05,0.1,1.825},
             size   = 350,
             value  = 3,
             hideBG = true,
         },
         -- 37 display Jump Height — no running
-        {
-            id     = "display_Jump_Height_no_running",
+        [DISPLAY_JUMP_HEIGHT_NO_RUNNING_ID] = {
+            id     = DISPLAY_JUMP_HEIGHT_NO_RUNNING_ID,
             pos    = {0.34,0.1,1.76},
             size   = 350,
             value  = 1,
             hideBG = true,
         },
         -- 38 display Jump Distance — no running
-        {
-            id     = "display_Jump_Distance_no_running",
+        [DISPLAY_JUMP_DISTANCE_NO_RUNNING_ID] = {
+            id     = DISPLAY_JUMP_DISTANCE_NO_RUNNING_ID,
             pos    = {0.34,0.1,1.695},
             size   = 350,
             value  = 5,
             hideBG = true,
         },
         -- 39 display Jump Height with Hands — no running
-        {
-            id     = "display_Jump_Height_with_Hands_no_running",
+        [DISPLAY_JUMP_HEIGHT_WITH_HANDS_NO_RUNNING_ID] = {
+            id     = DISPLAY_JUMP_HEIGHT_WITH_HANDS_NO_RUNNING_ID,
             pos     = {0.34,0.1,1.825},
             size   = 350,
             value  = 1,
             hideBG = true,
         },
         -- 40 Level
-        {
-            id     = "display_Level",
+        [DISPLAY_LEVEL_ID] = {
+            id     = DISPLAY_LEVEL_ID,
             pos    = {-1.35,0.1,-1.285},
             size   = 600,
             value  = 1,
             hideBG = true,
         },
         -- 41 Exp for next LVL
-        {
-            id     = "display_next_LVL",
+        [DISPLAY_NEXT_LVL_ID] = {
+            id     = DISPLAY_NEXT_LVL_ID,
             pos    = {1.27,0.1,-1.835},
             size   = 300,
             value  = '/ 300',
             hideBG = true,
         },
         -- 42 Proficiency
-        {
-            id     = "display_Proficiency",
+        [DISPLAY_PROFICIENCY_ID] = {
+            id     = DISPLAY_PROFICIENCY_ID,
             pos    = {-1.35,0.1,-1.45},
             size   = 650,
             value  = '+2',
             hideBG = true,
         },
         -- 43 Hit Dices Left
-        {
-            id     = "display_Hit_Dices_Left",
+        [DISPLAY_HIT_DICES_LEFT_ID] = {
+            id     = DISPLAY_HIT_DICES_LEFT_ID,
             pos    = {0.75,0.1,-1.38},
             size   = 450,
             value  = ' 1/ 1к',
@@ -1297,8 +1310,7 @@ defaultButtonData = {
         -- Index (i) Card  {1 to 67} // Proficiency = 8 // Expertise {68 to 91}
 
         -- 1 textbox Name
-        {
-            id        = TEXTBOX_NAME_ID,
+        [TEXTBOX_NAME_ID] = {
             pos       = {-0.825,0.1,-1.900},
             rows      = 1,
             width     = 5000,
@@ -1307,8 +1319,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 2 textbox Class & Level
-        {
-            id        = TEXTBOX_CLASS_LEVEL_ID,
+        [TEXTBOX_CLASS_LEVEL_ID] = {
             pos       = {0.075,0.1,-1.975},
             rows      = 1,
             width     = 2500,
@@ -1317,8 +1328,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 3 textbox Background
-        {
-            id        = TEXTBOX_BACKGROUND_ID,
+        [TEXTBOX_BACKGROUND_ID] = {
             pos       = {0.612,0.1,-1.975},
             rows      = 1,
             width     = 2600,
@@ -1327,8 +1337,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 4 textbox Player’s name
-        {
-            id        = TEXTBOX_PLAYERS_NAME_ID,
+        [TEXTBOX_PLAYERS_NAME_ID] = {
             pos       = {1.14,0.1,-1.975},
             rows      = 1,
             width     = 2400,
@@ -1337,8 +1346,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 5 textbox Race
-        {
-            id        = TEXTBOX_RACE_ID,
+        [TEXTBOX_RACE_ID] = {
             pos       = {0.075,0.1,-1.835},
             rows      = 1,
             width     = 2500,
@@ -1347,8 +1355,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 6 textbox Aligment
-        {
-            id        = TEXTBOX_ALIGMENT_ID,
+        [TEXTBOX_ALIGMENT_ID] = {
             pos       = {0.612,0.1,-1.835},
             rows      = 1,
             width     = 2600,
@@ -1357,8 +1364,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 7 textbox XP
-        {
-            id        = TEXTBOX_XP_ID,
+        [TEXTBOX_XP_ID] = {
             pos       = {1.015,0.1,-1.835},
             rows      = 1,
             width     = 1200,
@@ -1367,8 +1373,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 8 textbox DELETED — Proficiency
-        {
-            id        = TEXTBOX_DELETED_PROFICIENCY_ID,
+        [TEXTBOX_DELETED_PROFICIENCY_ID] = {
             pos       = {0,0,0},
             rows      = 0,
             width     = 0,
@@ -1377,8 +1382,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 9 textbox Age
-        {
-            id        = TEXTBOX_AGE_ID,
+        [TEXTBOX_AGE_ID] = {
             pos       = {-0.671,0.1,1.24},
             rows      = 1,
             width     = 1200,
@@ -1387,8 +1391,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 10 textbox AC
-        {
-            id        = TEXTBOX_AC_ID,
+        [TEXTBOX_AC_ID] = {
             pos       = {-0.265,0.1,-1.425},
             rows      = 1,
             width     = 750,
@@ -1397,8 +1400,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 11 textbox HP max
-        {
-            id        = TEXTBOX_HP_MAX_ID,
+        [TEXTBOX_HP_MAX_ID] = {
             pos       = {0.045,0.1,-1.425},
             rows      = 1,
             width     = 750,
@@ -1407,8 +1409,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 12 textbox HP temporary
-        {
-            id        = TEXTBOX_HP_TEMPORARY_ID,
+        [TEXTBOX_HP_TEMPORARY_ID] = {
             pos       = {0.355,0.1,-1.425},
             rows      = 1,
             width     = 750,
@@ -1417,8 +1418,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 13 textbox Hit Dices
-        {
-            id        = TEXTBOX_HIT_DICES_ID,
+        [TEXTBOX_HIT_DICES_ID] = {
             pos       = {0.93,0.1,-1.38},
             rows      = 1,
             width     = 500,
@@ -1427,8 +1427,7 @@ defaultButtonData = {
             alignment = 1
         },
         -- 14 textbox Initiative
-        {
-            id        = TEXTBOX_INITIATIVE_ID,
+        [TEXTBOX_INITIATIVE_ID] = {
             pos       = {1.25,0.1,-1.45},
             rows      = 1,
             width     = 750,
@@ -1437,8 +1436,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 15 textbox Speed
-        {
-            id        = TEXTBOX_SPEED_ID,
+        [TEXTBOX_SPEED_ID] = {
             pos       = {1.25,0.1,-1.225},
             rows      = 1,
             width     = 1000,
@@ -1447,8 +1445,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 16 textbox Vision
-        {
-            id        = TEXTBOX_VISION_ID,
+        [TEXTBOX_VISION_ID] = {
             pos       = {1.25,0.1,-1.0},
             rows      = 1,
             width     = 1500,
@@ -1457,8 +1454,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 17 textbox Current Hit Points
-        {
-            id        = TEXTBOX_CURRENT_HIT_POINTS_ID,
+        [TEXTBOX_CURRENT_HIT_POINTS_ID] = {
             pos       = {0.035,0.1,-1.09},
             rows      = 1,
             width     = 3800,
@@ -1467,8 +1463,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 18 textbox Weapon Name1
-        {
-            id        = TEXTBOX_WEAPON_NAME_1_ID,
+        [TEXTBOX_WEAPON_NAME_1_ID] = {
             pos       = {-0.08,0.1,-0.71 },
             rows      = 1,
             width     = 3350,
@@ -1477,8 +1472,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 19 textbox Weapon Name2
-        {
-            id        = TEXTBOX_WEAPON_NAME_2_ID,
+        [TEXTBOX_WEAPON_NAME_2_ID] = {
             pos       = {-0.08,0.1,-0.632},
             rows      = 1,
             width     = 3350,
@@ -1487,8 +1481,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 20 textbox Weapon Name3
-        {
-            id        = TEXTBOX_WEAPON_NAME_3_ID,
+        [TEXTBOX_WEAPON_NAME_3_ID] = {
             pos       = {-0.08,0.1,-0.554},
             rows      = 1,
             width     = 3350,
@@ -1497,8 +1490,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 21 textbox Weapon Name4
-        {
-            id        = TEXTBOX_WEAPON_NAME_4_ID,
+        [TEXTBOX_WEAPON_NAME_4_ID] = {
             pos       = {-0.08,0.1,-0.476},
             rows      = 1,
             width     = 3350,
@@ -1507,8 +1499,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 22 textbox Weapon Name5
-        {
-            id        = TEXTBOX_WEAPON_NAME_5_ID,
+        [TEXTBOX_WEAPON_NAME_5_ID] = {
             pos       = {-0.08,0.1,-0.398},
             rows      = 1,
             width     = 3350,
@@ -1517,8 +1508,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 23 textbox Weapon Name6
-        {
-            id        = TEXTBOX_WEAPON_NAME_6_ID,
+        [TEXTBOX_WEAPON_NAME_6_ID] = {
             pos       = {-0.08,0.1,-0.320},
             rows      = 1,
             width     = 3350,
@@ -1527,8 +1517,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 24 textbox Weapon Name7
-        {
-            id        = TEXTBOX_WEAPON_NAME_7_ID,
+        [TEXTBOX_WEAPON_NAME_7_ID] = {
             pos       = {-0.08,0.1,-0.242},
             rows      = 1,
             width     = 3350,
@@ -1537,8 +1526,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 25 textbox Damage 1
-        {
-            id        = TEXTBOX_DAMAGE_1_ID,
+        [TEXTBOX_DAMAGE_1_ID] = {
             pos       = {0.38,0.1,-0.71},
             rows      = 1,
             width     = 800,
@@ -1547,8 +1535,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 26 textbox Damage 2
-        {
-            id        = TEXTBOX_DAMAGE_2_ID,
+        [TEXTBOX_DAMAGE_2_ID] = {
             pos       = {0.38,0.1,-0.632},
             rows      = 1,
             width     = 800,
@@ -1557,8 +1544,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 27 textbox Damage3
-        {
-            id        = TEXTBOX_DAMAGE_3_ID,
+        [TEXTBOX_DAMAGE_3_ID] = {
             pos       = {0.38,0.1,-0.554},
             rows      = 1,
             width     = 800,
@@ -1567,8 +1553,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 28 textbox Damage4
-        {
-            id        = TEXTBOX_DAMAGE_4_ID,
+        [TEXTBOX_DAMAGE_4_ID] = {
             pos       = {0.38,0.1,-0.476},
             rows      = 1,
             width     = 800,
@@ -1577,8 +1562,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 29 textbox Damage5
-        {
-            id        = TEXTBOX_DAMAGE_5_ID,
+        [TEXTBOX_DAMAGE_5_ID] = {
             pos       = {0.38,0.1,-0.398},
             rows      = 1,
             width     = 800,
@@ -1587,8 +1571,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 30 textbox Damage6
-        {
-            id        = TEXTBOX_DAMAGE_6_ID,
+        [TEXTBOX_DAMAGE_6_ID] = {
             pos       = {0.38,0.1,-0.320},
             rows      = 1,
             width     = 800,
@@ -1597,8 +1580,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 31 textbox Damage7
-        {
-            id        = TEXTBOX_DAMAGE_7_ID,
+        [TEXTBOX_DAMAGE_7_ID] = {
             pos       = {0.38,0.1,-0.242},
             rows      = 1,
             width     = 800,
@@ -1607,8 +1589,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 32textbox Damage Type1
-        {
-            id        = TEXTBOX_DAMAGE_TYPE_1_ID,
+        [TEXTBOX_DAMAGE_TYPE_1_ID] = {
             pos       = {0.6375,0.1,-0.71},
             rows      = 1,
             width     = 1350,
@@ -1617,8 +1598,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 33textbox Damage Type2
-        {
-            id        = TEXTBOX_DAMAGE_TYPE_2_ID,
+        [TEXTBOX_DAMAGE_TYPE_2_ID] = {
             pos       = {0.6375,0.1,-0.632},
             rows      = 1,
             width     = 1350,
@@ -1627,8 +1607,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 34textbox Damage Type3
-        {
-            id        = TEXTBOX_DAMAGE_TYPE_3_ID,
+        [TEXTBOX_DAMAGE_TYPE_3_ID] = {
             pos       = {0.6375,0.1,-0.554},
             rows      = 1,
             width     = 1350,
@@ -1637,8 +1616,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 35textbox Damage Type4
-        {
-            id        = TEXTBOX_DAMAGE_TYPE_4_ID,
+        [TEXTBOX_DAMAGE_TYPE_4_ID] = {
             pos       = {0.6375,0.1,-0.476},
             rows      = 1,
             width     = 1350,
@@ -1647,8 +1625,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 36textbox Damage Type5
-        {
-            id        = TEXTBOX_DAMAGE_TYPE_5_ID,
+        [TEXTBOX_DAMAGE_TYPE_5_ID] = {
             pos       = {0.6375,0.1,-0.398},
             rows      = 1,
             width     = 1350,
@@ -1657,8 +1634,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 37textbox Damage Type6
-        {
-            id        = TEXTBOX_DAMAGE_TYPE_6_ID,
+        [TEXTBOX_DAMAGE_TYPE_6_ID] = {
             pos       = {0.6375,0.1,-0.320},
             rows      = 1,
             width     = 1350,
@@ -1667,8 +1643,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 38textbox Damage Type7
-        {
-            id        = TEXTBOX_DAMAGE_TYPE_7_ID,
+        [TEXTBOX_DAMAGE_TYPE_7_ID] = {
             pos       = {0.6375,0.1,-0.242},
             rows      = 1,
             width     = 1350,
@@ -1677,8 +1652,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 39 textbox Range1
-        {
-            id        = TEXTBOX_RANGE_1_ID,
+        [TEXTBOX_RANGE_1_ID] = {
             pos       = {0.9475,0.1,-0.71},
             rows      = 1,
             width     = 1250,
@@ -1687,8 +1661,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 40 textbox Range2
-        {
-            id        = TEXTBOX_RANGE_2_ID,
+        [TEXTBOX_RANGE_2_ID] = {
             pos       = {0.9475,0.1,-0.632},
             rows      = 1,
             width     = 1250,
@@ -1697,8 +1670,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 41 textbox Range3
-        {
-            id        = TEXTBOX_RANGE_3_ID,
+        [TEXTBOX_RANGE_3_ID] = {
             pos       = {0.9475,0.1,-0.554},
             rows      = 1,
             width     = 1250,
@@ -1707,8 +1679,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 42 textbox Range4
-        {
-            id        = TEXTBOX_RANGE_4_ID,
+        [TEXTBOX_RANGE_4_ID] = {
             pos       = {0.9475,0.1,-0.476},
             rows      = 1,
             width     = 1250,
@@ -1717,8 +1688,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 43 textbox Range5
-        {
-            id        = TEXTBOX_RANGE_5_ID,
+        [TEXTBOX_RANGE_5_ID] = {
             pos       = {0.9475,0.1,-0.398},
             rows      = 1,
             width     = 1250,
@@ -1728,8 +1698,7 @@ defaultButtonData = {
         },
 
         -- 44 textbox Range6
-        {
-            id        = TEXTBOX_RANGE_6_ID,
+        [TEXTBOX_RANGE_6_ID] = {
             pos       = {0.9475,0.1,-0.320},
             rows      = 1,
             width     = 1250,
@@ -1738,8 +1707,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 45 textbox Range7
-        {
-            id        = TEXTBOX_RANGE_7_ID,
+        [TEXTBOX_RANGE_7_ID] = {
             pos       = {0.9475,0.1,-0.242},
             rows      = 1,
             width     = 1250,
@@ -1748,8 +1716,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 46 textbox Notes1
-        {
-            id        = TEXTBOX_NOTES_1_ID,
+        [TEXTBOX_NOTES_1_ID] = {
             pos       = {1.29,0.1,-0.71},
             rows      = 1,
             width     = 1700,
@@ -1759,8 +1726,7 @@ defaultButtonData = {
         },
 
         -- 47 textbox Notes2
-        {
-            id        = TEXTBOX_NOTES_2_ID,
+        [TEXTBOX_NOTES_2_ID] = {
             pos       = {1.29,0.1,-0.632},
             rows      = 1,
             width     = 1700,
@@ -1769,8 +1735,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 48 textbox Notes3
-        {
-            id        = TEXTBOX_NOTES_3_ID,
+        [TEXTBOX_NOTES_3_ID] = {
             pos       = {1.29,0.1,-0.554},
             rows      = 1,
             width     = 1700,
@@ -1779,8 +1744,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 49 textbox Notes4
-        {
-            id        = TEXTBOX_NOTES_4_ID,
+        [TEXTBOX_NOTES_4_ID] = {
             pos       = {1.29,0.1,-0.476},
             rows      = 1,
             width     = 1700,
@@ -1789,8 +1753,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 50 textbox Notes5
-        {
-            id        = TEXTBOX_NOTES_5_ID,
+        [TEXTBOX_NOTES_5_ID] = {
             pos       = {1.29,0.1,-0.398},
             rows      = 1,
             width     = 1700,
@@ -1799,8 +1762,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 51 textbox Notes6
-        {
-            id        = TEXTBOX_NOTES_6_ID,
+        [TEXTBOX_NOTES_6_ID] = {
             pos       = {1.29,0.1,-0.320},
             rows      = 1,
             width     = 1700,
@@ -1809,8 +1771,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 52 textbox Notes7
-        {
-            id        = TEXTBOX_NOTES_7_ID,
+        [TEXTBOX_NOTES_7_ID] = {
             pos       = {1.29,0.1,-0.242},
             rows      = 1,
             width     = 1700,
@@ -1819,8 +1780,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 53 textbox Copper coins
-        {
-            id        = TEXTBOX_COPPER_COINS_ID,
+        [TEXTBOX_COPPER_COINS_ID] = {
             pos       = {-0.35,0.1,0.04},
             rows      = 1,
             width     = 850,
@@ -1829,8 +1789,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 54 textbox Silver coins
-        {
-            id        = TEXTBOX_SILVER_COINS_ID,
+        [TEXTBOX_SILVER_COINS_ID] = {
             pos       = {-0.35,0.1,0.18},
             rows      = 1,
             width     = 850,
@@ -1839,8 +1798,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 55 textbox Electrum coins
-        {
-            id        = TEXTBOX_ELECTRUM_COINS_ID,
+        [TEXTBOX_ELECTRUM_COINS_ID] = {
             pos       = {-0.35,0.1,0.315},
             rows      = 1,
             width     = 850,
@@ -1849,8 +1807,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 56 textbox Gold coins
-        {
-            id        = TEXTBOX_GOLD_COINS_ID,
+        [TEXTBOX_GOLD_COINS_ID] = {
             pos       = {-0.35,0.1,0.455},
             rows      = 1,
             width     = 850,
@@ -1859,8 +1816,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 57 textbox Platinum coins
-        {
-            id        = TEXTBOX_PLATINUM_COINS_ID,
+        [TEXTBOX_PLATINUM_COINS_ID] = {
             pos       = {-0.35,0.1,0.6},
             rows      = 1,
             width     = 850,
@@ -1869,8 +1825,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 58 textbox Equipment
-        {
-            id        = TEXTBOX_EQUIPMENT_1_ID,
+        [TEXTBOX_EQUIPMENT_1_ID] = {
             pos       = {0.1335,0.1,0.31},
             rows      = 11,
             width     = 3300,
@@ -1879,8 +1834,7 @@ defaultButtonData = {
             alignment = 2
         },
         -- 59 textbox Equipment2
-        {
-            id        = TEXTBOX_EQUIPMENT_2_ID,
+        [TEXTBOX_EQUIPMENT_2_ID] = {
             pos       = {0.015,0.1,1.1},
             rows      = 13,
             width     = 4425,
@@ -1889,8 +1843,7 @@ defaultButtonData = {
             alignment = 2
         },
         -- 60 textbox Class and Race Characteristics
-        {
-            id        = TEXTBOX_CLASS_RACE_CHARACTERISTICS_ID,
+        [TEXTBOX_CLASS_RACE_CHARACTERISTICS_ID] = {
             pos       = {1.01,0.1,1.02},
             rows      = 41,
             width     = 4550,
@@ -1899,8 +1852,7 @@ defaultButtonData = {
             alignment = 2
         },
         -- 61 textbox Height
-        {
-            id        = TEXTBOX_HEIGHT_ID,
+        [TEXTBOX_HEIGHT_ID] = {
             pos       = {-0.671,0.1,1.315},
             rows      = 1,
             width     = 1200,
@@ -1909,8 +1861,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 62 textbox Weight
-        {
-            id        = TEXTBOX_WEIGHT_ID,
+        [TEXTBOX_WEIGHT_ID] = {
             pos       = {-0.671,0.1,1.39},
             rows      = 1,
             width     = 1200,
@@ -1920,8 +1871,7 @@ defaultButtonData = {
         },
 
         -- 63 textbox Proficiency3
-        {
-            id        = TEXTBOX_PROFICIENCY_3_ID,
+        [TEXTBOX_PROFICIENCY_3_ID] = {
             pos       = {-1,0.1,1.78},
             rows      = 10,
             width     = 4350,
@@ -1930,8 +1880,7 @@ defaultButtonData = {
             alignment = 2
         },
         -- 64 textbox -- REMOVED -- Jump Distance
-        {
-            id        = TEXTBOX_REMOVED_JUMP_DISTANCE_ID,
+        [TEXTBOX_REMOVED_JUMP_DISTANCE_ID] = {
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
@@ -1940,8 +1889,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 65 textbox -- REMOVED -- Jump Height
-        {
-            id        = TEXTBOX_REMOVED_JUMP_HEIGHT_ID,
+        [TEXTBOX_REMOVED_JUMP_HEIGHT_ID] = {
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
@@ -1950,8 +1898,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 66 textbox -- REMOVED -- Weight
-        {
-            id        = TEXTBOX_REMOVED_WEIGHT_ID,
+        [TEXTBOX_REMOVED_WEIGHT_ID] = {
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
@@ -1960,8 +1907,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 67 textbox -- REMOVED -- Raise, Lift and Pull
-        {
-            id        = TEXTBOX_REMOVED_RAISE_LIFT_PULL_ID,
+        [TEXTBOX_REMOVED_RAISE_LIFT_PULL_ID] = {
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
@@ -1970,8 +1916,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 68 textbox STR savethrow
-        {
-            id        = TEXTBOX_SKILL_STR_SAVETHROW_ID,
+        [TEXTBOX_SKILL_STR_SAVETHROW_ID] = {
             skillId   = SKILL_STR_SAVETHROW_ID,
             pos       = {-1.055,0.1,-1.165},
             rows      = 1,
@@ -1981,8 +1926,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 69 textbox Atletics
-        {
-            id        = TEXTBOX_SKILL_ATHLETICS_ID,
+        [TEXTBOX_SKILL_ATHLETICS_ID] = {
             skillId   = SKILL_ATHLETICS_ID,
             pos       = {-1.055,0.1,-1.1105},
             rows      = 1,
@@ -1992,8 +1936,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 70 textbox DEX savethrow
-        {
-            id        = TEXTBOX_SKILL_DEX_SAVETHROW_ID,
+        [TEXTBOX_SKILL_DEX_SAVETHROW_ID] = {
             skillId   = SKILL_DEX_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.8},
             rows      = 1,
@@ -2003,8 +1946,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 71 textbox Acrobatics
-        {
-            id        = TEXTBOX_SKILL_ACROBATICS_ID,
+        [TEXTBOX_SKILL_ACROBATICS_ID] = {
             skillId   = SKILL_ACROBATICS_ID,
             pos       = {-1.055,0.1,-0.745},
             rows      = 1,
@@ -2014,8 +1956,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 72 textbox Stealth
-        {
-            id        = TEXTBOX_SKILL_STEALTH_ID,
+        [TEXTBOX_SKILL_STEALTH_ID] = {
             skillId   = SKILL_STEALTH_ID,
             pos       = {-1.055,0.1,-0.695},
             rows      = 1,
@@ -2025,8 +1966,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 73 textbox Sleight of Hand
-        {
-            id        = TEXTBOX_SKILL_SLEIGHT_OF_HAND_ID,
+        [TEXTBOX_SKILL_SLEIGHT_OF_HAND_ID] = {
             skillId   = SKILL_SLEIGHT_OF_HAND_ID,
             pos       = {-1.055,0.1,-0.645},
             rows      = 1,
@@ -2036,8 +1976,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 74 textbox CON savethrow
-        {
-            id        = TEXTBOX_SKILL_CON_SAVETHROW_ID,
+        [TEXTBOX_SKILL_CON_SAVETHROW_ID] = {
             skillId   = SKILL_CON_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.435},
             rows      = 1,
@@ -2047,8 +1986,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 75 textbox INT savethrow
-        {
-            id        = TEXTBOX_SKILL_INT_SAVETHROW_ID,
+        [TEXTBOX_SKILL_INT_SAVETHROW_ID] = {
             skillId   = SKILL_INT_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.075},
             rows      = 1,
@@ -2058,8 +1996,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 76 textbox Arcana
-        {
-            id        = TEXTBOX_SKILL_ARCANA_ID,
+        [TEXTBOX_SKILL_ARCANA_ID] = {
             skillId   = SKILL_ARCANA_ID,
             pos       = {-1.055,0.1,-0.0215},
             rows      = 1,
@@ -2069,8 +2006,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 77 textbox History
-        {
-            id        = TEXTBOX_SKILL_HISTORY_ID,
+        [TEXTBOX_SKILL_HISTORY_ID] = {
             skillId   = SKILL_HISTORY_ID,
             pos       = {-1.055,0.1,0.031},
             rows      = 1,
@@ -2080,8 +2016,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 78 textbox Investigation
-        {
-            id        = TEXTBOX_SKILL_INVESTIGATION_ID,
+        [TEXTBOX_SKILL_INVESTIGATION_ID] = {
             skillId   = SKILL_INVESTIGATION_ID,
             pos       = {-1.055,0.1,0.0825},
             rows      = 1,
@@ -2091,8 +2026,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 97 textbox Nature
-        {
-            id        = TEXTBOX_SKILL_NATURE_ID,
+        [TEXTBOX_SKILL_NATURE_ID] = {
             skillId   = SKILL_NATURE_ID,
             pos       = {-1.055,0.1,0.135},
             rows      = 1,
@@ -2102,8 +2036,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 80 textbox Religion
-        {
-            id        = TEXTBOX_SKILL_RELIGION_ID,
+        [TEXTBOX_SKILL_RELIGION_ID] = {
             skillId   = SKILL_RELIGION_ID,
             pos       = {-1.055,0.1,0.185},
             rows      = 1,
@@ -2113,8 +2046,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 81 textbox WIT savethrow
-        {
-            id        = TEXTBOX_SKILL_WIT_SAVETHROW_ID,
+        [TEXTBOX_SKILL_WIT_SAVETHROW_ID] = {
             skillId   = SKILL_WIT_SAVETHROW_ID,
             pos       = {-1.055,0.1,0.29},
             rows      = 1,
@@ -2124,8 +2056,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 82 textbox Animal Handling
-        {
-            id        = TEXTBOX_SKILL_ANIMAL_HANDLING_ID,
+        [TEXTBOX_SKILL_ANIMAL_HANDLING_ID] = {
             skillId   = SKILL_ANIMAL_HANDLING_ID,
             pos       = {-1.055,0.1,0.345},
             rows      = 1,
@@ -2135,8 +2066,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 83 textbox Insight
-        {
-            id        = TEXTBOX_SKILL_INSIGHT_ID,
+        [TEXTBOX_SKILL_INSIGHT_ID] = {
             skillId   = SKILL_INSIGHT_ID,
             pos       = {-1.055,0.1,0.395},
             rows      = 1,
@@ -2146,8 +2076,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 84 textbox Medicine
-        {
-            id        = TEXTBOX_SKILL_MEDICINE_ID,
+        [TEXTBOX_SKILL_MEDICINE_ID] = {
             skillId   = SKILL_MEDICINE_ID,
             pos       = {-1.055,0.1,0.445},
             rows      = 1,
@@ -2157,8 +2086,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 85 textbox Perception -- variable ind = 85
-        {
-            id        = TEXTBOX_SKILL_PERCEPTION_ID,
+        [TEXTBOX_SKILL_PERCEPTION_ID] = {
             skillId   = SKILL_PERCEPTION_ID,
             pos       = {-1.055,0.1,0.495},
             rows      = 1,
@@ -2168,8 +2096,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 86 textbox Survival
-        {
-            id        = TEXTBOX_SKILL_SURVIVAL_ID,
+        [TEXTBOX_SKILL_SURVIVAL_ID] = {
             skillId   = SKILL_SURVIVAL_ID,
             pos       = {-1.055,0.1,0.55},
             rows      = 1,
@@ -2179,8 +2106,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 87 textbox CHA savethrow
-        {
-            id        = TEXTBOX_SKILL_CHA_SAVETHROW_ID,
+        [TEXTBOX_SKILL_CHA_SAVETHROW_ID] = {
             skillId   = SKILL_CHA_SAVETHROW_ID,
             pos       = {-1.055,0.1,0.655},
             rows      = 1,
@@ -2190,8 +2116,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 88 textbox Performance
-        {
-            id        = TEXTBOX_SKILL_PERFORMANCE_ID,
+        [TEXTBOX_SKILL_PERFORMANCE_ID] = {
             skillId   = SKILL_PERFORMANCE_ID,
             pos       = {-1.055,0.1,0.708},
             rows      = 1,
@@ -2201,8 +2126,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 89 textbox Deception
-        {
-            id        = TEXTBOX_SKILL_DECEPTION_ID,
+        [TEXTBOX_SKILL_DECEPTION_ID] = {
             skillId   = SKILL_DECEPTION_ID,
             pos       = {-1.055,0.1,0.76},
             rows      = 1,
@@ -2212,8 +2136,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 90 textbox Intimidation
-        {
-            id        = TEXTBOX_SKILL_INTIMIDATION_ID,
+        [TEXTBOX_SKILL_INTIMIDATION_ID] = {
             skillId   = SKILL_INTIMIDATION_ID,
             pos       = {-1.055,0.1,0.813},
             rows      = 1,
@@ -2223,8 +2146,7 @@ defaultButtonData = {
             alignment = 3
         },
         -- 91 textbox Persuasion
-        {
-            id        = TEXTBOX_SKILL_PERSUASION_ID,
+        [TEXTBOX_SKILL_PERSUASION_ID] = {
             skillId   = SKILL_PERSUASION_ID,
             pos       = {-1.055,0.1,0.863},
             rows      = 1,
@@ -2281,28 +2203,28 @@ end
 
 --Startup procedure
 function onload(saved_data)
-    if disableSave==true then
+    if disableSave == true then
         saved_data = ""
     end
 
     if saved_data ~= "" then
-        local loaded_data = JSON.decode(saved_data)
-        ref_buttonData = loaded_data
-        -- ref_buttonData = defaultButtonData
+        --local loaded_data = JSON.decode(saved_data)
+        --ref_buttonData = loaded_data
+         ref_buttonData = defaultButtonData
     else
         ref_buttonData = defaultButtonData
     end
 
     spawnedButtonCount = 0
 
-    createCheckbox() -- 0 + 36 = 36 buttons
-    createCounter() -- 36 + 18 = 54 buttons
+    createCheckbox()
+    createCounter()
     createTextbox()
-    createDisplay() -- 54 + 43 = 97 buttons
+    createDisplay()
 
     updateJumpAndWeight()
-    createLvlUpdateBtn() -- 97 + 1 = 98 buttons
-    createHitDiceCounters() -- 98 + 2 = 100 buttons
+    createLvlUpdateBtn()
+    createHitDiceCounters()
 
     lvlRefresh()
 end
@@ -2310,57 +2232,28 @@ end
 --Click functions for buttons
 
 --Checks or unchecks the given box
-function click_checkbox(tableIndex, checkboxId) --
+function click_checkbox(checkboxId) --
     -- tableIndex 1 to 24 // 18 Perception
     -- buttonIndex 0 to 23
 
-    local checkbox = ref_buttonData.checkbox[tableIndex]
-    -- TODO: local checkbox = ref_buttonData.checkbox[checkboxId]
+    local checkbox = ref_buttonData.checkbox[checkboxId]
     local skillId = checkbox.skillId
 
     if not (skillId == nil) then
         local paramId = paramIdBySkillId[skillId]
 
-        -- TODO: Вместо всех этих строк
-        -- TODO: atributo = ref_buttonData.display["display_"..paramId].value
-        -- Saving the value of the Attribute Modifier Corresponding to the Checked Expertise
-        if paramId == PARAM_STR_ID then
-            atributo = ref_buttonData.display[1].value
-        end
-
-        if paramId == PARAM_DEX_ID then
-            atributo = ref_buttonData.display[2].value
-        end
-
-        if paramId == PARAM_CON_ID  then
-            atributo = ref_buttonData.display[3].value
-        end
-
-        if paramId == PARAM_INT_ID then
-            atributo = ref_buttonData.display[4].value
-        end
-
-        if paramId == PARAM_WIT_ID then
-            atributo = ref_buttonData.display[5].value
-        end
-
-        if paramId == PARAM_CHA_ID then
-            atributo = ref_buttonData.display[6].value
-        end
+        atributo = ref_buttonData.display["display_"..paramId].value
     end
 
     -- Skill Point Total Value Calculation and Update - Proficiently Marked
     if checkbox.state == false then
         if not (skillId == nil) then
-            local proficiency = ref_buttonData.display[42].value
-            --TODO: local proficiency = ref_buttonData.display["display_Proficiency"].value
-            local bonus = ref_buttonData.textbox[tableIndex + 67].value
-            --TODO: local bonus = ref_buttonData.textbox["textbox_"..skillId].value
+            local proficiency = ref_buttonData.display[DISPLAY_PROFICIENCY_ID].value
+            local bonus = ref_buttonData.textbox["textbox_"..skillId].value
             tonumber(proficiency)
             tonumber(bonus)
             local newValue = atributo + bonus + proficiency
-            ref_buttonData.display[tableIndex + 6].value = newValue  -- Index Proficiency Display ranges from 7 to 31
-            --TODO: ref_buttonData.display["display_"..skillId].value = newValue to 31
+            ref_buttonData.display["display_"..skillId].value = newValue
             self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = newValue})
         end
 
@@ -2369,13 +2262,11 @@ function click_checkbox(tableIndex, checkboxId) --
         -- Total Skill Calculation - Uncheck
     else
         if not (skillId == nil) then
-            local bonus = ref_buttonData.textbox[tableIndex+67].value
-            --TODO: local bonus = ref_buttonData.textbox["textbox_"..skillId].value
+            local bonus = ref_buttonData.textbox["textbox_"..skillId].value
             tonumber(bonus)
             local newVal = atributo + bonus
 
-            ref_buttonData.display[tableIndex + 6].value = newVal
-            --TODO: ref_buttonData.display["display_"..skillId].value = newVal
+            ref_buttonData.display["display_"..skillId].value = newVal
             self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = newVal})
         end
 
@@ -2385,225 +2276,108 @@ function click_checkbox(tableIndex, checkboxId) --
 
     -- Passive Perception Update in CheckBox
     if checkboxId == "checkbox_"..SKILL_PERCEPTION_ID then
-        local proficiency = ref_buttonData.display[42].value
-        --TODO: local proficiency = ref_buttonData.display["display_Proficiency"].value
-        local bonus = ref_buttonData.textbox[tableIndex+67].value -- 18 + 67 = 85 TEXTBOX_SKILL_PERCEPTION_ID
-        --TODO: local bonus = ref_buttonData.textbox[TEXTBOX_SKILL_PERCEPTION_ID].value
+        local proficiency = ref_buttonData.display[DISPLAY_PROFICIENCY_ID].value
+        local bonus = ref_buttonData.textbox[TEXTBOX_SKILL_PERCEPTION_ID].value
         tonumber(proficiency)
         tonumber(bonus)
 
         if checkbox.state == true then
-            ref_buttonData.display[31].value = 10 + atributo + bonus + proficiency
-            -- TODO: ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus + proficiency
+            ref_buttonData.display[DISPLAY_PASSIVE_PERCEPTION_ID].value = 10 + atributo + bonus + proficiency
         else
-            ref_buttonData.display[31].value = 10 + atributo + bonus
-            --TODO: ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus
+            ref_buttonData.display[DISPLAY_PASSIVE_PERCEPTION_ID].value = 10 + atributo + bonus
         end
 
-        self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display[31].value})
-        --TODO: self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value})
+        self.editButton({
+            index = btnIndexByElementIdTable[DISPLAY_PASSIVE_PERCEPTION_ID],
+            label = ref_buttonData.display[DISPLAY_PASSIVE_PERCEPTION_ID].value,
+        })
     end
 
     updateSave()
 end
 
 --Applies value to given counter display
-function click_counter(tableIndex, buttonIndex, amount, counterId)
-    local paramId = ref_buttonData.counter[tableIndex].paramId
-    -- TODO: local paramId = ref_buttonData.counter[counterId].paramId
+function click_counter(amount, counterId)
+    local paramId = ref_buttonData.counter[counterId].paramId
 
-    ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
-    -- TODO: ref_buttonData.counter[counterId].value = ref_buttonData.counter[counterId].value + amount
-
-    ref_buttonData.display[tableIndex].value = math.floor((ref_buttonData.counter[tableIndex].value - 10) / 2)
-    -- TODO: ref_buttonData.display["display_"..paramId].value = math.floor((ref_buttonData.counter[counterId].value - 10) / 2)
+    ref_buttonData.counter[counterId].value = ref_buttonData.counter[counterId].value + amount
+    ref_buttonData.display["display_"..paramId].value = math.floor((ref_buttonData.counter[counterId].value - 10) / 2)
 
     -- Update Attribute
-    self.editButton({index = btnIndexByElementIdTable["counter_"..paramId], label = ref_buttonData.counter[tableIndex].value})
-    -- TODO: self.editButton({index = btnIndexByElementIdTable["counter_"..paramId], label = ref_buttonData.counter[counterId].value})
+    self.editButton({
+        index = btnIndexByElementIdTable["counter_"..paramId],
+        label = ref_buttonData.counter[counterId].value,
+    })
 
     -- Update Attribute Modifier
-    self.editButton({index = btnIndexByElementIdTable["display_"..paramId], label = ref_buttonData.display[tableIndex].value})
-    -- TODO: self.editButton({index = btnIndexByElementIdTable["display_"..paramId], label = ref_buttonData.display[counterId].value})
+    self.editButton({
+        index = btnIndexByElementIdTable["display_"..paramId],
+        label = ref_buttonData.display["display_"..paramId].value,
+    })
 
     -- Declaring the Variables attribute and proficiency
-    local atributo = ref_buttonData.display[tableIndex].value
-    -- TODO: local atributo = ref_buttonData.display["display_"..paramId].value
+    local atributo = ref_buttonData.display["display_"..paramId].value
 
-    local proficiency = ref_buttonData.display[42].value
-    -- TODO: local proficiency = ref_buttonData.display["display_Proficiency"].value
+    local proficiency = ref_buttonData.display[DISPLAY_PROFICIENCY_ID].value
 
     tonumber(proficiency)
 
     -- Calculation and Update of Attribute Matching Skills
-    -- ButtonIndex of Skill display from 60 to 84
-    -- Strength Skill Calculation
-    if paramId == PARAM_STR_ID then
-        for ind = 1, 2, 1 do
-            -- Declaring Bonus Variable for Skill
-            local bonus = ref_buttonData.textbox[ind + 67].value
-            local skillId = skillIdListByParamId[paramId][ind]
-            tonumber(bonus)
 
-            -- Skill Update With and Without Proficiency
-            if ref_buttonData.checkbox[ind].state == true then
-                ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
-            else
-                ref_buttonData.display[ind + 6].value = atributo + bonus
-                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
-            end
-        end
-
-        updateJumpAndWeight()
-    end
-
-    -- TODO: Use this instead all params
-    --for i, skillId in ipairs(skillIdListByParamId[paramId]) do
-    --    -- Declaring Bonus Variable for Skill
-    --    local bonus = ref_buttonData.textbox["textbox_"..skillId].value
-    --    tonumber(bonus)
-    --
-    --    -- Skill Update With and Without Proficiency
-    --    if ref_buttonData.checkbox["checkbox_"..skillId].state == true then
-    --        ref_buttonData.display["display_"..skillId].value = atributo + bonus + proficiency
-    --        self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
-    --    else
-    --        ref_buttonData.display["display_"..skillId].value = atributo + bonus
-    --        self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
-    --    end
-    --
-    --    --Passive Perception Update
-    --    if skillId == SKILL_PERCEPTION_ID then
-    --        -- With or Without Perception Proficiency
-    --        if ref_buttonData.checkbox["checkbox_"..SKILL_PERCEPTION_ID].state == true then
-    --            ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus + proficiency
-    --            self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value}) -- TODO: check if cutton is correct here
-    --        else
-    --            ref_buttonData.display["display_Passive_Perception"].value = 10 + atributo + bonus
-    --            self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value}) -- TODO: check if cutton is correct here
-    --        end
-    --    end
-    --end
-
-    -- Dexterity Skill Calculation
-    if paramId == PARAM_DEX_ID then
-        for ind = 3, 6, 1 do
-            local bonus = ref_buttonData.textbox[ind + 67].value
-            local skillId = skillIdListByParamId[paramId][ind - 2]
-            tonumber(bonus)
-
-            if ref_buttonData.checkbox[ind].state == true then
-                ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
-            else
-                ref_buttonData.display[ind + 6].value = atributo + bonus
-                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
-            end
-        end
-    end
-
-    -- Constitution Skill Calculation
-    if paramId == PARAM_CON_ID then
-        local ind = 7
-        local bonus = ref_buttonData.textbox[74].value
-        local skillId = skillIdListByParamId[paramId][1]
+    for i, skillId in ipairs(skillIdListByParamId[paramId]) do
+        -- Declaring Bonus Variable for Skill
+        local bonus = ref_buttonData.textbox["textbox_"..skillId].value
         tonumber(bonus)
 
-        if ref_buttonData.checkbox[7].state == true then
-            ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
+        -- Skill Update With and Without Proficiency
+        if ref_buttonData.checkbox["checkbox_"..skillId].state == true then
+            ref_buttonData.display["display_"..skillId].value = atributo + bonus + proficiency
             self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
         else
-            ref_buttonData.display[ind + 6].value = atributo + bonus
+            ref_buttonData.display["display_"..skillId].value = atributo + bonus
             self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
         end
-    end
 
-    -- Intelligence Skill Calculation
-    if paramId == PARAM_INT_ID then
-        for ind = 8, 13, 1 do
-            local bonus = ref_buttonData.textbox[ind + 67].value
-            local skillId = skillIdListByParamId[paramId][ind - 7]
-            tonumber(bonus)
-
-            if ref_buttonData.checkbox[ind].state == true then
-                ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
+        --Passive Perception Update
+        if skillId == SKILL_PERCEPTION_ID then
+            -- With or Without Perception Proficiency
+            if ref_buttonData.checkbox["checkbox_"..SKILL_PERCEPTION_ID].state == true then
+                ref_buttonData.display[DISPLAY_PASSIVE_PERCEPTION_ID].value = 10 + atributo + bonus + proficiency
+                self.editButton({
+                    index = btnIndexByElementIdTable[DISPLAY_PASSIVE_PERCEPTION_ID],
+                    label = ref_buttonData.display[DISPLAY_PASSIVE_PERCEPTION_ID].value,
+                })
             else
-                ref_buttonData.display[ind + 6].value = atributo + bonus
-                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
+                ref_buttonData.display[DISPLAY_PASSIVE_PERCEPTION_ID].value = 10 + atributo + bonus
+                self.editButton({
+                    index = btnIndexByElementIdTable[DISPLAY_PASSIVE_PERCEPTION_ID],
+                    label = ref_buttonData.display[DISPLAY_PASSIVE_PERCEPTION_ID].value,
+                })
             end
         end
     end
 
-    -- Wisdom Skill Calculation
-    if paramId == PARAM_WIT_ID then
-        for ind = 14, 19, 1 do
-            local bonus = ref_buttonData.textbox[ind + 67].value
-            local skillId = skillIdListByParamId[paramId][ind - 13]
-            tonumber(bonus)
-
-            if ref_buttonData.checkbox[ind].state == true then
-                ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
-            else
-                ref_buttonData.display[ind + 6].value = atributo + bonus
-                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
-            end
-
-            -- Passive Perception Update
-            if ind == 18 then
-                -- With or Without Perception Proficiency
-                if ref_buttonData.checkbox[ind].state == true then
-                    ref_buttonData.display[31].value = 10 + atributo + bonus + proficiency
-                    self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display[31].value})
-                else
-                    ref_buttonData.display[31].value = 10 + atributo + bonus
-                    self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label=ref_buttonData.display[31].value})
-                end
-            end
-        end
-    end
-
-    -- Charisma Skill Calculation
-    if paramId == PARAM_CHA_ID then
-        for ind = 20, 24, 1 do
-            local bonus = ref_buttonData.textbox[ind + 67].value
-            local skillId = skillIdListByParamId[paramId][ind - 19]
-            tonumber(bonus)
-
-            if ref_buttonData.checkbox[ind].state == true then
-                ref_buttonData.display[ind + 6].value = atributo + bonus + proficiency
-                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus + proficiency})
-            else
-                ref_buttonData.display[ind + 6].value = atributo + bonus
-                self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = atributo + bonus})
-            end
-        end
-    end
+    updateJumpAndWeight()
 
     --Updates saved value for given text box
     updateSave()
 end
 
 --Applies value to given textbox
-function click_textbox(i, value, selected, textboxId)
+function click_textbox(value, selected, textboxId)
     if selected == false then
-        ref_buttonData.textbox[i].value = value
-        -- TODO: ref_buttonData.textbox[textboxId].value = value
+        ref_buttonData.textbox[textboxId].value = value
 
         -- Declaring Proficiency Values
         updateSkillsByProficiency()
 
         -- Height Change — Jump Height with Hands update
-        if i == 61 then
-        -- TODO: if textboxId == TEXTBOX_HEIGHT_ID then
+        if textboxId == TEXTBOX_HEIGHT_ID then
             updateJumpAndWeight()
         end
 
         -- Exp Change — Level update
-        if i == 7 then
-        -- TODO: if textboxId == TEXTBOX_XP_ID then
+        if textboxId == TEXTBOX_XP_ID then
             updateLevelByExp()
         end
 
@@ -2617,99 +2391,72 @@ function click_none() end
 -- Check Proficiency and update skills
 function updateSkillsByProficiency()
     -- Declaring Proficiency Values
-    proficiency = ref_buttonData.display[42].value
-    -- TODO: proficiency = ref_buttonData.display[display_Proficiency].value
+    proficiency = ref_buttonData.display[DISPLAY_PROFICIENCY_ID].value
     tonumber(proficiency)
 
     -- Proficiency Value Change Skills Update
-    for cont = 1, 24, 1 do -- cont Goes Through All Skills
-        -- Selecting Skill Matching Attribute Modifiers
-        if cont < 3 then
-            atributo = ref_buttonData.display[1].value
-        end
-        if cont > 2 and cont < 7 then
-            atributo = ref_buttonData.display[2].value
-        end
-        if cont == 7  then
-            atributo = ref_buttonData.display[3].value
-        end
-        if cont > 7 and cont < 14 then
-            atributo = ref_buttonData.display[4].value
-        end
-        if cont > 13 and cont < 20 then
-            atributo = ref_buttonData.display[5].value
-        end
-        if cont > 19 and cont < 25 then
-            atributo = ref_buttonData.display[6].value
-        end
+    for skillId, paramId in pairs(paramIdBySkillId) do
+        atributo = ref_buttonData.display["display_"..paramId].value
 
         -- Upgrading Skills Only as Proficiency
-        local bonus = ref_buttonData.textbox[cont + 67].value
+        local bonus = ref_buttonData.textbox["textbox_"..skillId].value
         tonumber(bonus)
         local nextValue = atributo + bonus
-        if ref_buttonData.checkbox[cont].state == true then
+        if ref_buttonData.checkbox["checkbox_"..skillId].state == true then
             nextValue = atributo + bonus + proficiency
         end
 
-        ref_buttonData.display[cont + 6].value = nextValue
-        self.editButton({index = cont + 59, label = nextValue})
+        ref_buttonData.display["display_"..skillId].value = nextValue
+        self.editButton({
+            index = btnIndexByElementIdTable["display_"..skillId],
+            label = nextValue,
+        })
 
         -- Updating Passive Perception with Proficiency
-        if cont == 18 then
-            ref_buttonData.display[31].value = 10 + nextValue
-            self.editButton({index = 84, label = ref_buttonData.display[31].value})
+        if skillId == SKILL_PERCEPTION_ID then
+            ref_buttonData.display[DISPLAY_PASSIVE_PERCEPTION_ID].value = 10 + nextValue
+            self.editButton({
+                index = btnIndexByElementIdTable[DISPLAY_PASSIVE_PERCEPTION_ID],
+                label = ref_buttonData.display[DISPLAY_PASSIVE_PERCEPTION_ID].value,
+            })
         end
     end
-
-    -- Proficiency Value Change Skills Update
-    -- TODO: use next instead
-    --for skillId, paramId in ipairs(paramIdBySkillId) do
-    --    atributo = ref_buttonData.display["display_"..paramId].value
-    --
-    --    -- Upgrading Skills Only as Proficiency
-    --    local bonus = ref_buttonData.textbox["textbox_"..skillId].value
-    --    tonumber(bonus)
-    --    local nextValue = atributo + bonus
-    --    if ref_buttonData.checkbox["checkbox_"..skillId].state == true then
-    --        nextValue = atributo + bonus + proficiency
-    --    end
-    --
-    --    ref_buttonData.display["display_"..skillId].value = nextValue
-    --    self.editButton({index = btnIndexByElementIdTable["display_"..skillId], label = nextValue})
-    --
-    --    -- Updating Passive Perception with Proficiency
-    --    if skillId == SKILL_PERCEPTION_ID then
-    --        ref_buttonData.display["display_Passive_Perception"].value = 10 + nextValue
-    --        self.editButton({index = btnIndexByElementIdTable["display_Passive_Perception"], label = ref_buttonData.display["display_Passive_Perception"].value})
-    --    end
-    --end
 end
 
 --Button creation
 
 --Makes checkboxes
 function updateJumpAndWeight()
-    local strBtnIndex = 1
-    -- Update Weight Capacity // line 579
-    weightCapacity = ref_buttonData.counter[strBtnIndex].value * 15
-    -- TODO: weightCapacity = ref_buttonData.counter["counter_"..PARAM_STR_ID].value * 15
-    self.editButton({index = btnIndexByElementIdTable["display_Weight_Capacity"], label = weightCapacity})
+    -- Update Weight Capacity
+    weightCapacity = ref_buttonData.counter[COUNTER_PARAM_STR_ID].value * 15
+    self.editButton({
+        index = btnIndexByElementIdTable[DISPLAY_WEIGHT_CAPACITY_ID],
+        label = weightCapacity,
+    })
 
-    -- Update Raise, Lift and Pull // line 579
+    -- Update Raise, Lift and Pull
     raiseLiftPullCapacity = weightCapacity * 2
-    self.editButton({index = btnIndexByElementIdTable["display_Raise_Lift_and_Pull"], label = raiseLiftPullCapacity})
+    self.editButton({
+        index = btnIndexByElementIdTable[DISPLAY_RAISE_LIFT_AND_PULL_ID],
+        label = raiseLiftPullCapacity,
+    })
 
-    -- Update Jump Height // line 593
-    jumpHeight = ref_buttonData.display[strBtnIndex].value + 3
-    self.editButton({index = btnIndexByElementIdTable["display_Jump_Height"], label = jumpHeight})
+    -- Update Jump Height
+    jumpHeight = ref_buttonData.display[DISPLAY_PARAM_STR_ID].value + 3
+    self.editButton({
+        index = btnIndexByElementIdTable[DISPLAY_JUMP_HEIGHT_ID],
+        label = jumpHeight,
+    })
 
-    -- Update Jump Distance // line 600
-    jumpDistance = ref_buttonData.counter[strBtnIndex].value
-    self.editButton({index = btnIndexByElementIdTable["display_Jump_Distance"], label = jumpDistance})
+    -- Update Jump Distance
+    jumpDistance = ref_buttonData.counter[COUNTER_PARAM_STR_ID].value
+    self.editButton({
+        index = btnIndexByElementIdTable[DISPLAY_JUMP_DISTANCE_ID],
+        label = jumpDistance,
+    })
 
-    -- Update Jump Height with Hands // line 607
-    characterHeight = ref_buttonData.textbox[61].value
-    -- TODO: characterHeight = ref_buttonData.textbox[TEXTBOX_HEIGHT_ID].value
+    -- Update Jump Height with Hands
+    characterHeight = ref_buttonData.textbox[TEXTBOX_HEIGHT_ID].value
     if characterHeight == '' then
         characterHeight = 0
     end
@@ -2717,19 +2464,31 @@ function updateJumpAndWeight()
     tonumber(characterHeight)
     characterOneAndHalfHeight = math.floor(characterHeight * 1.5)
     jumpHeightWithHands = jumpHeight + characterOneAndHalfHeight
-    self.editButton({index = btnIndexByElementIdTable["display_Jump_Height_with_Hands"], label = jumpHeightWithHands})
+    self.editButton({
+        index = btnIndexByElementIdTable[DISPLAY_JUMP_HEIGHT_WITH_HANDS_ID],
+        label = jumpHeightWithHands,
+    })
 
-    -- Update Jump Height — no running // line 614
+    -- Update Jump Height — no running
     jumpHeightNoRunning = math.floor(jumpHeight / 2)
-    self.editButton({index = btnIndexByElementIdTable["display_Jump_Height_no_running"], label = jumpHeightNoRunning})
+    self.editButton({
+        index = btnIndexByElementIdTable[DISPLAY_JUMP_HEIGHT_NO_RUNNING_ID],
+        el = jumpHeightNoRunning,
+    })
 
-    -- Update Jump Distance — no running // line 621
+    -- Update Jump Distance — no running
     jumpDistanceNoRunning = math.floor(jumpDistance / 2)
-    self.editButton({index = btnIndexByElementIdTable["display_Jump_Distance_no_running"], label = jumpDistanceNoRunning})
+    self.editButton({
+        index = btnIndexByElementIdTable[DISPLAY_JUMP_DISTANCE_NO_RUNNING_ID],
+        label = jumpDistanceNoRunning,
+    })
 
-    -- Update Jump Height with Hands — no running // line 628
+    -- Update Jump Height with Hands — no running
     jumpHeightWithHandsNoRunning = jumpHeightNoRunning + characterOneAndHalfHeight
-    self.editButton({index = btnIndexByElementIdTable["display_Jump_Height_with_Hands_no_running"], label = jumpHeightWithHandsNoRunning})
+    self.editButton({
+        index = btnIndexByElementIdTable[DISPLAY_JUMP_HEIGHT_WITH_HANDS_NO_RUNNING_ID],
+        label = jumpHeightWithHandsNoRunning,
+    })
 end
 
 -- Lvl update btn - Activate/Deactivate
@@ -2769,22 +2528,21 @@ function onClickLvlUpdateBtn()
     ref_buttonData.lvl = ref_buttonData.lvlByExp
 
     self.editButton({
-        index = btnIndexByElementIdTable["display_Level"],
+        index = btnIndexByElementIdTable[DISPLAY_LEVEL_ID],
         label = ref_buttonData.lvlByExp,
         value = ref_buttonData.lvlByExp,
     })
 
     self.editButton({
-        index = btnIndexByElementIdTable["display_next_LVL"],
+        index = btnIndexByElementIdTable[DISPLAY_NEXT_LVL_ID],
         label = ref_buttonData.nextLvlExp,
         value = ref_buttonData.nextLvlExp,
     })
 
-    ref_buttonData.display[42].value = ref_buttonData.lvlByExpProficiency
-    -- TODO: ref_buttonData.display["display_Proficiency"].value = ref_buttonData.lvlByExpProficiency
+    ref_buttonData.display[DISPLAY_PROFICIENCY_ID].value = ref_buttonData.lvlByExpProficiency
 
     self.editButton({
-        index = btnIndexByElementIdTable["display_Proficiency"],
+        index = btnIndexByElementIdTable[DISPLAY_PROFICIENCY_ID],
         label = '+'..ref_buttonData.lvlByExpProficiency,
         value = ref_buttonData.lvlByExpProficiency,
     })
@@ -2798,10 +2556,8 @@ end
 --Update Level
 function updateLevelByExp()
     local EXP_INPUT_EDIT_ID = 6
-    local EXP_TEXTBOX_ID = 7
 
-    exp = tonumber(ref_buttonData.textbox[EXP_TEXTBOX_ID].value) or EXP_MIN
-    -- TODO: exp = tonumber(ref_buttonData.textbox[TEXTBOX_XP_ID].value) or EXP_MIN
+    exp = tonumber(ref_buttonData.textbox[TEXTBOX_XP_ID].value) or EXP_MIN
 
     -- Исправить значение опыта
     if (exp < EXP_MIN or exp > EXP_MAX) then
@@ -2809,8 +2565,7 @@ function updateLevelByExp()
         if (exp > EXP_MAX) then exp = EXP_MAX end
 
         -- Исправить значение опыта на инпуте
-        ref_buttonData.textbox[EXP_TEXTBOX_ID].value = exp
-        -- TODO: ref_buttonData.textbox[TEXTBOX_XP_ID].value = exp
+        ref_buttonData.textbox[TEXTBOX_XP_ID].value = exp
         Wait.time(
             function ()
                 self.editInput({
@@ -2913,10 +2668,9 @@ function updateHitDiceText()
     local hitDiceLeft = tonumber(ref_buttonData.hitDiceLeft)
     local hitDiceText = hitDiceLeft..'/'..ref_buttonData.lvl..'к'
 
-    ref_buttonData.display[43].value = hitDiceText
-    -- TODO: ref_buttonData.display["display_Hit_Dices_Left"].value = hitDiceText
+    ref_buttonData.display[DISPLAY_HIT_DICES_LEFT_ID].value = hitDiceText
     self.editButton({
-        index = btnIndexByElementIdTable["display_Hit_Dices_Left"],
+        index = btnIndexByElementIdTable[DISPLAY_HIT_DICES_LEFT_ID],
         label = hitDiceText,
         value = hitDiceText,
     })
@@ -2924,11 +2678,11 @@ end
 
 --Makes checkboxes
 function createCheckbox()
-    for i, data in ipairs(ref_buttonData.checkbox) do
+    for checkboxId, data in pairs(ref_buttonData.checkbox) do
         --Sets up reference function
-        local funcName = "checkbox"..i
+        local funcName = "checkbox"..checkboxId
         local func = function()
-            click_checkbox(i, data.id)
+            click_checkbox(checkboxId)
         end
 
         self.setVar(funcName, func)
@@ -2941,7 +2695,7 @@ function createCheckbox()
 
         --Creates button and counts it
         createBtnAndSaveIndex(
-            data.id,
+            checkboxId,
             {
                 click_function = funcName,
                 color          = buttonColor,
@@ -2961,7 +2715,7 @@ function createCheckbox()
 end
 --Makes counters
 function createCounter()
-    for i, data in ipairs(ref_buttonData.counter) do
+    for counterId, data in pairs(ref_buttonData.counter) do
         --Sets up display
         local displayNumber = spawnedButtonCount
         --Sets up label
@@ -2974,7 +2728,7 @@ function createCounter()
 
         --Creates button and counts it
         createBtnAndSaveIndex(
-            data.id,
+            counterId,
             {
                 click_function = "click_none",
                 color          = buttonColor,
@@ -2994,7 +2748,7 @@ function createCounter()
         --Sets up add 1
         local funcName = data.btnAddId
         local func = function()
-            click_counter(i, displayNumber, 1, data.id)
+            click_counter(1, counterId)
         end
 
         self.setVar(funcName, func)
@@ -3030,7 +2784,7 @@ function createCounter()
         --Sets up subtract 1
         local funcName = data.btnSubId
         local func = function()
-            click_counter(i, displayNumber, -1, data.id)
+            click_counter(-1, counterId)
         end
 
         self.setVar(funcName, func)
@@ -3065,7 +2819,7 @@ end
 
 --Makes display
 function createDisplay()
-    for i, data in ipairs(ref_buttonData.display) do
+    for displayId, data in pairs(ref_buttonData.display) do
         -- Sets up label
         local label = data.value
         -- Sets height/width for display
@@ -3078,7 +2832,7 @@ function createDisplay()
 
         -- Create display button
         createBtnAndSaveIndex(
-            data.id,
+            displayId,
             {
                 click_function = "click_none",
                 color          = buttonColor,
@@ -3098,11 +2852,11 @@ end
 
 --Makes textbox
 function createTextbox()
-    for i, data in ipairs(ref_buttonData.textbox) do
+    for textboxId, data in pairs(ref_buttonData.textbox) do
         --Sets up reference function
-        local funcName = "textbox"..i
+        local funcName = "textbox_"..textboxId
         local func = function(_, _, val, sel)
-            click_textbox(i, val, sel, data.id)
+            click_textbox(val, sel, textboxId)
         end
 
         self.setVar(funcName, func)
@@ -3115,7 +2869,7 @@ function createTextbox()
             function_owner = self,
             height         = (data.font_size * data.rows) + 24,
             input_function = funcName,
-            label          = textboxLabelCollection[data.id],
+            label          = textboxLabelCollection[textboxId],
             position       = data.pos,
             scale          = buttonScale,
             value          = data.value,
