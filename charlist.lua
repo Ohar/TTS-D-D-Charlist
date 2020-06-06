@@ -392,7 +392,7 @@ local TEXTBOX_EQUIPMENT_2_ID = "textbox_Equipment_2"
 local TEXTBOX_CLASS_RACE_CHARACTERISTICS_ID = "textbox_Class_Race_Characteristics"
 local TEXTBOX_HEIGHT_ID = "textbox_Height"
 local TEXTBOX_WEIGHT_ID = "textbox_Weight"
-local TEXTBOX_PROFICIENCY_3_ID = "textbox_Proficiency_3"
+local TEXTBOX_PROFICIENCY_OTHER_ID = "textbox_Proficiency_other"
 local TEXTBOX_SKILL_STR_SAVETHROW_ID = "textbox_"..SKILL_STR_SAVETHROW_ID
 local TEXTBOX_SKILL_ATHLETICS_ID = "textbox_"..SKILL_ATHLETICS_ID
 local TEXTBOX_SKILL_DEX_SAVETHROW_ID = "textbox_"..SKILL_DEX_SAVETHROW_ID
@@ -569,7 +569,7 @@ local textboxLabelCollection = {
     [TEXTBOX_CLASS_RACE_CHARACTERISTICS_ID] = "",
     [TEXTBOX_HEIGHT_ID] = "Рост",
     [TEXTBOX_WEIGHT_ID] = "Вес",
-    [TEXTBOX_PROFICIENCY_3_ID] = "",
+    [TEXTBOX_PROFICIENCY_OTHER_ID] = "",
     [TEXTBOX_SKILL_STR_SAVETHROW_ID] = "0",
     [TEXTBOX_SKILL_ATHLETICS_ID] = "0",
     [TEXTBOX_SKILL_DEX_SAVETHROW_ID] = "0",
@@ -1712,7 +1712,7 @@ defaultButtonData = {
             alignment = 3
         },
 
-        [TEXTBOX_PROFICIENCY_3_ID] = {
+        [TEXTBOX_PROFICIENCY_OTHER_ID] = {
             pos       = {-1,0.1,1.78},
             rows      = 10,
             width     = 4350,
