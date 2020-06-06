@@ -512,6 +512,8 @@ local textboxLabelCollection = {
     [TEXTBOX_SKILL_PERSUASION_ID] = "",
 }
 
+local btnIndexByElementIdTable = {}
+
 --This is the button placement information
 defaultButtonData = {
     --Add checkboxes
@@ -2867,16 +2869,18 @@ function createCounter()
             width          = size,
         })
 
+        local btnTable = self.getButtons()
+        btnIndexByElementIdTable[data.id] = btnTable[#btnTable].index
+
         spawnedButtonCount = spawnedButtonCount + 1
 
         --Sets up add 1
-        local funcName = "counterAdd"..i
+        local funcName = data.btnAddId
         local func = function()
             click_counter(i, displayNumber, 1)
         end
+
         self.setVar(funcName, func)
-        --Sets up label
-        local label = "+"
         --Sets up position
         local offsetDistance = (data.size/2 + data.size/4) * (buttonScale[1] * 0.002)
         local pos = {
@@ -2895,24 +2899,25 @@ function createCounter()
             font_size      = size,
             function_owner = self,
             height         = size,
-            label          = label,
+            label          = "+",
             position       = pos,
             scale          = buttonScale,
             width          = size,
         })
 
+        local btnAddTable = self.getButtons()
+        btnIndexByElementIdTable[data.btnAddId] = btnAddTable[#btnAddTable].index
+
         spawnedButtonCount = spawnedButtonCount + 1
 
         --Sets up subtract 1
-        local funcName = "counterSub"..i
+        local funcName = data.btnSubId
         local func = function()
-            click_counter(i, displayNumber, -1)
+            click_counter(i, displayNumber, -1) -- TODO use “data.id” instead of “i”
         end
 
         self.setVar(funcName, func)
 
-        --Sets up label
-        local label = "−"
         --Set up position
         local pos = {
             data.pos[1] - offsetDistance,
@@ -2928,11 +2933,15 @@ function createCounter()
             font_size      = size,
             function_owner = self,
             height         = size,
-            label          = label,
+            label          = "−",
             position       = pos,
             scale          = buttonScale,
             width          = size,
         })
+        local btnSubTable = self.getButtons()
+        btnIndexByElementIdTable[data.btnSubId] = btnSubTable[#btnSubTable].index
+
+        print(JSON.encode(btnIndexByElementIdTable))
 
         spawnedButtonCount = spawnedButtonCount + 1
     end
