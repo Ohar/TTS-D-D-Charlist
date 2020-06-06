@@ -192,6 +192,140 @@ LVL_BY_EXP = {
 EXP_MIN = LVL_BY_EXP[1].min
 EXP_MAX = LVL_BY_EXP[#LVL_BY_EXP].max
 
+local SKILL_ACROBATICS_ID = "Acrobatics"
+local SKILL_ANIMAL_HANDLING_ID = "Animal_Handling"
+local SKILL_ARCANA_ID = "Arcana"
+local SKILL_ATHLETICS_ID = "Athletics"
+local SKILL_CHA_SAVETHROW_ID = "CHA_savethrow"
+local SKILL_CON_SAVETHROW_ID = "CON_savethrow"
+local SKILL_DECEPTION_ID = "Deception"
+local SKILL_DEX_SAVETHROW_ID = "DEX_savethrow"
+local SKILL_HISTORY_ID = "History"
+local SKILL_INSIGHT_ID = "Insight"
+local SKILL_INT_SAVETHROW_ID = "INT_savethrow"
+local SKILL_INTIMIDATION_ID = "Intimidation"
+local SKILL_INVESTIGATION_ID = "Investigation"
+local SKILL_MEDICINE_ID = "Medicine"
+local SKILL_NATURE_ID = "Nature"
+local SKILL_PERCEPTION_ID = "Perception"
+local SKILL_PERFORMANCE_ID = "Performance"
+local SKILL_PERSUASION_ID = "Persuasion"
+local SKILL_RELIGION_ID = "Religion"
+local SKILL_SLEIGHT_OF_HAND_ID = "Sleight_of_hand"
+local SKILL_STEALTH_ID = "Stealth"
+local SKILL_STR_SAVETHROW_ID = "STR_savethrow"
+local SKILL_SURVIVAL_ID = "Survival"
+local SKILL_WIT_SAVETHROW_ID = "WIT_savethrow"
+
+local PARAM_CHA_ID = "CHA"
+local PARAM_CON_ID = "CON"
+local PARAM_DEX_ID = "DEX"
+local PARAM_INT_ID = "INT"
+local PARAM_STR_ID = "STR"
+local PARAM_WIT_ID = "WIT"
+
+local skillIdList = {
+    SKILL_ACROBATICS_ID,
+    SKILL_ANIMAL_HANDLING_ID,
+    SKILL_ARCANA_ID,
+    SKILL_ATHLETICS_ID,
+    SKILL_CHA_SAVETHROW_ID,
+    SKILL_CON_SAVETHROW_ID,
+    SKILL_DECEPTION_ID,
+    SKILL_DEX_SAVETHROW_ID,
+    SKILL_HISTORY_ID,
+    SKILL_INSIGHT_ID,
+    SKILL_INT_SAVETHROW_ID,
+    SKILL_INTIMIDATION_ID,
+    SKILL_INVESTIGATION_ID,
+    SKILL_MEDICINE_ID,
+    SKILL_NATURE_ID,
+    SKILL_PERCEPTION_ID,
+    SKILL_PERFORMANCE_ID,
+    SKILL_PERSUASION_ID,
+    SKILL_RELIGION_ID,
+    SKILL_SLEIGHT_OF_HAND_ID,
+    SKILL_STEALTH_ID,
+    SKILL_STR_SAVETHROW_ID,
+    SKILL_SURVIVAL_ID,
+    SKILL_WIT_SAVETHROW_ID,
+}
+
+local paramIdList = {
+    PARAM_CHA_ID,
+    PARAM_CON_ID,
+    PARAM_DEX_ID,
+    PARAM_INT_ID,
+    PARAM_STR_ID,
+    PARAM_WIT_ID,
+}
+
+local skillIdListByParamId = {
+    [PARAM_CHA_ID] = {
+        SKILL_CHA_SAVETHROW_ID,
+        SKILL_DECEPTION_ID,
+        SKILL_PERFORMANCE_ID,
+        SKILL_PERSUASION_ID,
+        SKILL_INTIMIDATION_ID,
+    },
+    [PARAM_CON_ID] = {
+        SKILL_CON_SAVETHROW_ID,
+    },
+    [PARAM_DEX_ID] = {
+        SKILL_DEX_SAVETHROW_ID,
+        SKILL_ACROBATICS_ID,
+        SKILL_SLEIGHT_OF_HAND_ID,
+        SKILL_STEALTH_ID,
+    },
+    [PARAM_INT_ID] = {
+        SKILL_INT_SAVETHROW_ID,
+        SKILL_ARCANA_ID,
+        SKILL_HISTORY_ID,
+        SKILL_INVESTIGATION_ID,
+        SKILL_NATURE_ID,
+        SKILL_RELIGION_ID,
+    },
+    [PARAM_STR_ID] = {
+        SKILL_STR_SAVETHROW_ID,
+        SKILL_ATHLETICS_ID,
+    },
+    [PARAM_WIT_ID] = {
+        SKILL_WIT_SAVETHROW_ID,
+        SKILL_ANIMAL_HANDLING_ID,
+        SKILL_INSIGHT_ID,
+        SKILL_MEDICINE_ID,
+        SKILL_PERCEPTION_ID,
+        SKILL_SURVIVAL_ID,
+    },
+}
+
+local paramIdBySkillId = {
+    [SKILL_ACROBATICS_ID] = PARAM_DEX_ID,
+    [SKILL_ANIMAL_HANDLING_ID] = PARAM_WIT_ID,
+    [SKILL_ARCANA_ID] = PARAM_INT_ID,
+    [SKILL_ATHLETICS_ID] = PARAM_STR_ID,
+    [SKILL_CHA_SAVETHROW_ID] = PARAM_CHA_ID,
+    [SKILL_CON_SAVETHROW_ID] = PARAM_CON_ID,
+    [SKILL_DECEPTION_ID] = PARAM_CHA_ID,
+    [SKILL_DEX_SAVETHROW_ID] = PARAM_DEX_ID,
+    [SKILL_HISTORY_ID] = PARAM_INT_ID,
+    [SKILL_INSIGHT_ID] = PARAM_WIT_ID,
+    [SKILL_INT_SAVETHROW_ID] = PARAM_INT_ID,
+    [SKILL_INTIMIDATION_ID] = PARAM_CHA_ID,
+    [SKILL_INVESTIGATION_ID] = PARAM_INT_ID,
+    [SKILL_MEDICINE_ID] = PARAM_WIT_ID,
+    [SKILL_NATURE_ID] = PARAM_INT_ID,
+    [SKILL_PERCEPTION_ID] = PARAM_WIT_ID,
+    [SKILL_PERFORMANCE_ID] = PARAM_CHA_ID,
+    [SKILL_PERSUASION_ID] = PARAM_CHA_ID,
+    [SKILL_RELIGION_ID] = PARAM_INT_ID,
+    [SKILL_SLEIGHT_OF_HAND_ID] = PARAM_DEX_ID,
+    [SKILL_STEALTH_ID] = PARAM_DEX_ID,
+    [SKILL_STR_SAVETHROW_ID] = PARAM_STR_ID,
+    [SKILL_SURVIVAL_ID] = PARAM_WIT_ID,
+    [SKILL_WIT_SAVETHROW_ID] = PARAM_WIT_ID,
+}
+
 --This is the button placement information
 defaultButtonData = {
     --Add checkboxes
@@ -206,219 +340,291 @@ defaultButtonData = {
 
         -- 1 checkbox STR savethrow
         {
-            pos   = {-1.123,0.1,-1.155},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_STR_SAVETHROW_ID,
+            skillId = SKILL_STR_SAVETHROW_ID,
+            pos     = {-1.123,0.1,-1.155},
+            size    = 150,
+            state   = false
         },
         -- 2 checkbox Athletics
         {
-            pos   = {-1.123,0.1,-1.10},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_ATHLETICS_ID,
+            skillId = SKILL_ATHLETICS_ID,
+            pos     = {-1.123,0.1,-1.10},
+            size    = 150,
+            state   = false
         },
         -- 3 checkbox DEX savethrow
         {
-            pos   = {-1.123,0.1,-0.79},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_DEX_SAVETHROW_ID,
+            skillId = SKILL_DEX_SAVETHROW_ID,
+            pos     = {-1.123,0.1,-0.79},
+            size    = 150,
+            state   = false
         },
         -- 4 checkbox Acrobatics
         {
-            pos   = {-1.123,0.1,-0.735},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_ACROBATICS_ID,
+            skillId = SKILL_ACROBATICS_ID,
+            pos     = {-1.123,0.1,-0.735},
+            size    = 150,
+            state   = false
         },
         -- 5 checkbox Stealth
         {
-            pos   = {-1.123,0.1,-0.685},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_STEALTH_ID,
+            skillId = SKILL_STEALTH_ID,
+            pos     = {-1.123,0.1,-0.685},
+            size    = 150,
+            state   = false
         },
         -- 6 checkbox Sleight of hand
         {
-            pos   = {-1.123,0.1,-0.630},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_SLEIGHT_OF_HAND_ID,
+            skillId = SKILL_SLEIGHT_OF_HAND_ID,
+            pos     = {-1.123,0.1,-0.630},
+            size    = 150,
+            state   = false
         },
         -- 7 checkbox CON savethrow
         {
-            pos   = {-1.123,0.1,-0.428},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_CON_SAVETHROW_ID,
+            skillId = SKILL_CON_SAVETHROW_ID,
+            pos     = {-1.123,0.1,-0.428},
+            size    = 150,
+            state   = false
         },
         -- 8 checkbox INT savethrow
         {
-            pos   = {-1.123,0.1,-0.070},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_INT_SAVETHROW_ID,
+            skillId = SKILL_INT_SAVETHROW_ID,
+            pos     = {-1.123,0.1,-0.070},
+            size    = 150,
+            state   = false
         },
-        -- 9 checkbox Arcane
+        -- 9 checkbox Arcana
         {
-            pos   = {-1.123,0.1,-0.015},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_ARCANA_ID,
+            skillId = SKILL_ARCANA_ID,
+            pos     = {-1.123,0.1,-0.015},
+            size    = 150,
+            state   = false
         },
         -- 10 checkbox History
         {
-            pos   = {-1.123,0.1,0.040},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_HISTORY_ID,
+            skillId = SKILL_HISTORY_ID,
+            pos     = {-1.123,0.1,0.040},
+            size    = 150,
+            state   = false
         },
         -- 11 checkbox Investigation
         {
-            pos   = {-1.123,0.1,0.095},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_INVESTIGATION_ID,
+            skillId = SKILL_INVESTIGATION_ID,
+            pos     = {-1.123,0.1,0.095},
+            size    = 150,
+            state   = false
         },
         -- 12 checkbox Nature
         {
-            pos   = {-1.123,0.1,0.150},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_NATURE_ID,
+            skillId = SKILL_NATURE_ID,
+            pos     = {-1.123,0.1,0.150},
+            size    = 150,
+            state   = false
         },
         -- 13 checkbox Religion
         {
-            pos   = {-1.123,0.1,0.202},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_RELIGION_ID,
+            skillId = SKILL_RELIGION_ID,
+            pos     = {-1.123,0.1,0.202},
+            size    = 150,
+            state   = false
         },
         -- 14 checkbox WIT savethrow
         {
-            pos   = {-1.123,0.1,0.30},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_WIT_SAVETHROW_ID,
+            skillId = SKILL_WIT_SAVETHROW_ID,
+            pos     = {-1.123,0.1,0.30},
+            size    = 150,
+            state   = false
         },
         -- 15 checkbox Animal Handling
         {
-            pos   = {-1.123,0.1,0.355},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_ANIMAL_HANDLING_ID,
+            skillId = SKILL_ANIMAL_HANDLING_ID,
+            pos     = {-1.123,0.1,0.355},
+            size    = 150,
+            state   = false
         },
         -- 16 checkbox Insight
         {
-            pos   = {-1.123,0.1,0.410},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_INSIGHT_ID,
+            skillId = SKILL_INSIGHT_ID,
+            pos     = {-1.123,0.1,0.410},
+            size    = 150,
+            state   = false
         },
         -- 17 checkbox Medicine
         {
-            pos   = {-1.123,0.1,0.46},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_MEDICINE_ID,
+            skillId = SKILL_MEDICINE_ID,
+            pos     = {-1.123,0.1,0.46},
+            size    = 150,
+            state   = false
         },
         -- 18 checkbox Perception
         {
-            pos   = {-1.123,0.1,0.51},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_PERCEPTION_ID,
+            skillId = SKILL_PERCEPTION_ID,
+            pos     = {-1.123,0.1,0.51},
+            size    = 150,
+            state   = false
         },
         -- 19 checkbox Survival
         {
-            pos   = {-1.123,0.1,0.565},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_SURVIVAL_ID,
+            skillId = SKILL_SURVIVAL_ID,
+            pos     = {-1.123,0.1,0.565},
+            size    = 150,
+            state   = false
         },
         -- 20 checkbox CHA savethrow
         {
-            pos   = {-1.123,0.1,0.67},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_CHA_SAVETHROW_ID,
+            skillId = SKILL_CHA_SAVETHROW_ID,
+            pos     = {-1.123,0.1,0.67},
+            size    = 150,
+            state   = false
         },
         -- 21 checkbox Performance
         {
-            pos   = {-1.123,0.1,0.725},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_PERFORMANCE_ID,
+            skillId = SKILL_PERFORMANCE_ID,
+            pos     = {-1.123,0.1,0.725},
+            size    = 150,
+            state   = false
         },
         -- 22 checkbox Deception
         {
-            pos   = {-1.123,0.1,0.775},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_DECEPTION_ID,
+            skillId = SKILL_DECEPTION_ID,
+            pos     = {-1.123,0.1,0.775},
+            size    = 150,
+            state   = false
         },
         -- 23 checkbox Intimidation
         {
-            pos   = {-1.123,0.1,0.82},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_INTIMIDATION_ID,
+            skillId = SKILL_INTIMIDATION_ID,
+            pos     = {-1.123,0.1,0.82},
+            size    = 150,
+            state   = false
         },
         -- 24 checkbox Persuasion
         {
-            pos   = {-1.123,0.1,0.875},
-            size  = 150,
-            state = false
+            id      = "checkbox_"..SKILL_PERSUASION_ID,
+            skillId = SKILL_PERSUASION_ID,
+            pos     = {-1.123,0.1,0.875},
+            size    = 150,
+            state   = false
         },
         -- 25 checkbox Light Armor
         {
-            pos   = {-1.430,0.1,1.26},
-            size  = 150,
-            state = false
+            id      = "checkbox_Light_Armor",
+            skillId = nil,
+            pos     = {-1.430,0.1,1.26},
+            size    = 150,
+            state   = false
         },
         -- 26 checkbox Medium Armor
         {
-            pos   = {-1.430,0.1,1.30},
-            size  = 150,
-            state = false
+            id      = "checkbox_Medium_Armor",
+            skillId = nil,
+            pos     = {-1.430,0.1,1.30},
+            size    = 150,
+            state   = false
         },
         -- 27 checkbox Heavy Armor
         {
-            pos   = {-1.430,0.1,1.34},
-            size  = 150,
-            state = false
+            id      = "checkbox_Heavy_Armor",
+            skillId = nil,
+            pos     = {-1.430,0.1,1.34},
+            size    = 150,
+            state   = false
         },
         -- 28 checkbox Shield
         {
-            pos   = {-1.430,0.1,1.38},
-            size  = 150,
-            state = false
+            id      = "checkbox_Shield",
+            skillId = nil,
+            pos     = {-1.430,0.1,1.38},
+            size    = 150,
+            state   = false
         },
         -- 29 checkbox Simple Weapons
         {
-            pos   = {-1.2,0.1,1.26},
-            size  = 150,
-            state = false
+            id      = "checkbox_Simple_Weapons",
+            skillId = nil,
+            pos     = {-1.2,0.1,1.26},
+            size    = 150,
+            state   = false
         },
         -- 30 checkbox Martial Weapons
         {
-            pos   = {-1.2,0.1,1.30},
-            size  = 150,
-            state = false
+            id      = "checkbox_Martial_Weapons",
+            skillId = nil,
+            pos     = {-1.2,0.1,1.30},
+            size    = 150,
+            state   = false
         },
         -- 31 checkbox Death savethrow success 1
         {
-            pos   = {0.825,0.1,-1.08},
-            size  = 200,
-            state = false
+            id      = "checkbox_Death_savethrow_success_1",
+            skillId = nil,
+            pos     = {0.825,0.1,-1.08},
+            size    = 200,
+            state   = false
         },
         -- 32 checkbox Death savethrow success 2
         {
-            pos   = {0.895,0.1,-1.08},
-            size  = 200,
-            state = false
+            id      = "checkbox_Death_savethrow_success_2",
+            skillId = nil,
+            pos     = {0.895,0.1,-1.08},
+            size    = 200,
+            state   = false
         },
         -- 33 checkbox Death savethrow success 3
         {
-            pos   = {0.96,0.1,-1.08},
-            size  = 200,
-            state = false
+            id      = "checkbox_Death_savethrow_success_3",
+            skillId = nil,
+            pos     = {0.96,0.1,-1.08},
+            size    = 200,
+            state   = false
         },
         -- 34 checkbox Death savethrow fail 1
         {
-            pos   = {0.825,0.1,-1.015},
-            size  = 200,
-            state = false
+            id      = "checkbox_Death_savethrow_fail_1",
+            skillId = nil,
+            pos     = {0.825,0.1,-1.015},
+            size    = 200,
+            state   = false
         },
         -- 35 checkbox Death savethrow fail 2
         {
-            pos   = {0.895,0.1,-1.015},
-            size  = 200,
-            state = false
+            id      = "checkbox_Death_savethrow_fail_2",
+            skillId = nil,
+            pos     = {0.895,0.1,-1.015},
+            size    = 200,
+            state   = false
         },
         -- 36 checkbox Death savethrow fail 3
         {
-            pos   = {0.96,0.1,-1.015},
-            size  = 200,
-            state = false
+            id      = "checkbox_Death_savethrow_fail_3",
+            skillId = nil,
+            pos     = {0.96,0.1,-1.015},
+            size    = 200,
+            state   = false
         },
         --End of checkboxes
     },
@@ -435,6 +641,8 @@ defaultButtonData = {
 
         -- 1 counter STR
         {
+            id      = "counter_"..PARAM_STR_ID,
+            paramId = PARAM_STR_ID,
             pos    = {-1.35,0.1,-1.025},
             size   = 450,
             value  = 10,
@@ -442,6 +650,8 @@ defaultButtonData = {
         },
         -- 2 counter DEX
         {
+            id      = "counter_"..PARAM_DEX_ID,
+            paramId = PARAM_DEX_ID,
             pos    = {-1.35,0.1,-0.662},
             size   = 450,
             value  = 10,
@@ -449,6 +659,8 @@ defaultButtonData = {
         },
         -- 3 counter CON
         {
+            id      = "counter_"..PARAM_CON_ID,
+            paramId = PARAM_CON_ID,
             pos    = {-1.35,0.1,-0.299},
             size   = 450,
             value  = 10,
@@ -456,6 +668,8 @@ defaultButtonData = {
         },
         -- 4 counter INT
         {
+            id      = "counter_"..PARAM_INT_ID,
+            paramId = PARAM_INT_ID,
             pos    = {-1.35,0.1,0.064},
             size   = 450,
             value  = 10,
@@ -463,6 +677,8 @@ defaultButtonData = {
         },
         -- 5 counter WIT
         {
+            id      = "counter_"..PARAM_WIT_ID,
+            paramId = PARAM_WIT_ID,
             pos    = {-1.35,0.1,0.427},
             size   = 450,
             value  = 10,
@@ -470,6 +686,8 @@ defaultButtonData = {
         },
         -- 6 counter CHA
         {
+            id      = "counter_"..PARAM_CHA_ID,
+            paramId = PARAM_CHA_ID,
             pos    = {-1.35,0.1,0.790},
             size   = 450,
             value  = 10,
@@ -490,216 +708,277 @@ defaultButtonData = {
         -- ButtonIndex Modificador Atributo {54 Até 60} // Perícia {61 to 84} // Passive Perception = 85
         -- 1 display STR
         {
-            pos    = {-1.35,0.1,-1.14},
-            size   = 450,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..PARAM_STR_ID,
+            paramId = PARAM_STR_ID,
+            pos     = {-1.35,0.1,-1.14},
+            size    = 450,
+            value   = 0,
+            hideBG  = true
         },
         -- 2 display DEX
         {
-            pos    = {-1.35,0.1,-0.77},
-            size   = 450,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..PARAM_DEX_ID,
+            paramId = PARAM_DEX_ID,
+            pos     = {-1.35,0.1,-0.77},
+            size    = 450,
+            value   = 0,
+            hideBG  = true
         },
         -- 3 display CON
         {
-            pos    = {-1.35,0.1,-0.41},
-            size   = 450,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..PARAM_CON_ID,
+            paramId = PARAM_CON_ID,
+            pos     = {-1.35,0.1,-0.41},
+            size    = 450,
+            value   = 0,
+            hideBG  = true
         },
         -- 4 display INT
         {
-            pos    = {-1.35,0.1,-0.05},
-            size   = 450,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..PARAM_INT_ID,
+            paramId = PARAM_INT_ID,
+            pos     = {-1.35,0.1,-0.05},
+            size    = 450,
+            value   = 0,
+            hideBG  = true
         },
         -- 5 display WIT
         {
-            pos    = {-1.35,0.1,0.31},
-            size   = 450,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..PARAM_WIT_ID,
+            paramId = PARAM_WIT_ID,
+            pos     = {-1.35,0.1,0.31},
+            size    = 450,
+            value   = 0,
+            hideBG  = true
         },
         -- 6 display CHA
         {
-            pos    = {-1.35,0.1,0.68},
-            size   = 450,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..PARAM_CHA_ID,
+            paramId = PARAM_CHA_ID,
+            pos     = {-1.35,0.1,0.68},
+            size    = 450,
+            value   = 0,
+            hideBG  = true
         },
         -- 7 display STR savethrow
         {
-            pos    = {-0.973,0.1,-1.16},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_STR_SAVETHROW_ID,
+            skillId = SKILL_STR_SAVETHROW_ID,
+            pos     = {-0.973,0.1,-1.16},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 8 display Atletics
         {
-            pos    = {-0.973,0.1,-1.11},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_ATHLETICS_ID,
+            skillId = SKILL_ATHLETICS_ID,
+            pos     = {-0.973,0.1,-1.11},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 9 display DEX savethrow
         {
-            pos    = {-0.973,0.1,-0.795},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_DEX_SAVETHROW_ID,
+            skillId = SKILL_DEX_SAVETHROW_ID,
+            pos     = {-0.973,0.1,-0.795},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 10 display Acrobatics
         {
-            pos    = {-0.973,0.1,-0.745},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_ACROBATICS_ID,
+            skillId = SKILL_ACROBATICS_ID,
+            pos     = {-0.973,0.1,-0.745},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 11 display Stealth
         {
-            pos    = {-0.973,0.1,-0.695},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_STEALTH_ID,
+            skillId = SKILL_STEALTH_ID,
+            pos     = {-0.973,0.1,-0.695},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 12 display Sleight of Hand
         {
-            pos    = {-0.973,0.1,-0.645},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_SLEIGHT_OF_HAND_ID,
+            skillId = SKILL_SLEIGHT_OF_HAND_ID,
+            pos     = {-0.973,0.1,-0.645},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 13 display CON savethrow
         {
-            pos    = {-0.973,0.1,-0.435},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_CON_SAVETHROW_ID,
+            skillId = SKILL_CON_SAVETHROW_ID,
+            pos     = {-0.973,0.1,-0.435},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 14 display INT savethrow
         {
-            pos    = {-0.973,0.1,-0.07},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_INT_SAVETHROW_ID,
+            skillId = SKILL_INT_SAVETHROW_ID,
+            pos     = {-0.973,0.1,-0.07},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 15 display Arcana
         {
-            pos    = {-0.973,0.1,-0.0215},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_ARCANA_ID,
+            skillId = SKILL_ARCANA_ID,
+            pos     = {-0.973,0.1,-0.0215},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 16 display History
         {
-            pos    = {-0.973,0.1,0.031},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_HISTORY_ID,
+            skillId = SKILL_HISTORY_ID,
+            pos     = {-0.973,0.1,0.031},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 17 display Investigation
         {
-            pos    = {-0.973,0.1,0.0825},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_INVESTIGATION_ID,
+            skillId = SKILL_INVESTIGATION_ID,
+            pos     = {-0.973,0.1,0.0825},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 18 display Nature
         {
-            pos    = {-0.973,0.1,0.135},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_NATURE_ID,
+            skillId = SKILL_NATURE_ID,
+            pos     = {-0.973,0.1,0.135},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 19 display Religion
         {
-            pos    = {-0.973,0.1,0.185},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_RELIGION_ID,
+            skillId = SKILL_RELIGION_ID,
+            pos     = {-0.973,0.1,0.185},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 20 display WIT savethrow
         {
-            pos    = {-0.973,0.1,0.295},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_WIT_SAVETHROW_ID,
+            skillId = SKILL_WIT_SAVETHROW_ID,
+            pos     = {-0.973,0.1,0.295},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 21 display Animal Handling
         {
-            pos    = {-0.973,0.1,0.345},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_ANIMAL_HANDLING_ID,
+            skillId = SKILL_ANIMAL_HANDLING_ID,
+            pos     = {-0.973,0.1,0.345},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 22 display Insight
         {
-            pos    = {-0.973,0.1,0.395},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_INSIGHT_ID,
+            skillId = SKILL_INSIGHT_ID,
+            pos     = {-0.973,0.1,0.395},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 23 display Medicine
         {
-            pos    = {-0.973,0.1,0.445},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_MEDICINE_ID,
+            skillId = SKILL_MEDICINE_ID,
+            pos     = {-0.973,0.1,0.445},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 24 display Perception
         {
-            pos    = {-0.973,0.1,0.495},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_PERCEPTION_ID,
+            skillId = SKILL_PERCEPTION_ID,
+            pos     = {-0.973,0.1,0.495},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 25 display Survival
         {
-            pos    = {-0.973,0.1,0.55},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_SURVIVAL_ID,
+            skillId = SKILL_SURVIVAL_ID,
+            pos     = {-0.973,0.1,0.55},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 26 display CHA savethrow
         {
-            pos    = {-0.973,0.1,0.66},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_CHA_SAVETHROW_ID,
+            skillId = SKILL_CHA_SAVETHROW_ID,
+            pos     = {-0.973,0.1,0.66},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 27 display Performance
         {
-            pos    = {-0.973,0.1,0.708},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_PERFORMANCE_ID,
+            skillId = SKILL_PERFORMANCE_ID,
+            pos     = {-0.973,0.1,0.708},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 28 display Deception
         {
-            pos    = {-0.973,0.1,0.76},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_DECEPTION_ID,
+            skillId = SKILL_DECEPTION_ID,
+            pos     = {-0.973,0.1,0.76},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 29 display Intimidation
         {
-            pos    = {-0.973,0.1,0.813},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_INTIMIDATION_ID,
+            skillId = SKILL_INTIMIDATION_ID,
+            pos     = {-0.973,0.1,0.813},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 30 display Persuasion
         {
-            pos    = {-0.973,0.1,0.863},
-            size   = 250,
-            value  = 0,
-            hideBG = true
+            id      = "display_"..SKILL_PERSUASION_ID,
+            skillId = SKILL_PERSUASION_ID,
+            pos     = {-0.973,0.1,0.863},
+            size    = 250,
+            value   = 0,
+            hideBG  = true
         },
         -- 31 display Passive Perception ButtonIndex 84
         {
+            id     = "display_Passive_Perception",
             pos    = {-1.35,0.1,1.03},
             size   = 450,
             value  = 10,
@@ -707,6 +986,7 @@ defaultButtonData = {
         },
         -- 32 display Weight Capacity
         {
+            id     = "display_Weight_Capacity",
             pos    = {-0.225,0.1,2.085},
             size   = 450,
             value  = 150,
@@ -714,6 +994,7 @@ defaultButtonData = {
         },
         -- 33 display Raise, Lift and Pull
         {
+            id     = "display_Raise_Lift_and_Pull",
             pos    = {0.225,0.1,2.085},
             size   = 450,
             value  = 300,
@@ -721,13 +1002,15 @@ defaultButtonData = {
         },
         -- 34 display Jump Height
         {
-            pos     = {0.05,0.1,1.76},
+            id     = "display_Jump_Height",
+            pos    = {0.05,0.1,1.76},
             size   = 350,
             value  = 3,
             hideBG = true,
         },
         -- 35 display Jump Distance
         {
+            id     = "display_Jump_Distance",
             pos    = {0.05,0.1,1.695},
             size   = 350,
             value  = 10,
@@ -735,20 +1018,23 @@ defaultButtonData = {
         },
         -- 36 display Jump Height with Hands
         {
-            pos     = {0.05,0.1,1.825},
+            id     = "display_Jump_Height_with_Hands",
+            pos    = {0.05,0.1,1.825},
             size   = 350,
             value  = 3,
             hideBG = true,
         },
         -- 37 display Jump Height — no running
         {
-            pos     = {0.34,0.1,1.76},
+            id     = "display_Jump_Height_no_running",
+            pos    = {0.34,0.1,1.76},
             size   = 350,
             value  = 1,
             hideBG = true,
         },
         -- 38 display Jump Distance — no running
         {
+            id     = "display_Jump_Distance_no_running",
             pos    = {0.34,0.1,1.695},
             size   = 350,
             value  = 5,
@@ -756,6 +1042,7 @@ defaultButtonData = {
         },
         -- 39 display Jump Height with Hands — no running
         {
+            id     = "display_Jump_Height_with_Hands_no_running",
             pos     = {0.34,0.1,1.825},
             size   = 350,
             value  = 1,
@@ -763,6 +1050,7 @@ defaultButtonData = {
         },
         -- 40 Level
         {
+            id     = "display_Level",
             pos    = {-1.35,0.1,-1.285},
             size   = 600,
             value  = 1,
@@ -770,6 +1058,7 @@ defaultButtonData = {
         },
         -- 41 Exp for next LVL
         {
+            id     = "display_next_LVL",
             pos    = {1.27,0.1,-1.835},
             size   = 300,
             value  = '/ 300',
@@ -777,6 +1066,7 @@ defaultButtonData = {
         },
         -- 42 Proficiency
         {
+            id     = "display_Proficiency",
             pos    = {-1.35,0.1,-1.45},
             size   = 650,
             value  = '+2',
@@ -784,6 +1074,7 @@ defaultButtonData = {
         },
         -- 43 Hit Dices Left
         {
+            id     = "display_Hit_Dices_Left",
             pos    = {0.75,0.1,-1.38},
             size   = 450,
             value  = ' 1/ 1к',
@@ -808,6 +1099,7 @@ defaultButtonData = {
 
         -- 1 textbox Name
         {
+            id        = "textbox_Name",
             pos       = {-0.825,0.1,-1.900},
             rows      = 1,
             width     = 5000,
@@ -818,6 +1110,7 @@ defaultButtonData = {
         },
         -- 2 textbox Class & Level
         {
+            id        = "textbox_Class_Level",
             pos       = {0.075,0.1,-1.975},
             rows      = 1,
             width     = 2500,
@@ -828,6 +1121,7 @@ defaultButtonData = {
         },
         -- 3 textbox Background
         {
+            id        = "textbox_Background",
             pos       = {0.612,0.1,-1.975},
             rows      = 1,
             width     = 2600,
@@ -838,6 +1132,7 @@ defaultButtonData = {
         },
         -- 4 textbox Player’s name
         {
+            id        = "textbox_Players_name",
             pos       = {1.14,0.1,-1.975},
             rows      = 1,
             width     = 2400,
@@ -848,6 +1143,7 @@ defaultButtonData = {
         },
         -- 5 textbox Race
         {
+            id        = "textbox_Race",
             pos       = {0.075,0.1,-1.835},
             rows      = 1,
             width     = 2500,
@@ -858,6 +1154,7 @@ defaultButtonData = {
         },
         -- 6 textbox Aligment
         {
+            id        = "textbox_Aligment",
             pos       = {0.612,0.1,-1.835},
             rows      = 1,
             width     = 2600,
@@ -868,6 +1165,7 @@ defaultButtonData = {
         },
         -- 7 textbox XP
         {
+            id        = "textbox_XP",
             pos       = {1.015,0.1,-1.835},
             rows      = 1,
             width     = 1200,
@@ -878,6 +1176,7 @@ defaultButtonData = {
         },
         -- 8 textbox DELETED — Proficiency
         {
+            id        = "textbox_DELETED_Proficiency", -- TODO: delete
             pos       = {0,0,0},
             rows      = 0,
             width     = 0,
@@ -888,6 +1187,7 @@ defaultButtonData = {
         },
         -- 9 textbox Age
         {
+            id        = "textbox_Age",
             pos       = {-0.671,0.1,1.24},
             rows      = 1,
             width     = 1200,
@@ -898,6 +1198,7 @@ defaultButtonData = {
         },
         -- 10 textbox AC
         {
+            id        = "textbox_AC",
             pos       = {-0.265,0.1,-1.425},
             rows      = 1,
             width     = 750,
@@ -908,6 +1209,7 @@ defaultButtonData = {
         },
         -- 11 textbox HP max
         {
+            id        = "textbox_HP_max",
             pos       = {0.045,0.1,-1.425},
             rows      = 1,
             width     = 750,
@@ -918,6 +1220,7 @@ defaultButtonData = {
         },
         -- 12 textbox HP temporary
         {
+            id        = "textbox_HP_temporary",
             pos       = {0.355,0.1,-1.425},
             rows      = 1,
             width     = 750,
@@ -928,6 +1231,7 @@ defaultButtonData = {
         },
         -- 13 textbox Hit Dices
         {
+            id        = "textbox_Hit_Dices",
             pos       = {0.93,0.1,-1.38},
             rows      = 1,
             width     = 500,
@@ -938,6 +1242,7 @@ defaultButtonData = {
         },
         -- 14 textbox Initiative
         {
+            id        = "textbox_Initiative",
             pos       = {1.25,0.1,-1.45},
             rows      = 1,
             width     = 750,
@@ -948,6 +1253,7 @@ defaultButtonData = {
         },
         -- 15 textbox Speed
         {
+            id        = "textbox_Speed",
             pos       = {1.25,0.1,-1.225},
             rows      = 1,
             width     = 1000,
@@ -958,6 +1264,7 @@ defaultButtonData = {
         },
         -- 16 textbox Vision
         {
+            id        = "textbox_Vision",
             pos       = {1.25,0.1,-1.0},
             rows      = 1,
             width     = 1500,
@@ -968,6 +1275,7 @@ defaultButtonData = {
         },
         -- 17 textbox Current Hit Points
         {
+            id        = "textbox_Current_Hit_Points",
             pos       = {0.035,0.1,-1.09},
             rows      = 1,
             width     = 3800,
@@ -978,6 +1286,7 @@ defaultButtonData = {
         },
         -- 18 textbox Weapon Name1
         {
+            id        = "textbox_Weapon_Name_1",
             pos       = {-0.08,0.1,-0.71 },
             rows      = 1,
             width     = 3350,
@@ -988,6 +1297,7 @@ defaultButtonData = {
         },
         -- 19 textbox Weapon Name2
         {
+            id        = "textbox_Weapon_Name_2",
             pos       = {-0.08,0.1,-0.632},
             rows      = 1,
             width     = 3350,
@@ -998,6 +1308,7 @@ defaultButtonData = {
         },
         -- 20 textbox Weapon Name3
         {
+            id        = "textbox_Weapon_Name_3",
             pos       = {-0.08,0.1,-0.554},
             rows      = 1,
             width     = 3350,
@@ -1008,6 +1319,7 @@ defaultButtonData = {
         },
         -- 21 textbox Weapon Name4
         {
+            id        = "textbox_Weapon_Name_4",
             pos       = {-0.08,0.1,-0.476},
             rows      = 1,
             width     = 3350,
@@ -1018,6 +1330,7 @@ defaultButtonData = {
         },
         -- 22 textbox Weapon Name5
         {
+            id        = "textbox_Weapon_Name_5",
             pos       = {-0.08,0.1,-0.398},
             rows      = 1,
             width     = 3350,
@@ -1028,6 +1341,7 @@ defaultButtonData = {
         },
         -- 23 textbox Weapon Name6
         {
+            id        = "textbox_Weapon_Name_6",
             pos       = {-0.08,0.1,-0.320},
             rows      = 1,
             width     = 3350,
@@ -1038,6 +1352,7 @@ defaultButtonData = {
         },
         -- 24 textbox Weapon Name7
         {
+            id        = "textbox_Weapon_Name_7",
             pos       = {-0.08,0.1,-0.242},
             rows      = 1,
             width     = 3350,
@@ -1048,6 +1363,7 @@ defaultButtonData = {
         },
         -- 25 textbox Damage 1
         {
+            id        = "textbox_Damage_1",
             pos       = {0.38,0.1,-0.71},
             rows      = 1,
             width     = 800,
@@ -1058,6 +1374,7 @@ defaultButtonData = {
         },
         -- 26 textbox Damage 2
         {
+            id        = "textbox_Damage_2",
             pos       = {0.38,0.1,-0.632},
             rows      = 1,
             width     = 800,
@@ -1068,6 +1385,7 @@ defaultButtonData = {
         },
         -- 27 textbox Damage3
         {
+            id        = "textbox_Damage_3",
             pos       = {0.38,0.1,-0.554},
             rows      = 1,
             width     = 800,
@@ -1078,6 +1396,7 @@ defaultButtonData = {
         },
         -- 28 textbox Damage4
         {
+            id        = "textbox_Damage_4",
             pos       = {0.38,0.1,-0.476},
             rows      = 1,
             width     = 800,
@@ -1088,6 +1407,7 @@ defaultButtonData = {
         },
         -- 29 textbox Damage5
         {
+            id        = "textbox_Damage_5",
             pos       = {0.38,0.1,-0.398},
             rows      = 1,
             width     = 800,
@@ -1098,6 +1418,7 @@ defaultButtonData = {
         },
         -- 30 textbox Damage6
         {
+            id        = "textbox_Damage_6",
             pos       = {0.38,0.1,-0.320},
             rows      = 1,
             width     = 800,
@@ -1108,6 +1429,7 @@ defaultButtonData = {
         },
         -- 31 textbox Damage7
         {
+            id        = "textbox_Damage_7",
             pos       = {0.38,0.1,-0.242},
             rows      = 1,
             width     = 800,
@@ -1118,6 +1440,7 @@ defaultButtonData = {
         },
         -- 32textbox Damage Type1
         {
+            id        = "textbox_Damage_Type_1",
             pos       = {0.6375,0.1,-0.71},
             rows      = 1,
             width     = 1350,
@@ -1128,6 +1451,7 @@ defaultButtonData = {
         },
         -- 33textbox Damage Type2
         {
+            id        = "textbox_Damage_Type_2",
             pos       = {0.6375,0.1,-0.632},
             rows      = 1,
             width     = 1350,
@@ -1138,6 +1462,7 @@ defaultButtonData = {
         },
         -- 34textbox Damage Type3
         {
+            id        = "textbox_Damage_Type_3",
             pos       = {0.6375,0.1,-0.554},
             rows      = 1,
             width     = 1350,
@@ -1148,6 +1473,7 @@ defaultButtonData = {
         },
         -- 35textbox Damage Type4
         {
+            id        = "textbox_Damage_Type_4",
             pos       = {0.6375,0.1,-0.476},
             rows      = 1,
             width     = 1350,
@@ -1158,6 +1484,7 @@ defaultButtonData = {
         },
         -- 36textbox Damage Type5
         {
+            id        = "textbox_Damage_Type_5",
             pos       = {0.6375,0.1,-0.398},
             rows      = 1,
             width     = 1350,
@@ -1168,6 +1495,7 @@ defaultButtonData = {
         },
         -- 37textbox Damage Type6
         {
+            id        = "textbox_Damage_Type_6",
             pos       = {0.6375,0.1,-0.320},
             rows      = 1,
             width     = 1350,
@@ -1178,6 +1506,7 @@ defaultButtonData = {
         },
         -- 38textbox Damage Type7
         {
+            id        = "textbox_Damage_Type_7",
             pos       = {0.6375,0.1,-0.242},
             rows      = 1,
             width     = 1350,
@@ -1188,6 +1517,7 @@ defaultButtonData = {
         },
         -- 39 textbox Range1
         {
+            id        = "textbox_Range_1",
             pos       = {0.9475,0.1,-0.71},
             rows      = 1,
             width     = 1250,
@@ -1198,6 +1528,7 @@ defaultButtonData = {
         },
         -- 40 textbox Range2
         {
+            id        = "textbox_Range_2",
             pos       = {0.9475,0.1,-0.632},
             rows      = 1,
             width     = 1250,
@@ -1208,6 +1539,7 @@ defaultButtonData = {
         },
         -- 41 textbox Range3
         {
+            id        = "textbox_Range_3",
             pos       = {0.9475,0.1,-0.554},
             rows      = 1,
             width     = 1250,
@@ -1218,6 +1550,7 @@ defaultButtonData = {
         },
         -- 42 textbox Range4
         {
+            id        = "textbox_Range_4",
             pos       = {0.9475,0.1,-0.476},
             rows      = 1,
             width     = 1250,
@@ -1228,6 +1561,7 @@ defaultButtonData = {
         },
         -- 43 textbox Range5
         {
+            id        = "textbox_Range_5",
             pos       = {0.9475,0.1,-0.398},
             rows      = 1,
             width     = 1250,
@@ -1239,6 +1573,7 @@ defaultButtonData = {
 
         -- 44 textbox Range6
         {
+            id        = "textbox_Range_6",
             pos       = {0.9475,0.1,-0.320},
             rows      = 1,
             width     = 1250,
@@ -1249,6 +1584,7 @@ defaultButtonData = {
         },
         -- 45 textbox Range7
         {
+            id        = "textbox_Range_7",
             pos       = {0.9475,0.1,-0.242},
             rows      = 1,
             width     = 1250,
@@ -1259,6 +1595,7 @@ defaultButtonData = {
         },
         -- 46 textbox Notes1
         {
+            id        = "textbox_Notes_1",
             pos       = {1.29,0.1,-0.71},
             rows      = 1,
             width     = 1700,
@@ -1270,6 +1607,7 @@ defaultButtonData = {
 
         -- 47 textbox Notes2
         {
+            id        = "textbox_Notes_2",
             pos       = {1.29,0.1,-0.632},
             rows      = 1,
             width     = 1700,
@@ -1280,6 +1618,7 @@ defaultButtonData = {
         },
         -- 48 textbox Notes3
         {
+            id        = "textbox_Notes_3",
             pos       = {1.29,0.1,-0.554},
             rows      = 1,
             width     = 1700,
@@ -1290,6 +1629,7 @@ defaultButtonData = {
         },
         -- 49 textbox Notes4
         {
+            id        = "textbox_Notes_4",
             pos       = {1.29,0.1,-0.476},
             rows      = 1,
             width     = 1700,
@@ -1300,6 +1640,7 @@ defaultButtonData = {
         },
         -- 50 textbox Notes5
         {
+            id        = "textbox_Notes_5",
             pos       = {1.29,0.1,-0.398},
             rows      = 1,
             width     = 1700,
@@ -1310,6 +1651,7 @@ defaultButtonData = {
         },
         -- 51 textbox Notes6
         {
+            id        = "textbox_Notes_6",
             pos       = {1.29,0.1,-0.320},
             rows      = 1,
             width     = 1700,
@@ -1320,6 +1662,7 @@ defaultButtonData = {
         },
         -- 52 textbox Notes7
         {
+            id        = "textbox_Notes_7",
             pos       = {1.29,0.1,-0.242},
             rows      = 1,
             width     = 1700,
@@ -1330,6 +1673,7 @@ defaultButtonData = {
         },
         -- 53 textbox Copper coins
         {
+            id        = "textbox_Copper_coins",
             pos       = {-0.35,0.1,0.04},
             rows      = 1,
             width     = 850,
@@ -1340,6 +1684,7 @@ defaultButtonData = {
         },
         -- 54 textbox Silver coins
         {
+            id        = "textbox_Silver_coins",
             pos       = {-0.35,0.1,0.18},
             rows      = 1,
             width     = 850,
@@ -1350,6 +1695,7 @@ defaultButtonData = {
         },
         -- 55 textbox Electrum coins
         {
+            id        = "textbox_Electrum_coins",
             pos       = {-0.35,0.1,0.315},
             rows      = 1,
             width     = 850,
@@ -1360,6 +1706,7 @@ defaultButtonData = {
         },
         -- 56 textbox Gold coins
         {
+            id        = "textbox_Gold_coins",
             pos       = {-0.35,0.1,0.455},
             rows      = 1,
             width     = 850,
@@ -1370,6 +1717,7 @@ defaultButtonData = {
         },
         -- 57 textbox Platinum coins
         {
+            id        = "textbox_Platinum_coins",
             pos       = {-0.35,0.1,0.6},
             rows      = 1,
             width     = 850,
@@ -1380,6 +1728,7 @@ defaultButtonData = {
         },
         -- 58 textbox Equipment
         {
+            id        = "textbox_Equipment_1",
             pos       = {0.1335,0.1,0.31},
             rows      = 11,
             width     = 3300,
@@ -1390,6 +1739,7 @@ defaultButtonData = {
         },
         -- 59 textbox Equipment2
         {
+            id        = "textbox_Equipment_2",
             pos       = {0.015,0.1,1.1},
             rows      = 13,
             width     = 4425,
@@ -1400,6 +1750,7 @@ defaultButtonData = {
         },
         -- 60 textbox Class and Race Characteristics
         {
+            id        = "textbox_Class_Race_Characteristics",
             pos       = {1.01,0.1,1.02},
             rows      = 41,
             width     = 4550,
@@ -1410,16 +1761,18 @@ defaultButtonData = {
         },
         -- 61 textbox Height
         {
+            id        = "textbox_Height",
             pos       = {-0.671,0.1,1.315},
             rows      = 1,
             width     = 1200,
             font_size = 300,
-            label     = "Pос����������������",
+            label     = "Pост",
             value     = "0",
             alignment = 3
         },
         -- 62 textbox Weight
         {
+            id        = "textbox_Weight",
             pos       = {-0.671,0.1,1.39},
             rows      = 1,
             width     = 1200,
@@ -1431,6 +1784,7 @@ defaultButtonData = {
 
         -- 63 textbox Proficiency3
         {
+            id        = "textbox_Proficiency_3",
             pos       = {-1,0.1,1.78},
             rows      = 10,
             width     = 4350,
@@ -1441,6 +1795,7 @@ defaultButtonData = {
         },
         -- 64 textbox -- REMOVED -- Jump Distance
         {
+            id        = "textbox_REMOVED_Jump_Distance", -- TODO Remove
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
@@ -1451,6 +1806,7 @@ defaultButtonData = {
         },
         -- 65 textbox -- REMOVED -- Jump Height
         {
+            id        = "textbox_REMOVED_Jump_Height", -- TODO Remove
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
@@ -1461,6 +1817,7 @@ defaultButtonData = {
         },
         -- 66 textbox -- REMOVED -- Weight
         {
+            id        = "textbox_REMOVED_Weight", -- TODO Remove
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
@@ -1471,6 +1828,7 @@ defaultButtonData = {
         },
         -- 67 textbox -- REMOVED -- Raise, Lift and Pull
         {
+            id        = "textbox_REMOVED_Raise_Lift_Pull", -- TODO Remove
             pos       = {0,0,0},
             rows      = 1,
             width     = 0,
@@ -1481,6 +1839,8 @@ defaultButtonData = {
         },
         -- 68 textbox STR savethrow
         {
+            id        = "textbox_"..SKILL_STR_SAVETHROW_ID,
+            skillId   = SKILL_STR_SAVETHROW_ID,
             pos       = {-1.055,0.1,-1.165},
             rows      = 1,
             width     = 200,
@@ -1491,6 +1851,8 @@ defaultButtonData = {
         },
         -- 69 textbox Atletics
         {
+            id        = "textbox_"..SKILL_ATHLETICS_ID,
+            skillId   = SKILL_ATHLETICS_ID,
             pos       = {-1.055,0.1,-1.1105},
             rows      = 1,
             width     = 200,
@@ -1501,6 +1863,8 @@ defaultButtonData = {
         },
         -- 70 textbox DEX savethrow
         {
+            id        = "textbox_"..SKILL_DEX_SAVETHROW_ID,
+            skillId   = SKILL_DEX_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.8},
             rows      = 1,
             width     = 200,
@@ -1511,6 +1875,8 @@ defaultButtonData = {
         },
         -- 71 textbox Acrobatics
         {
+            id        = "textbox_"..SKILL_ACROBATICS_ID,
+            skillId   = SKILL_ACROBATICS_ID,
             pos       = {-1.055,0.1,-0.745},
             rows      = 1,
             width     = 200,
@@ -1521,6 +1887,8 @@ defaultButtonData = {
         },
         -- 72 textbox Stealth
         {
+            id        = "textbox_"..SKILL_STEALTH_ID,
+            skillId   = SKILL_STEALTH_ID,
             pos       = {-1.055,0.1,-0.695},
             rows      = 1,
             width     = 200,
@@ -1531,6 +1899,8 @@ defaultButtonData = {
         },
         -- 73 textbox Sleight of Hand
         {
+            id        = "textbox_"..SKILL_SLEIGHT_OF_HAND_ID,
+            skillId   = SKILL_SLEIGHT_OF_HAND_ID,
             pos       = {-1.055,0.1,-0.645},
             rows      = 1,
             width     = 200,
@@ -1541,6 +1911,8 @@ defaultButtonData = {
         },
         -- 74 textbox CON savethrow
         {
+            id        = "textbox_"..SKILL_CON_SAVETHROW_ID,
+            skillId   = SKILL_CON_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.435},
             rows      = 1,
             width     = 200,
@@ -1551,6 +1923,8 @@ defaultButtonData = {
         },
         -- 75 textbox INT savethrow
         {
+            id        = "textbox_"..SKILL_INT_SAVETHROW_ID,
+            skillId   = SKILL_INT_SAVETHROW_ID,
             pos       = {-1.055,0.1,-0.075},
             rows      = 1,
             width     = 200,
@@ -1561,6 +1935,8 @@ defaultButtonData = {
         },
         -- 76 textbox Arcana
         {
+            id        = "textbox_"..SKILL_ARCANA_ID,
+            skillId   = SKILL_ARCANA_ID,
             pos       = {-1.055,0.1,-0.0215},
             rows      = 1,
             width     = 200,
@@ -1571,6 +1947,8 @@ defaultButtonData = {
         },
         -- 77 textbox History
         {
+            id        = "textbox_"..SKILL_HISTORY_ID,
+            skillId   = SKILL_HISTORY_ID,
             pos       = {-1.055,0.1,0.031},
             rows      = 1,
             width     = 200,
@@ -1581,6 +1959,8 @@ defaultButtonData = {
         },
         -- 78 textbox Investigation
         {
+            id        = "textbox_"..SKILL_INVESTIGATION_ID,
+            skillId   = SKILL_INVESTIGATION_ID,
             pos       = {-1.055,0.1,0.0825},
             rows      = 1,
             width     = 200,
@@ -1591,6 +1971,8 @@ defaultButtonData = {
         },
         -- 97 textbox Nature
         {
+            id        = "textbox_"..SKILL_NATURE_ID,
+            skillId   = SKILL_NATURE_ID,
             pos       = {-1.055,0.1,0.135},
             rows      = 1,
             width     = 200,
@@ -1601,6 +1983,8 @@ defaultButtonData = {
         },
         -- 80 textbox Religion
         {
+            id        = "textbox_"..SKILL_RELIGION_ID,
+            skillId   = SKILL_RELIGION_ID,
             pos       = {-1.055,0.1,0.185},
             rows      = 1,
             width     = 200,
@@ -1611,6 +1995,8 @@ defaultButtonData = {
         },
         -- 81 textbox WIT savethrow
         {
+            id        = "textbox_"..SKILL_WIT_SAVETHROW_ID,
+            skillId   = SKILL_WIT_SAVETHROW_ID,
             pos       = {-1.055,0.1,0.29},
             rows      = 1,
             width     = 200,
@@ -1621,6 +2007,8 @@ defaultButtonData = {
         },
         -- 82 textbox Animal Handling
         {
+            id        = "textbox_"..SKILL_ANIMAL_HANDLING_ID,
+            skillId   = SKILL_ANIMAL_HANDLING_ID,
             pos       = {-1.055,0.1,0.345},
             rows      = 1,
             width     = 200,
@@ -1631,6 +2019,8 @@ defaultButtonData = {
         },
         -- 83 textbox Insight
         {
+            id        = "textbox_"..SKILL_INSIGHT_ID,
+            skillId   = SKILL_INSIGHT_ID,
             pos       = {-1.055,0.1,0.395},
             rows      = 1,
             width     = 200,
@@ -1641,6 +2031,8 @@ defaultButtonData = {
         },
         -- 84 textbox Medicine
         {
+            id        = "textbox_"..SKILL_MEDICINE_ID,
+            skillId   = SKILL_MEDICINE_ID,
             pos       = {-1.055,0.1,0.445},
             rows      = 1,
             width     = 200,
@@ -1651,6 +2043,8 @@ defaultButtonData = {
         },
         -- 85 textbox Perception -- variable ind = 85
         {
+            id        = "textbox_"..SKILL_PERCEPTION_ID,
+            skillId   = SKILL_PERCEPTION_ID,
             pos       = {-1.055,0.1,0.495},
             rows      = 1,
             width     = 200,
@@ -1661,6 +2055,8 @@ defaultButtonData = {
         },
         -- 86 textbox Survival
         {
+            id        = "textbox_"..SKILL_SURVIVAL_ID,
+            skillId   = SKILL_SURVIVAL_ID,
             pos       = {-1.055,0.1,0.55},
             rows      = 1,
             width     = 200,
@@ -1671,6 +2067,8 @@ defaultButtonData = {
         },
         -- 87 textbox CHA savethrow
         {
+            id        = "textbox_"..SKILL_CHA_SAVETHROW_ID,
+            skillId   = SKILL_CHA_SAVETHROW_ID,
             pos       = {-1.055,0.1,0.655},
             rows      = 1,
             width     = 200,
@@ -1681,6 +2079,8 @@ defaultButtonData = {
         },
         -- 88 textbox Performance
         {
+            id        = "textbox_"..SKILL_PERFORMANCE_ID,
+            skillId   = SKILL_PERFORMANCE_ID,
             pos       = {-1.055,0.1,0.708},
             rows      = 1,
             width     = 200,
@@ -1691,6 +2091,8 @@ defaultButtonData = {
         },
         -- 89 textbox Deception
         {
+            id        = "textbox_"..SKILL_DECEPTION_ID,
+            skillId   = SKILL_DECEPTION_ID,
             pos       = {-1.055,0.1,0.76},
             rows      = 1,
             width     = 200,
@@ -1701,6 +2103,8 @@ defaultButtonData = {
         },
         -- 90 textbox Intimidation
         {
+            id        = "textbox_"..SKILL_INTIMIDATION_ID,
+            skillId   = SKILL_INTIMIDATION_ID,
             pos       = {-1.055,0.1,0.813},
             rows      = 1,
             width     = 200,
@@ -1711,6 +2115,8 @@ defaultButtonData = {
         },
         -- 91 textbox Persuasion
         {
+            id        = "textbox_"..SKILL_PERSUASION_ID,
+            skillId   = SKILL_PERSUASION_ID,
             pos       = {-1.055,0.1,0.863},
             rows      = 1,
             width     = 200,
