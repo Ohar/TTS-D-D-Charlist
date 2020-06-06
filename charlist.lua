@@ -2064,10 +2064,7 @@ end
 --Click functions for buttons
 
 --Checks or unchecks the given box
-function click_checkbox(checkboxId) --
-    -- tableIndex 1 to 24 // 18 Perception
-    -- buttonIndex 0 to 23
-
+function click_checkbox(checkboxId)
     local checkbox = ref_buttonData.checkbox[checkboxId]
     local skillId = checkbox.skillId
 
