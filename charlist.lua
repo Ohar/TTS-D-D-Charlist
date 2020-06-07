@@ -2384,6 +2384,7 @@ function updateJumpAndWeight()
 
     -- Update Weight Capacity
     weightCapacity = ref_buttonData.counter[COUNTER_PARAM_STR_ID].value * 15 * weightCapacityKoef
+    ref_buttonData.display[DISPLAY_WEIGHT_CAPACITY_ID].value = weightCapacity
     self.editButton({
         index = btnIndexByElementIdTable[DISPLAY_WEIGHT_CAPACITY_ID],
         label = weightCapacity,
@@ -2391,6 +2392,7 @@ function updateJumpAndWeight()
 
     -- Update Raise, Lift and Pull
     raiseLiftPullCapacity = weightCapacity * 2
+    ref_buttonData.display[DISPLAY_RAISE_LIFT_AND_PULL_ID].value = raiseLiftPullCapacity
     self.editButton({
         index = btnIndexByElementIdTable[DISPLAY_RAISE_LIFT_AND_PULL_ID],
         label = raiseLiftPullCapacity,
@@ -2398,6 +2400,7 @@ function updateJumpAndWeight()
 
     -- Update Jump Height
     jumpHeight = ref_buttonData.display[DISPLAY_PARAM_STR_ID].value + 3
+    ref_buttonData.display[DISPLAY_JUMP_HEIGHT_ID].value = jumpHeight
     self.editButton({
         index = btnIndexByElementIdTable[DISPLAY_JUMP_HEIGHT_ID],
         label = jumpHeight,
@@ -2405,6 +2408,7 @@ function updateJumpAndWeight()
 
     -- Update Jump Distance
     jumpDistance = ref_buttonData.counter[COUNTER_PARAM_STR_ID].value
+    ref_buttonData.display[DISPLAY_JUMP_DISTANCE_ID].value = jumpDistance
     self.editButton({
         index = btnIndexByElementIdTable[DISPLAY_JUMP_DISTANCE_ID],
         label = jumpDistance,
@@ -2419,6 +2423,7 @@ function updateJumpAndWeight()
     tonumber(characterHeight)
     characterOneAndHalfHeight = math.floor(characterHeight * 1.5)
     jumpHeightWithHands = jumpHeight + characterOneAndHalfHeight
+    ref_buttonData.display[DISPLAY_JUMP_HEIGHT_WITH_HANDS_ID].value = jumpHeightWithHands
     self.editButton({
         index = btnIndexByElementIdTable[DISPLAY_JUMP_HEIGHT_WITH_HANDS_ID],
         label = jumpHeightWithHands,
@@ -2426,6 +2431,7 @@ function updateJumpAndWeight()
 
     -- Update Jump Height — no running
     jumpHeightNoRunning = math.floor(jumpHeight / 2)
+    ref_buttonData.display[DISPLAY_JUMP_HEIGHT_NO_RUNNING_ID].value = jumpHeightNoRunning
     self.editButton({
         index = btnIndexByElementIdTable[DISPLAY_JUMP_HEIGHT_NO_RUNNING_ID],
         el = jumpHeightNoRunning,
@@ -2433,6 +2439,7 @@ function updateJumpAndWeight()
 
     -- Update Jump Distance — no running
     jumpDistanceNoRunning = math.floor(jumpDistance / 2)
+    ref_buttonData.display[DISPLAY_JUMP_DISTANCE_NO_RUNNING_ID].value = jumpDistanceNoRunning
     self.editButton({
         index = btnIndexByElementIdTable[DISPLAY_JUMP_DISTANCE_NO_RUNNING_ID],
         label = jumpDistanceNoRunning,
@@ -2440,6 +2447,7 @@ function updateJumpAndWeight()
 
     -- Update Jump Height with Hands — no running
     jumpHeightWithHandsNoRunning = jumpHeightNoRunning + characterOneAndHalfHeight
+    ref_buttonData.display[DISPLAY_JUMP_HEIGHT_WITH_HANDS_NO_RUNNING_ID].value = jumpHeightWithHandsNoRunning
     self.editButton({
         index = btnIndexByElementIdTable[DISPLAY_JUMP_HEIGHT_WITH_HANDS_NO_RUNNING_ID],
         label = jumpHeightWithHandsNoRunning,
