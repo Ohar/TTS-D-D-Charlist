@@ -53,7 +53,7 @@ Bonus) Finding/Editing Positions for elements
 Begin editing below:    ]]
 
 --Set this to true while editing and false when you have finished
-disableSave = true
+disableSave = false
 --Remember to set this to false once you are done making changes
 --Then, after you save & apply it, save your game too
 
@@ -2057,6 +2057,7 @@ defaultButtonData = {
     lvlByExp = 1,
     lvlByExpProficiency = 2,
     hitDiceLeft = 1,
+    monetWeight = 0,
 }
 
 local lvlUpdateBtnConditionOFF = {
@@ -2112,6 +2113,7 @@ function onload(saved_data)
     updateJumpAndWeight()
     createLvlUpdateBtn()
     createHitDiceCounters()
+    updateMonetWeight()
 
     lvlRefresh()
 end
@@ -2308,12 +2310,48 @@ function updateMonetWeight()
         text = NET_MONET_TEXT
     end
 
+    ref_buttonData.monetWeight = coinTotalWeight
+    checkOvercumbrance()
+
     ref_buttonData.display[DISPLAY_MONET_WEIGHT_ID].value = text
     self.editButton({
         index = btnIndexByElementIdTable[DISPLAY_MONET_WEIGHT_ID],
         label = text,
         value = text,
     })
+end
+
+function checkOvercumbrance()
+    local redBtnParams = {
+        color = { 1, 0, 0 },
+        font_color = { 1, 1, 1 },
+        width = 1500,
+        height = 500,
+        tooltip = 'Перегруз',
+    }
+    local normalBtnParams = {
+        color = buttonColor,
+        font_color = buttonFontColor,
+        width = 0,
+        height = 0,
+        tooltip = nil,
+    }
+
+    local weightLimits = {
+        DISPLAY_WEIGHT_CAPACITY_ID,
+        DISPLAY_RAISE_LIFT_AND_PULL_ID,
+    }
+    for i, weightLimitDisplayId in ipairs(weightLimits) do
+        if ref_buttonData.monetWeight > ref_buttonData.display[weightLimitDisplayId].value then
+            local params = redBtnParams
+            params.index = btnIndexByElementIdTable[weightLimitDisplayId]
+            self.editButton(params)
+        else
+            local params = normalBtnParams
+            params.index = btnIndexByElementIdTable[weightLimitDisplayId]
+            self.editButton(params)
+        end
+    end
 end
 
 function declensionRus(num, singleText, doubleText, multipleText)
@@ -2452,6 +2490,8 @@ function updateJumpAndWeight()
         index = btnIndexByElementIdTable[DISPLAY_JUMP_HEIGHT_WITH_HANDS_NO_RUNNING_ID],
         label = jumpHeightWithHandsNoRunning,
     })
+
+    checkOvercumbrance()
 end
 
 -- Lvl update btn - Activate/Deactivate
