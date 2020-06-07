@@ -53,7 +53,7 @@ Bonus) Finding/Editing Positions for elements
 Begin editing below:    ]]
 
 --Set this to true while editing and false when you have finished
-disableSave = false
+disableSave = true
 --Remember to set this to false once you are done making changes
 --Then, after you save & apply it, save your game too
 
@@ -195,6 +195,9 @@ EXP_MAX = LVL_BY_EXP[#LVL_BY_EXP].max
 
 local TEXTBOX_SKILL_width = 280
 local TEXTBOX_SKILL_fontSize = 220
+local POUND_PER_KG = 0.454
+
+local NET_MONET_TEXT = 'Нет монет                            ' -- Align text with spaces
 
 local SKILL_ACROBATICS_ID = "Acrobatics"
 local SKILL_ANIMAL_HANDLING_ID = "Animal_Handling"
@@ -512,6 +515,7 @@ local DISPLAY_LEVEL_ID = "display_Level"
 local DISPLAY_NEXT_LVL_ID = "display_next_LVL"
 local DISPLAY_PROFICIENCY_ID = "display_Proficiency"
 local DISPLAY_HIT_DICES_LEFT_ID = "display_Hit_Dices_Left"
+local DISPLAY_MONET_WEIGHT_ID = "display_MONET_WEIGHT_Left"
 
 local textboxLabelCollection = {
     [TEXTBOX_NAME_ID] = "Имя персонажа",
@@ -1204,6 +1208,12 @@ defaultButtonData = {
             pos    = {0.75,0.1,-1.38},
             size   = 450,
             value  = ' 1/ 1к',
+            hideBG = true,
+        },
+        [DISPLAY_MONET_WEIGHT_ID] = {
+            pos    = {-0.22,0.11,0.677},
+            size   = 150,
+            value  = NET_MONET_TEXT,
             hideBG = true,
         },
         -- End of Display
@@ -2256,7 +2266,72 @@ function click_textbox(value, selected, textboxId)
             updateLevelByExp()
         end
 
+        -- Monet count change
+        if (
+               textboxId == TEXTBOX_COPPER_COINS_ID
+            or textboxId == TEXTBOX_SILVER_COINS_ID
+            or textboxId == TEXTBOX_ELECTRUM_COINS_ID
+            or textboxId == TEXTBOX_GOLD_COINS_ID
+            or textboxId == TEXTBOX_PLATINUM_COINS_ID
+        ) then
+            updateMonetWeight()
+        end
+
         updateSave()
+    end
+end
+
+function updateMonetWeight()
+    local coinTextBoxIdList = {
+        TEXTBOX_COPPER_COINS_ID,
+        TEXTBOX_SILVER_COINS_ID,
+        TEXTBOX_ELECTRUM_COINS_ID,
+        TEXTBOX_GOLD_COINS_ID,
+        TEXTBOX_PLATINUM_COINS_ID,
+    }
+
+    local singleCoinWeight = 0.02
+
+    local coinTotalCount = 0
+    for i, coinTextBoxId in ipairs(coinTextBoxIdList) do
+        local coinCount = ref_buttonData.textbox[coinTextBoxId].value
+        if not (coinCount == nil or coinCount == "") then
+            coinTotalCount = coinTotalCount + tonumber(coinCount)
+        end
+    end
+
+    local coinTotalWeight = math.ceil(singleCoinWeight * coinTotalCount)
+    local kgTotalWeight = math.ceil(coinTotalWeight * POUND_PER_KG)
+    local poundText = declensionRus(coinTotalWeight, 'фунт', 'фунта', 'фунтов')
+    local text = "Вес монет: "..coinTotalWeight.." "..poundText.." ("..kgTotalWeight.." кг)"
+    if coinTotalWeight == 0 then
+        text = NET_MONET_TEXT
+    end
+
+    ref_buttonData.display[DISPLAY_MONET_WEIGHT_ID].value = text
+    self.editButton({
+        index = btnIndexByElementIdTable[DISPLAY_MONET_WEIGHT_ID],
+        label = text,
+        value = text,
+    })
+end
+
+function declensionRus(num, singleText, doubleText, multipleText)
+    local numPart = math.fmod(math.abs(num), 100)
+
+    if numPart > 9 and numPart < 20 then
+        return multipleText
+    else
+        local shortPart = math.fmod(numPart, 10)
+
+        if shortPart == 1 then
+            return singleText
+        end
+        if shortPart > 1 and shortPart < 5 then
+            return doubleText
+        else
+            return multipleText
+        end
     end
 end
 
