@@ -523,6 +523,30 @@ local ROLL_PARAM_CON_ID = "roll_param_con"
 local ROLL_PARAM_INT_ID = "roll_param_int"
 local ROLL_PARAM_WIT_ID = "roll_param_wit"
 local ROLL_PARAM_CHA_ID = "roll_param_cha"
+local ROLL_SKILL_STR_SAVETHROW_ID = "roll_skill_str_savethrow"
+local ROLL_SKILL_ATHLETICS_ID = "roll_skill_athletics"
+local ROLL_SKILL_DEX_SAVETHROW_ID = "roll_skill_dex_savethrow"
+local ROLL_SKILL_ACROBATICS_ID = "roll_skill_acrobatics"
+local ROLL_SKILL_STEALTH_ID = "roll_skill_stealth"
+local ROLL_SKILL_SLEIGHT_OF_HAND_ID = "roll_skill_sleight_of_hand"
+local ROLL_SKILL_CON_SAVETHROW_ID = "roll_skill_con_savethrow"
+local ROLL_SKILL_INT_SAVETHROW_ID = "roll_skill_int_savethrow"
+local ROLL_SKILL_ARCANA_ID = "roll_skill_arcana"
+local ROLL_SKILL_HISTORY_ID = "roll_skill_history"
+local ROLL_SKILL_INVESTIGATION_ID = "roll_skill_investigation"
+local ROLL_SKILL_NATURE_ID = "roll_skill_nature"
+local ROLL_SKILL_RELIGION_ID = "roll_skill_religion"
+local ROLL_SKILL_WIT_SAVETHROW_ID = "roll_skill_wit_savethrow"
+local ROLL_SKILL_ANIMAL_HANDLING_ID = "roll_skill_animal_handling"
+local ROLL_SKILL_INSIGHT_ID = "roll_skill_insight"
+local ROLL_SKILL_MEDICINE_ID = "roll_skill_medicine"
+local ROLL_SKILL_PERCEPTION_ID = "roll_skill_perception"
+local ROLL_SKILL_SURVIVAL_ID = "roll_skill_survival"
+local ROLL_SKILL_CHA_SAVETHROW_ID = "roll_skill_cha_savethrow"
+local ROLL_SKILL_PERFORMANCE_ID = "roll_skill_performance"
+local ROLL_SKILL_DECEPTION_ID = "roll_skill_deception"
+local ROLL_SKILL_INTIMIDATION_ID = "roll_skill_intimidation"
+local ROLL_SKILL_PERSUASION_ID = "roll_skill_persuasion"
 
 local rollLabelCollection = {
     [ROLL_PARAM_STR_ID] = "Сила",
@@ -531,15 +555,63 @@ local rollLabelCollection = {
     [ROLL_PARAM_INT_ID] = "Интеллект",
     [ROLL_PARAM_WIT_ID] = "Мудрость",
     [ROLL_PARAM_CHA_ID] = "Харизма",
+    [ROLL_SKILL_STR_SAVETHROW_ID] = "Испытание",
+    [ROLL_SKILL_ATHLETICS_ID] = "Атлетика",
+    [ROLL_SKILL_DEX_SAVETHROW_ID] = "Испытание",
+    [ROLL_SKILL_ACROBATICS_ID] = "Акробатика",
+    [ROLL_SKILL_STEALTH_ID] = "Скрытность",
+    [ROLL_SKILL_SLEIGHT_OF_HAND_ID] = "Ловкость рук",
+    [ROLL_SKILL_CON_SAVETHROW_ID] = "Испытание",
+    [ROLL_SKILL_INT_SAVETHROW_ID] = "Испытание",
+    [ROLL_SKILL_ARCANA_ID] = "Магия",
+    [ROLL_SKILL_HISTORY_ID] = "История",
+    [ROLL_SKILL_INVESTIGATION_ID] = "Анализ",
+    [ROLL_SKILL_NATURE_ID] = "Природа",
+    [ROLL_SKILL_RELIGION_ID] = "Религия",
+    [ROLL_SKILL_WIT_SAVETHROW_ID] = "Испытание",
+    [ROLL_SKILL_ANIMAL_HANDLING_ID] = "Обращение с животными",
+    [ROLL_SKILL_INSIGHT_ID] = "Проницательность",
+    [ROLL_SKILL_MEDICINE_ID] = "Медицина",
+    [ROLL_SKILL_PERCEPTION_ID] = "Внимательность",
+    [ROLL_SKILL_SURVIVAL_ID] = "Выживание",
+    [ROLL_SKILL_CHA_SAVETHROW_ID] = "Испытание",
+    [ROLL_SKILL_PERFORMANCE_ID] = "Выступление",
+    [ROLL_SKILL_DECEPTION_ID] = "Обман",
+    [ROLL_SKILL_INTIMIDATION_ID] = "Запугивание",
+    [ROLL_SKILL_PERSUASION_ID] = "Убеждение",
 }
 
 local rollTextCollection = {
-    [ROLL_PARAM_STR_ID] = "Силы",
-    [ROLL_PARAM_DEX_ID] = "Ловкости",
-    [ROLL_PARAM_CON_ID] = "Телосложения",
-    [ROLL_PARAM_INT_ID] = "Интеллекта",
-    [ROLL_PARAM_WIT_ID] = "Мудрости",
-    [ROLL_PARAM_CHA_ID] = "Харизмы",
+    [ROLL_PARAM_STR_ID] = "проверка [b]Силы[/b]",
+    [ROLL_PARAM_DEX_ID] = "проверка [b]Ловкости[/b]",
+    [ROLL_PARAM_CON_ID] = "проверка [b]Телосложения[/b]",
+    [ROLL_PARAM_INT_ID] = "проверка [b]Интеллекта[/b]",
+    [ROLL_PARAM_WIT_ID] = "проверка [b]Мудрости[/b]",
+    [ROLL_PARAM_CHA_ID] = "проверка [b]Харизмы[/b]",
+    [ROLL_SKILL_STR_SAVETHROW_ID] = "испытание [b]Силы[/b]",
+    [ROLL_SKILL_ATHLETICS_ID] = "проверка [b]Атлетики[/b]",
+    [ROLL_SKILL_DEX_SAVETHROW_ID] = "испытание [b]Ловкости[/b]",
+    [ROLL_SKILL_ACROBATICS_ID] = "проверка [b]Акробатики[/b]",
+    [ROLL_SKILL_STEALTH_ID] = "проверка [b]Скрытности[/b]",
+    [ROLL_SKILL_SLEIGHT_OF_HAND_ID] = "проверка [b]Ловкости[/b] рук",
+    [ROLL_SKILL_CON_SAVETHROW_ID] = "испытание [b]Телосложения[/b]",
+    [ROLL_SKILL_INT_SAVETHROW_ID] = "испытание [b]Интеллекта[/b]",
+    [ROLL_SKILL_ARCANA_ID] = "проверка [b]Магии[/b]",
+    [ROLL_SKILL_HISTORY_ID] = "проверка [b]Истории[/b]",
+    [ROLL_SKILL_INVESTIGATION_ID] = "проверка [b]Анализа[/b]",
+    [ROLL_SKILL_NATURE_ID] = "проверка [b]Природы[/b]",
+    [ROLL_SKILL_RELIGION_ID] = "проверка [b]Религии[/b]",
+    [ROLL_SKILL_WIT_SAVETHROW_ID] = "испытание [b]Мудрости[/b]",
+    [ROLL_SKILL_ANIMAL_HANDLING_ID] = "проверка [b]Обращения[/b] с животными",
+    [ROLL_SKILL_INSIGHT_ID] = "проверка [b]Проницательности[/b]",
+    [ROLL_SKILL_MEDICINE_ID] = "проверка [b]Медицины[/b]",
+    [ROLL_SKILL_PERCEPTION_ID] = "проверка [b]Внимательности[/b]",
+    [ROLL_SKILL_SURVIVAL_ID] = "проверка [b]Выживания[/b]",
+    [ROLL_SKILL_CHA_SAVETHROW_ID] = "испытание [b]Харизмы[/b]",
+    [ROLL_SKILL_PERFORMANCE_ID] = "проверка [b]Выступления[/b]",
+    [ROLL_SKILL_DECEPTION_ID] = "проверка [b]Обмана[/b]",
+    [ROLL_SKILL_INTIMIDATION_ID] = "проверка [b]Запугивания[/b]",
+    [ROLL_SKILL_PERSUASION_ID] = "проверка [b]Убеждения[/b]",
 }
 
 local textboxLabelCollection = {
@@ -2115,6 +2187,151 @@ defaultButtonData = {
             width     = 1500,
             font_size = 250,
         },
+        [ROLL_SKILL_STR_SAVETHROW_ID] = {
+            pos       = {0.2 - 0.931, 0.1, -1.16+0.004},
+            skillId   = SKILL_STR_SAVETHROW_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_ATHLETICS_ID] = {
+            pos       = {0.2 - 0.931, 0.1, -1.11+0.004},
+            skillId   = SKILL_ATHLETICS_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_DEX_SAVETHROW_ID] = {
+            pos       = {0.2 - 0.931, 0.1, -0.795+0.004},
+            skillId   = SKILL_DEX_SAVETHROW_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_ACROBATICS_ID] = {
+            pos       = {0.2 - 0.931, 0.1, -0.745+0.004},
+            skillId   = SKILL_ACROBATICS_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_STEALTH_ID] = {
+            pos       = {0.2 - 0.931, 0.1, -0.695+0.004},
+            skillId   = SKILL_STEALTH_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_SLEIGHT_OF_HAND_ID] = {
+            pos       = {0.2 - 0.931, 0.1, -0.645+0.004},
+            skillId   = SKILL_SLEIGHT_OF_HAND_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_CON_SAVETHROW_ID] = {
+            pos       = {0.2 - 0.931, 0.1, -0.435+0.004},
+            skillId   = SKILL_CON_SAVETHROW_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_INT_SAVETHROW_ID] = {
+            pos       = {0.2 - 0.931, 0.1, -0.07+0.004},
+            skillId   = SKILL_INT_SAVETHROW_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_ARCANA_ID] = {
+            pos       = {0.2 - 0.931, 0.1, -0.0215+0.004},
+            skillId   = SKILL_ARCANA_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_HISTORY_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.031+0.004},
+            skillId   = SKILL_HISTORY_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_INVESTIGATION_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.0825+0.004},
+            skillId   = SKILL_INVESTIGATION_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_NATURE_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.135+0.004},
+            skillId   = SKILL_NATURE_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_RELIGION_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.185+0.004},
+            skillId   = SKILL_RELIGION_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_WIT_SAVETHROW_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.295+0.004},
+            skillId   = SKILL_WIT_SAVETHROW_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_ANIMAL_HANDLING_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.345+0.004},
+            skillId   = SKILL_ANIMAL_HANDLING_ID,
+            width     = 1950,
+            height    = 180*1.4,
+            font_size = 140,
+        },
+        [ROLL_SKILL_INSIGHT_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.395+0.004},
+            skillId   = SKILL_INSIGHT_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_MEDICINE_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.445+0.004},
+            skillId   = SKILL_MEDICINE_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_PERCEPTION_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.495+0.004},
+            skillId   = SKILL_PERCEPTION_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_SURVIVAL_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.55+0.004},
+            skillId   = SKILL_SURVIVAL_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_CHA_SAVETHROW_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.66+0.004},
+            skillId   = SKILL_CHA_SAVETHROW_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_PERFORMANCE_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.708+0.004},
+            skillId   = SKILL_PERFORMANCE_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_DECEPTION_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.76+0.004},
+            skillId   = SKILL_DECEPTION_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_INTIMIDATION_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.813+0.004},
+            skillId   = SKILL_INTIMIDATION_ID,
+            width     = 1950,
+            font_size = 180,
+        },
+        [ROLL_SKILL_PERSUASION_ID] = {
+            pos       = {0.2 - 0.931, 0.1, 0.863+0.004},
+            skillId   = SKILL_PERSUASION_ID,
+            width     = 1950,
+            font_size = 180,
+        },
         -- End of Display
     },
 
@@ -2924,11 +3141,12 @@ end
 function createRolls()
     for rollId, data in pairs(ref_buttonData.roll) do
         local label = rollLabelCollection[rollId] or ''
-        local tooltip = 'Проверка '..rollTextCollection[rollId]
+        local tooltip = rollTextCollection[rollId]
+        local height = data.height or data.font_size * 1.4
 
         local funcName = rollId
         local func = function(obj, playerColor)
-            rollParam(rollId, data.paramId, obj, playerColor)
+            rollParam(rollId, data.paramId, data.skillId, obj, playerColor)
         end
         self.setVar(funcName, func)
 
@@ -2940,7 +3158,7 @@ function createRolls()
                 font_color     = buttonFontColor,
                 font_size      = data.font_size,
                 function_owner = self,
-                height         = data.font_size * 1.4,
+                height         = height,
                 label          = label,
                 position       = data.pos,
                 scale          = buttonScale,
@@ -2971,11 +3189,34 @@ function decimalToHex(decimalNum)
     end
 end
 
-function rollParam(rollId, paramId, obj, playerColor)
-    local paramBonus = ref_buttonData.display["display_"..paramId].value
-    local paramBonusAbs = math.abs(paramBonus)
+function rollParam(rollId, paramId, skillId, obj, playerColor)
+    local paramBonusText = ''
+    local skillBonusText = ''
+
+    local paramBonus = 0
+    local skillBonus = 0
+
+    if (skillId == nil) then
+        paramBonus = ref_buttonData.display["display_"..paramId].value
+
+        local paramBonusSign = '+'
+        if paramBonus < 0 then
+            paramBonusSign = '−'
+        end
+        paramBonusText = ' '..paramBonusSign..' '..math.abs(paramBonus)
+    else
+        skillBonus = tonumber(ref_buttonData.display["display_"..skillId].value)
+
+        local skillBonusSign = '+'
+        if skillBonus < 0 then
+            skillBonusSign = '−'
+        end
+
+        skillBonusText = ' '..skillBonusSign..' '..math.abs(skillBonus)
+    end
+
     local roll20 = d20()
-    local result = roll20 + paramBonus
+    local result = roll20 + paramBonus + skillBonus
 
     local steam_name = Player[playerColor].steam_name
     local charSheetName = obj.getName()
@@ -2983,16 +3224,14 @@ function rollParam(rollId, paramId, obj, playerColor)
     local charSheetColor = colorToHex(obj.getColorTint())
     local rollName = rollTextCollection[rollId]
 
-    local paramBonusSign = '+'
-    if paramBonus < 0 then
-        paramBonusSign = '−'
-    end
-
     broadcastToAll(
         '['..playerColorRBB..']'..
-        steam_name..'[-] проверяет [b]'..rollName
-        ..'[/b] для ['..charSheetColor..'][i]'..charSheetName..'[/i][-]: '
-        ..roll20..' '..paramBonusSign..' '..paramBonusAbs..' = [b]'..result..'[/b]'
+        steam_name..'[-]: '
+        ..rollName..' для ['..charSheetColor..'][i]'..charSheetName..'[/i][-]: '
+        ..roll20
+        ..paramBonusText
+        ..skillBonusText
+        ..' = [b]'..result..'[/b]'
     )
 end
 
