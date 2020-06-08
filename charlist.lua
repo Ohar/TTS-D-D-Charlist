@@ -53,7 +53,7 @@ Bonus) Finding/Editing Positions for elements
 Begin editing below:    ]]
 
 --Set this to true while editing and false when you have finished
-disableSave = false
+disableSave = true
 --Remember to set this to false once you are done making changes
 --Then, after you save & apply it, save your game too
 
@@ -516,6 +516,31 @@ local DISPLAY_NEXT_LVL_ID = "display_next_LVL"
 local DISPLAY_PROFICIENCY_ID = "display_Proficiency"
 local DISPLAY_HIT_DICES_LEFT_ID = "display_Hit_Dices_Left"
 local DISPLAY_MONET_WEIGHT_ID = "display_MONET_WEIGHT_Left"
+
+local ROLL_STR_ID = "roll_str"
+local ROLL_DEX_ID = "roll_dex"
+local ROLL_CON_ID = "roll_con"
+local ROLL_INT_ID = "roll_int"
+local ROLL_WIT_ID = "roll_wit"
+local ROLL_CHA_ID = "roll_cha"
+
+local rollLabelCollection = {
+    [ROLL_STR_ID] = "Сила",
+    [ROLL_DEX_ID] = "Ловкость",
+    [ROLL_CON_ID] = "Телосложение",
+    [ROLL_INT_ID] = "Интеллект",
+    [ROLL_WIT_ID] = "Мудрость",
+    [ROLL_CHA_ID] = "Харизма",
+}
+
+local rollTextCollection = {
+    [ROLL_STR_ID] = "Силы",
+    [ROLL_DEX_ID] = "Ловкости",
+    [ROLL_CON_ID] = "Телосложения",
+    [ROLL_INT_ID] = "Интеллекта",
+    [ROLL_WIT_ID] = "Мудрости",
+    [ROLL_CHA_ID] = "Харизмы",
+}
 
 local textboxLabelCollection = {
     [TEXTBOX_NAME_ID] = "Имя персонажа",
@@ -2052,6 +2077,46 @@ defaultButtonData = {
         },
         --End of textboxes
     },
+    --Add display
+    roll = {
+        [ROLL_STR_ID] = {
+            pos       = {-1.355,0.1,-0.95},
+            paramId   = PARAM_STR_ID,
+            width     = 1500,
+            font_size = 250,
+        },
+        [ROLL_DEX_ID] = {
+            pos       = {-1.355,0.1,-0.95+0.366},
+            paramId   = PARAM_DEX_ID,
+            width     = 1500,
+            font_size = 250,
+        },
+        [ROLL_CON_ID] = {
+            pos       = {-1.355,0.1,-0.95+0.366+0.366},
+            paramId   = PARAM_CON_ID,
+            width     = 1500,
+            font_size = 210,
+        },
+        [ROLL_INT_ID] = {
+            pos       = {-1.355,0.1,-0.95+0.366+0.366+0.366},
+            paramId   = PARAM_INT_ID,
+            width     = 1500,
+            font_size = 250,
+        },
+        [ROLL_WIT_ID] = {
+            pos       = {-1.355,0.1,-0.95+0.366+0.366+0.366+0.366},
+            paramId   = PARAM_WIT_ID,
+            width     = 1500,
+            font_size = 250,
+        },
+        [ROLL_CHA_ID] = {
+            pos       = {-1.355,0.1,-0.95+0.366+0.366+0.366+0.366+0.366},
+            paramId   = PARAM_CHA_ID,
+            width     = 1500,
+            font_size = 250,
+        },
+        -- End of Display
+    },
 
     lvl = 1,
     lvlByExp = 1,
@@ -2109,6 +2174,7 @@ function onload(saved_data)
     createCounter()
     createTextbox()
     createDisplay()
+    createRolls()
 
     updateJumpAndWeight()
     createLvlUpdateBtn()
@@ -2852,6 +2918,110 @@ function createDisplay()
             }
         )
     end
+end
+
+--Makes rolls
+function createRolls()
+    for rollId, data in pairs(ref_buttonData.roll) do
+        local label = rollLabelCollection[rollId] or ''
+        local tooltip = 'Пройти проверку '..rollTextCollection[rollId]
+
+        local funcName = rollId
+        local func = function(obj, playerColor)
+            rollParam(rollId, data.paramId, obj, playerColor)
+        end
+        self.setVar(funcName, func)
+
+        createBtnAndSaveIndex(
+            rollId,
+            {
+                click_function = funcName,
+                color          = buttonColor,
+                font_color     = buttonFontColor,
+                font_size      = data.font_size,
+                function_owner = self,
+                height         = data.font_size * 1.4,
+                label          = label,
+                position       = data.pos,
+                scale          = buttonScale,
+                tooltip        = tooltip,
+                width          = data.width,
+            }
+        )
+    end
+end
+
+function colorToHex(color)
+    local rHex, gHex, bHex = decimalToHex(color.r), decimalToHex(color.g), decimalToHex(color.b)
+
+    return rHex .. '' .. gHex .. '' .. bHex
+end
+
+function decimalToHex(decimalNum)
+    if decimalNum == 0 then
+        return '00'
+    else
+        local hexStr = string.format("%X", math.floor(decimalNum * 256) - 1)
+        local gapper = ''
+        if string.len(hexStr) == 1 then
+            gapper = '0'
+        end
+
+        return gapper .. hexStr
+    end
+end
+
+function rollParam(rollId, paramId, obj, playerColor)
+    local paramBonus = ref_buttonData.display["display_"..paramId].value
+    local paramBonusAbs = math.abs(paramBonus)
+    local roll20 = d20()
+    local result = roll20 + paramBonus
+
+    local steam_name = Player[playerColor].steam_name
+    local charSheetName = obj.getName()
+    local playerColorRBB = convertColorNameIntoRgbString(playerColor)
+    local charSheetColor = colorToHex(obj.getColorTint())
+    local rollName = rollLabelCollection[rollId]
+
+    local paramBonusSign = '+'
+    if paramBonus < 0 then
+        paramBonusSign = '−'
+    end
+
+    broadcastToAll(
+        '['..playerColorRBB..']'..
+        steam_name..'[-] проверяет [b]'..rollName
+        ..'[/b] для ['..charSheetColor..'][i]'..charSheetName..'[/i][-]: '
+        ..roll20..' '..paramBonusSign..' '..paramBonusAbs..' = [b]'..result..'[/b]'
+    )
+end
+
+function convertColorNameIntoRgbString(colorName)
+    -- See https://api.tabletopsimulator.com/player-color/
+    local colorTable = {
+        White = {r = 1, g = 1, b = 1},
+        Brown = {r = 0.443, g = 0.231, b = 0.09},
+        Red = {r = 0.856, g = 0.1, b = 0.094},
+        Orange = {r = 0.956, g = 0.392, b = 0.113},
+        Yellow = {r = 0.905, g = 0.898, b = 0.172},
+        Green = {r = 0.192, g = 0.701, b = 0.168},
+        Teal = {r = 0.129, g = 0.694, b = 0.607},
+        Blue = {r = 0.118, g = 0.53, b = 1},
+        Purple = {r = 0.627, g = 0.125, b = 0.941},
+        Pink = {r = 0.96, g = 0.439, b = 0.807},
+        Grey = {r = 0.5, g = 0.5, b = 0.5},
+        Black = {r = 0.25, g = 0.25, b = 0.25},
+    }
+
+    return colorToHex(colorTable[colorName])
+end
+
+function d20()
+    return dX(20)
+end
+
+function dX(diceSize)
+    return math.random(1, diceSize)
 end
 
 --Makes textbox
