@@ -2080,37 +2080,37 @@ defaultButtonData = {
     --Add display
     roll = {
         [ROLL_STR_ID] = {
-            pos       = {-1.355,0.1,-0.95},
+            pos       = {-1.355, 0.1, -0.95},
             paramId   = PARAM_STR_ID,
             width     = 1500,
             font_size = 250,
         },
         [ROLL_DEX_ID] = {
-            pos       = {-1.355,0.1,-0.95+0.366},
+            pos       = {-1.355, 0.1, -0.584},
             paramId   = PARAM_DEX_ID,
             width     = 1500,
             font_size = 250,
         },
         [ROLL_CON_ID] = {
-            pos       = {-1.355,0.1,-0.95+0.366+0.366},
+            pos       = {-1.355, 0.1, -0.218},
             paramId   = PARAM_CON_ID,
             width     = 1500,
             font_size = 210,
         },
         [ROLL_INT_ID] = {
-            pos       = {-1.355,0.1,-0.95+0.366+0.366+0.366},
+            pos       = {-1.355, 0.1, 0.148},
             paramId   = PARAM_INT_ID,
             width     = 1500,
             font_size = 250,
         },
         [ROLL_WIT_ID] = {
-            pos       = {-1.355,0.1,-0.95+0.366+0.366+0.366+0.366},
+            pos       = {-1.355, 0.1, 0.514},
             paramId   = PARAM_WIT_ID,
             width     = 1500,
             font_size = 250,
         },
         [ROLL_CHA_ID] = {
-            pos       = {-1.355,0.1,-0.95+0.366+0.366+0.366+0.366+0.366},
+            pos       = {-1.355, 0.1, 0.88},
             paramId   = PARAM_CHA_ID,
             width     = 1500,
             font_size = 250,
