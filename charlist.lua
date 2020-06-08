@@ -517,29 +517,29 @@ local DISPLAY_PROFICIENCY_ID = "display_Proficiency"
 local DISPLAY_HIT_DICES_LEFT_ID = "display_Hit_Dices_Left"
 local DISPLAY_MONET_WEIGHT_ID = "display_MONET_WEIGHT_Left"
 
-local ROLL_STR_ID = "roll_str"
-local ROLL_DEX_ID = "roll_dex"
-local ROLL_CON_ID = "roll_con"
-local ROLL_INT_ID = "roll_int"
-local ROLL_WIT_ID = "roll_wit"
-local ROLL_CHA_ID = "roll_cha"
+local ROLL_PARAM_STR_ID = "roll_param_str"
+local ROLL_PARAM_DEX_ID = "roll_param_dex"
+local ROLL_PARAM_CON_ID = "roll_param_con"
+local ROLL_PARAM_INT_ID = "roll_param_int"
+local ROLL_PARAM_WIT_ID = "roll_param_wit"
+local ROLL_PARAM_CHA_ID = "roll_param_cha"
 
 local rollLabelCollection = {
-    [ROLL_STR_ID] = "Сила",
-    [ROLL_DEX_ID] = "Ловкость",
-    [ROLL_CON_ID] = "Телосложение",
-    [ROLL_INT_ID] = "Интеллект",
-    [ROLL_WIT_ID] = "Мудрость",
-    [ROLL_CHA_ID] = "Харизма",
+    [ROLL_PARAM_STR_ID] = "Сила",
+    [ROLL_PARAM_DEX_ID] = "Ловкость",
+    [ROLL_PARAM_CON_ID] = "Телосложение",
+    [ROLL_PARAM_INT_ID] = "Интеллект",
+    [ROLL_PARAM_WIT_ID] = "Мудрость",
+    [ROLL_PARAM_CHA_ID] = "Харизма",
 }
 
 local rollTextCollection = {
-    [ROLL_STR_ID] = "Силы",
-    [ROLL_DEX_ID] = "Ловкости",
-    [ROLL_CON_ID] = "Телосложения",
-    [ROLL_INT_ID] = "Интеллекта",
-    [ROLL_WIT_ID] = "Мудрости",
-    [ROLL_CHA_ID] = "Харизмы",
+    [ROLL_PARAM_STR_ID] = "Силы",
+    [ROLL_PARAM_DEX_ID] = "Ловкости",
+    [ROLL_PARAM_CON_ID] = "Телосложения",
+    [ROLL_PARAM_INT_ID] = "Интеллекта",
+    [ROLL_PARAM_WIT_ID] = "Мудрости",
+    [ROLL_PARAM_CHA_ID] = "Харизмы",
 }
 
 local textboxLabelCollection = {
@@ -2079,37 +2079,37 @@ defaultButtonData = {
     },
     --Add display
     roll = {
-        [ROLL_STR_ID] = {
+        [ROLL_PARAM_STR_ID] = {
             pos       = {-1.355, 0.1, -0.95},
             paramId   = PARAM_STR_ID,
             width     = 1500,
             font_size = 250,
         },
-        [ROLL_DEX_ID] = {
+        [ROLL_PARAM_DEX_ID] = {
             pos       = {-1.355, 0.1, -0.584},
             paramId   = PARAM_DEX_ID,
             width     = 1500,
             font_size = 250,
         },
-        [ROLL_CON_ID] = {
+        [ROLL_PARAM_CON_ID] = {
             pos       = {-1.355, 0.1, -0.218},
             paramId   = PARAM_CON_ID,
             width     = 1500,
             font_size = 210,
         },
-        [ROLL_INT_ID] = {
+        [ROLL_PARAM_INT_ID] = {
             pos       = {-1.355, 0.1, 0.148},
             paramId   = PARAM_INT_ID,
             width     = 1500,
             font_size = 250,
         },
-        [ROLL_WIT_ID] = {
+        [ROLL_PARAM_WIT_ID] = {
             pos       = {-1.355, 0.1, 0.514},
             paramId   = PARAM_WIT_ID,
             width     = 1500,
             font_size = 250,
         },
-        [ROLL_CHA_ID] = {
+        [ROLL_PARAM_CHA_ID] = {
             pos       = {-1.355, 0.1, 0.88},
             paramId   = PARAM_CHA_ID,
             width     = 1500,
