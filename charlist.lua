@@ -2924,7 +2924,7 @@ end
 function createRolls()
     for rollId, data in pairs(ref_buttonData.roll) do
         local label = rollLabelCollection[rollId] or ''
-        local tooltip = 'Пройти проверку '..rollTextCollection[rollId]
+        local tooltip = 'Проверка '..rollTextCollection[rollId]
 
         local funcName = rollId
         local func = function(obj, playerColor)
@@ -2981,7 +2981,7 @@ function rollParam(rollId, paramId, obj, playerColor)
     local charSheetName = obj.getName()
     local playerColorRBB = convertColorNameIntoRgbString(playerColor)
     local charSheetColor = colorToHex(obj.getColorTint())
-    local rollName = rollLabelCollection[rollId]
+    local rollName = rollTextCollection[rollId]
 
     local paramBonusSign = '+'
     if paramBonus < 0 then
