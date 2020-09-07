@@ -2553,11 +2553,11 @@ function click_textbox(value, selected, textboxId)
 
         -- Monet count change
         if (
-               textboxId == TEXTBOX_COPPER_COINS_ID
-            or textboxId == TEXTBOX_SILVER_COINS_ID
-            or textboxId == TEXTBOX_ELECTRUM_COINS_ID
-            or textboxId == TEXTBOX_GOLD_COINS_ID
-            or textboxId == TEXTBOX_PLATINUM_COINS_ID
+                textboxId == TEXTBOX_COPPER_COINS_ID
+             or textboxId == TEXTBOX_SILVER_COINS_ID
+             or textboxId == TEXTBOX_ELECTRUM_COINS_ID
+             or textboxId == TEXTBOX_GOLD_COINS_ID
+             or textboxId == TEXTBOX_PLATINUM_COINS_ID
         ) then
             updateMonetWeight()
         end
@@ -2854,13 +2854,13 @@ function updateLevelByExp()
         -- Исправить значение опыта на инпуте
         ref_buttonData.textbox[TEXTBOX_XP_ID].value = exp
         Wait.time(
-            function ()
-                self.editInput({
-                    index = EXP_INPUT_EDIT_ID, -- TODO: use input table like “btnIndexByElementIdTable”
-                    value = exp,
-                })
-            end,
-            0
+                function ()
+                    self.editInput({
+                        index = EXP_INPUT_EDIT_ID, -- TODO: use input table like “btnIndexByElementIdTable”
+                        value = exp,
+                    })
+                end,
+                0
         )
     end
 
@@ -2887,34 +2887,34 @@ function createHitDiceCounters()
     local size = 350
 
     createBtnAndSaveIndex(
-        "hitDiceIncrement",
-        {
-            click_function = "hitDiceIncrement",
-            color          = buttonColor,
-            font_color     = buttonFontColor,
-            font_size      = size,
-            function_owner = self,
-            height         = size,
-            label          = '+',
-            position       = {0.68,0.1,-1.47},
-            scale          = buttonScale,
-            width          = size,
-        }
+            "hitDiceIncrement",
+            {
+                click_function = "hitDiceIncrement",
+                color          = buttonColor,
+                font_color     = buttonFontColor,
+                font_size      = size,
+                function_owner = self,
+                height         = size,
+                label          = '+',
+                position       = {0.68,0.1,-1.47},
+                scale          = buttonScale,
+                width          = size,
+            }
     )
     createBtnAndSaveIndex(
-        "hitDiceDecrement",
-        {
-            click_function = "hitDiceDecrement",
-            color          = buttonColor,
-            font_color     = buttonFontColor,
-            font_size      = size,
-            function_owner = self,
-            height         = size,
-            label          = '-',
-            position       = {0.68,0.1,-1.29},
-            scale          = buttonScale,
-            width          = size,
-        }
+            "hitDiceDecrement",
+            {
+                click_function = "hitDiceDecrement",
+                color          = buttonColor,
+                font_color     = buttonFontColor,
+                font_size      = size,
+                function_owner = self,
+                height         = size,
+                label          = '-',
+                position       = {0.68,0.1,-1.29},
+                scale          = buttonScale,
+                width          = size,
+            }
     )
 
     updateHitDiceText()
@@ -2982,19 +2982,19 @@ function createCheckbox()
 
         --Creates button and counts it
         createBtnAndSaveIndex(
-            checkboxId,
-            {
-                click_function = funcName,
-                color          = buttonColor,
-                font_color     = buttonFontColor,
-                font_size      = data.size,
-                function_owner = self,
-                height         = data.size,
-                label          = label,
-                position       = data.pos,
-                scale          = buttonScale,
-                width          = data.size,
-            }
+                checkboxId,
+                {
+                    click_function = funcName,
+                    color          = buttonColor,
+                    font_color     = buttonFontColor,
+                    font_size      = data.size,
+                    function_owner = self,
+                    height         = data.size,
+                    label          = label,
+                    position       = data.pos,
+                    scale          = buttonScale,
+                    width          = data.size,
+                }
         )
 
         spawnedButtonCount = spawnedButtonCount + 1
@@ -3015,19 +3015,19 @@ function createCounter()
 
         --Creates button and counts it
         createBtnAndSaveIndex(
-            counterId,
-            {
-                click_function = "click_none",
-                color          = buttonColor,
-                font_color     = buttonFontColor,
-                font_size      = data.size,
-                function_owner = self,
-                height         = size,
-                label          = label,
-                position       = data.pos,
-                scale          = buttonScale,
-                width          = size,
-            }
+                counterId,
+                {
+                    click_function = "click_none",
+                    color          = buttonColor,
+                    font_color     = buttonFontColor,
+                    font_size      = data.size,
+                    function_owner = self,
+                    height         = size,
+                    label          = label,
+                    position       = data.pos,
+                    scale          = buttonScale,
+                    width          = size,
+                }
         )
 
         spawnedButtonCount = spawnedButtonCount + 1
@@ -3051,19 +3051,19 @@ function createCounter()
 
         --Creates button and counts it
         createBtnAndSaveIndex(
-            data.btnAddId,
-            {
-                click_function = funcName,
-                color          = buttonColor,
-                font_color     = buttonFontColor,
-                font_size      = size,
-                function_owner = self,
-                height         = size,
-                label          = "+",
-                position       = pos,
-                scale          = buttonScale,
-                width          = size,
-            }
+                data.btnAddId,
+                {
+                    click_function = funcName,
+                    color          = buttonColor,
+                    font_color     = buttonFontColor,
+                    font_size      = size,
+                    function_owner = self,
+                    height         = size,
+                    label          = "+",
+                    position       = pos,
+                    scale          = buttonScale,
+                    width          = size,
+                }
         )
 
         spawnedButtonCount = spawnedButtonCount + 1
@@ -3085,19 +3085,19 @@ function createCounter()
 
         --Creates button and counts it
         createBtnAndSaveIndex(
-            data.btnSubId,
-            {
-                click_function = funcName,
-                color          = buttonColor,
-                font_color     = buttonFontColor,
-                font_size      = size,
-                function_owner = self,
-                height         = size,
-                label          = "−",
-                position       = pos,
-                scale          = buttonScale,
-                width          = size,
-            }
+                data.btnSubId,
+                {
+                    click_function = funcName,
+                    color          = buttonColor,
+                    font_color     = buttonFontColor,
+                    font_size      = size,
+                    function_owner = self,
+                    height         = size,
+                    label          = "−",
+                    position       = pos,
+                    scale          = buttonScale,
+                    width          = size,
+                }
         )
 
         spawnedButtonCount = spawnedButtonCount + 1
@@ -3119,20 +3119,20 @@ function createDisplay()
 
         -- Create display button
         createBtnAndSaveIndex(
-            displayId,
-            {
-                click_function = "click_none",
-                color          = buttonColor,
-                font_color     = buttonFontColor,
-                font_size      = data.size,
-                function_owner = self,
-                height         = size,
-                label          = label,
-                position       = data.pos,
-                scale          = buttonScale,
-                tooltip        = tooltip,
-                width          = size,
-            }
+                displayId,
+                {
+                    click_function = "click_none",
+                    color          = buttonColor,
+                    font_color     = buttonFontColor,
+                    font_size      = data.size,
+                    function_owner = self,
+                    height         = size,
+                    label          = label,
+                    position       = data.pos,
+                    scale          = buttonScale,
+                    tooltip        = tooltip,
+                    width          = size,
+                }
         )
     end
 end
@@ -3151,20 +3151,20 @@ function createRolls()
         self.setVar(funcName, func)
 
         createBtnAndSaveIndex(
-            rollId,
-            {
-                click_function = funcName,
-                color          = buttonColor,
-                font_color     = buttonFontColor,
-                font_size      = data.font_size,
-                function_owner = self,
-                height         = height,
-                label          = label,
-                position       = data.pos,
-                scale          = buttonScale,
-                tooltip        = tooltip,
-                width          = data.width,
-            }
+                rollId,
+                {
+                    click_function = funcName,
+                    color          = buttonColor,
+                    font_color     = buttonFontColor,
+                    font_size      = data.font_size,
+                    function_owner = self,
+                    height         = height,
+                    label          = label,
+                    position       = data.pos,
+                    scale          = buttonScale,
+                    tooltip        = tooltip,
+                    width          = data.width,
+                }
         )
     end
 end
@@ -3225,13 +3225,13 @@ function rollParam(rollId, paramId, skillId, obj, playerColor)
     local rollName = rollTextCollection[rollId]
 
     broadcastToAll(
-        '['..playerColorRBB..']'..
-        steam_name..'[-]: '
-        ..rollName..' для ['..charSheetColor..'][i]'..charSheetName..'[/i][-]: '
-        ..roll20
-        ..paramBonusText
-        ..skillBonusText
-        ..' = [b]'..result..'[/b]'
+            '['..playerColorRBB..']'..
+                    steam_name..'[-]: '
+                    ..rollName..' для ['..charSheetColor..'][i]'..charSheetName..'[/i][-]: '
+                    ..roll20
+                    ..paramBonusText
+                    ..skillBonusText
+                    ..' = [b]'..result..'[/b]'
     )
 end
 
