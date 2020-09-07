@@ -3223,16 +3223,42 @@ function rollParam(rollId, paramId, skillId, obj, playerColor)
     local playerColorRBB = convertColorNameIntoRgbString(playerColor)
     local charSheetColor = colorToHex(obj.getColorTint())
     local rollName = rollTextCollection[rollId]
+    local generateText = rollTextGenerator(playerColorRBB, rollName, charSheetColor, charSheetName, paramBonusText, skillBonusText, steam_name)
+    local visibleRollText = generateText(roll20, result)
 
-    broadcastToAll(
-            '['..playerColorRBB..']'..
-                    steam_name..'[-]: '
-                    ..rollName..' для ['..charSheetColor..'][i]'..charSheetName..'[/i][-]: '
-                    ..roll20
-                    ..paramBonusText
-                    ..skillBonusText
-                    ..' = [b]'..result..'[/b]'
-    )
+    local showHidden = checkIfRollHidden()
+
+    if showHidden then
+        local hiddenRollText = generateText('?', '???')
+
+        playerList = Player.getPlayers()
+
+        for _, playerReference  in ipairs(playerList) do
+            if playerReference.color == 'Black' then
+                broadcastToColor(visibleRollText, playerReference.color)
+            else
+                broadcastToColor(hiddenRollText, playerReference.color)
+            end
+        end
+    else
+        broadcastToAll(visibleRollText)
+    end
+end
+
+function checkIfRollHidden()
+    return false -- TODO
+end
+
+function rollTextGenerator(playerColorRBB, rollName, charSheetColor, charSheetName, paramBonusText, skillBonusText, steam_name)
+    return function (roll20, result)
+        return '['..playerColorRBB..']'..
+        steam_name..'[-]: '
+        ..rollName..' для ['..charSheetColor..'][i]'..charSheetName..'[/i][-]: '
+        ..roll20
+        ..paramBonusText
+        ..skillBonusText
+        ..' = [b]'..result..'[/b]'
+    end
 end
 
 function convertColorNameIntoRgbString(colorName)
